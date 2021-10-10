@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventEmitter, Output } from '@angular/core';
+import { resume } from '../../assets/jsonResumeSample';
+
 
 @Component({
   selector: 'app-edit-content-tab',
@@ -7,10 +9,12 @@ import { EventEmitter, Output } from '@angular/core';
   styleUrls: ['./edit-content-tab.component.scss']
 })
 export class EditContentTabComponent implements OnInit {
-  userJsonResume: JSON;
+  userJsonResume : any;
   @Output() public onUserJsonResumeChanged = new EventEmitter<any>();
 
-  constructor() { }
+  constructor() {
+    this.onUserJsonResumeChanged.emit(this.userJsonResume);
+  }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-resume-page',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resume-page.component.scss']
 })
 export class ResumePageComponent implements OnInit {
+
+  @Input() jsonResume: any;
 
   constructor() { }
 

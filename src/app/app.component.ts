@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { resume } from '../assets/jsonResumeSample';
+
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'free-resume-builder';
-  resumeJsonContent: JSON;
+  resumeJsonContent = resume;
   resumeJsonContentString = ""
 
   updateJsonResume(newJsonResume) {
