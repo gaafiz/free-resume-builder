@@ -2,7 +2,7 @@ export const resume = {
   "basics": {
     "name": "John Doe",
     "label": "Software Engineer",
-    "image": "", // Image Link or Encoded picture
+    "image": "http://glasshalfull.net/wp-content/uploads/2017/03/headshot_placeholder.jpg", // Image Link or Encoded picture
     "email": "johndoe@gmail.com",
     "phone": "555-111-222",
     "url": "example.com",

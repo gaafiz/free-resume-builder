@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { ResumePageComponent } from './resume-page/resume-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditContentTabComponent } from './edit-content-tab/edit-content-tab.component';
+import { CandidatePhotoComponent } from './resume-page/candidate-photo/candidate-photo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResumePageComponent,
-    EditContentTabComponent
+    EditContentTabComponent,
+    CandidatePhotoComponent
   ],
   imports: [
     BrowserModule,

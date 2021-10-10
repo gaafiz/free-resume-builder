@@ -1,5 +1,6 @@
 <div id="resume-page">
-  <div id="resume-page-side-column">{{jsonResume.basics.name}}
+  <div id="resume-page-side-column">
+      <app-candidate-photo [jsonResume]=jsonResume></app-candidate-photo>
   </div>
   <div id="resume-page-main-column">
     {{jsonResume.basics.name}}

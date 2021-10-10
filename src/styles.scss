@@ -1,3 +1,5 @@
+/* VARIABLES */
+
 $a4-width: 21cm;
 $resume-page-width: $a4-width;
 $side-column-width: $resume-page-width/3;
@@ -6,10 +8,25 @@ $main-content-width: $resume-page-width - $side-column-width;
 $side-column-bkg-color: rgb(0, 51, 102);
 $side-column-font-color: white;
 
+$resume-page-text-font-size: 13px; // TODO: Make it relative to the page size
+$resume-page-text-font-letter-spacing: 0px;
+
+$side-column-to-photo-ratio: 75%;
+
+/* UTILITY classes */
+.centerize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
 
 @media print {
   #main-tab .mat-tab-header {
@@ -23,7 +40,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 27cm;
+  min-height: 29.6cm; // Min a a4 page height
+  font-size: $resume-page-text-font-size;
+  letter-spacing: $resume-page-text-font-letter-spacing;
 }
 
 #resume-page-side-column {
@@ -36,6 +55,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: $main-content-width;
 }
 
+img.candidate-photo {
+  border-radius: 50%;
+  width: $side-column-to-photo-ratio;
+}
+
+div.candidate-photo-wrapper {
+  padding-top: 0.5cm; // How to make these sizes relative?
+  padding-down: 0.5cm;
+}
 
 
 
