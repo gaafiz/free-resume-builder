@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-edit-content-tab',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditContentTabComponent implements OnInit {
   userJsonResume: JSON;
+  @Output() public onUserJsonResumeChanged = new EventEmitter<any>();
 
   constructor() { }
 
@@ -22,7 +24,7 @@ export class EditContentTabComponent implements OnInit {
       fileReader.onload = () => {
         const fileAsText = fileReader.result as string;
         this.userJsonResume = JSON.parse(fileAsText);
-        console.log(this.userJsonResume);
+        this.onUserJsonResumeChanged.emit(this.userJsonResume);
       }
       fileReader.onerror = (error) => {
         console.log(error);

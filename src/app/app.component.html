@@ -1,4 +1,7 @@
 <mat-tab-group>
   <mat-tab label="Preview"><app-resume-page></app-resume-page></mat-tab>
-  <mat-tab label="Edit"><app-edit-content-tab></app-edit-content-tab></mat-tab>
+  <mat-tab label="Edit"><app-edit-content-tab (onUserJsonResumeChanged)="updateJsonResume($event)"></app-edit-content-tab></mat-tab>
+  <mat-tab label="RAW JSON">
+    {{resumeJsonContentString}}
+  </mat-tab>
 </mat-tab-group>
