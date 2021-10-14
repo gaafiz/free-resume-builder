@@ -19,16 +19,16 @@ export class CandidatePersonalInfoComponent implements OnInit {
     return this.templateConf?.sections?.personalInfo?.title
   }
 
-  contacts() {
-    let contacts = [];
-    this.addBirthdayToContacts(contacts, this.jsonResume);
-    return contacts;
+  personalInfoList() {
+    let personalInfoList = [];
+    this.addBirthdayToPersonalInfo(personalInfoList, this.jsonResume);
+    return personalInfoList;
   }
 
-  addBirthdayToContacts(contacts, jsonResume) {
+  addBirthdayToPersonalInfo(personalInfoList, jsonResume) {
     let birthday = jsonResume?.basics?.birthday;
     if (!!birthday) {
-      contacts.push({
+      personalInfoList.push({
         key: 'birthday',
         styleClass: 'fa fa-birthday-cake',
         value: birthday,

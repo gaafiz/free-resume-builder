@@ -1,13 +1,13 @@
-<div class="contacts-section content-section">
+<div class="content-section personalInfo-section">
   <div class="section-head">
     {{title()}}
   </div>
   <div class="section-body">
     <ul>
-      <li *ngFor='let contact of contacts()'>
+      <li *ngFor='let personalInfo of personalInfoList()'>
         <div class="wrapper">
-          <div><i class="{{contact.styleClass}} contact-icon"></i></div>
-          <span class="contact-text" [innerHTML]=contact.value></span>
+          <div><i class="{{personalInfo.styleClass}} personalInfo-icon"></i></div>
+          <span class="personalInfo-text" [innerHTML]=personalInfo.value></span>
         </div>
       </li>
     </ul>
