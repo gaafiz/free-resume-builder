@@ -7,7 +7,7 @@ export const resume = {
     "email": "johndoe@gmail.com",
     "phone": "555-111-222",
     "url": "example.com",
-    "summary": "This is my summary where I describe myself. Html style is <b>supported>/b>",
+    "summary": "This is my summary where I describe myself. Html style is <b>supported</b>",
     "location": {
       "address": "my street 120",
       "postalCode": "8888",

@@ -10,6 +10,7 @@ import { EditContentTabComponent } from './edit-content-tab/edit-content-tab.com
 import { CandidatePhotoComponent } from './resume-page/candidate-photo/candidate-photo.component';
 import { CandidatePersonalInfoComponent } from './resume-page/candidate-personal-info/candidate-personal-info.component';
 import { CandidateLabelingComponent } from './resume-page/candidate-labeling/candidate-labeling.component';
+import { CandidateSummaryComponent } from './resume-page/candidate-summary/candidate-summary.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CandidateLabelingComponent } from './resume-page/candidate-labeling/can
     EditContentTabComponent,
     CandidatePhotoComponent,
     CandidatePersonalInfoComponent,
-    CandidateLabelingComponent
+    CandidateLabelingComponent,
+    CandidateSummaryComponent
   ],
   imports: [
     BrowserModule,
