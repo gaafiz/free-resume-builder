@@ -1,3 +1,5 @@
-<div class="content-section candidate-photo-wrapper centerize">
+<div
+  *ngIf="visible()"
+  class="content-section candidate-photo-wrapper centerize">
   <img class="candidate-photo" src="{{candidatePhoto()}}"/>
 </div>

@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditContentTabComponent } from './edit-content-tab/edit-content-tab.component';
 import { CandidatePhotoComponent } from './resume-page/candidate-photo/candidate-photo.component';
 import { CandidatePersonalInfoComponent } from './resume-page/candidate-personal-info/candidate-personal-info.component';
+import { CandidateLabelingComponent } from './resume-page/candidate-labeling/candidate-labeling.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CandidatePersonalInfoComponent } from './resume-page/candidate-personal
     ResumePageComponent,
     EditContentTabComponent,
     CandidatePhotoComponent,
-    CandidatePersonalInfoComponent
+    CandidatePersonalInfoComponent,
+    CandidateLabelingComponent
   ],
   imports: [
     BrowserModule,

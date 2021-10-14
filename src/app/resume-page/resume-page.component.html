@@ -4,6 +4,6 @@
       <app-candidate-personal-info [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-personal-info>
   </div>
   <div id="resume-page-main-column">
-    {{jsonResume.basics.name}}
+    <app-candidate-labeling [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-labeling>
   </div>
 </div>

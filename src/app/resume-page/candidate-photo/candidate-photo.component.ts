@@ -16,6 +16,10 @@ export class CandidatePhotoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  visible() {
+    return this.candidatePhoto() != undefined;
+  }
+
   candidatePhoto() {
     return this.jsonResume?.basics?.image;
   }

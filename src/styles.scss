@@ -16,10 +16,16 @@ $resume-page-text-font-letter-spacing: 0px;
 $side-column-to-photo-ratio: 65%;
 
 /* UTILITY classes */
+
 .centerize {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.centerize-column {
+  @extend .centerize;
+  flex-direction: column;
 }
 
 
@@ -57,9 +63,14 @@ body {
 
 #resume-page-main-column {
   width: $main-content-width;
+  padding: 1em;
 }
 
 #resume-page-side-column div.content-section {
+  margin-bottom: 1em
+}
+
+#resume-page-main-column div.content-section {
   margin-bottom: 1em
 }
 
@@ -68,11 +79,31 @@ img.candidate-photo {
   width: $side-column-to-photo-ratio;
 }
 
-div.candidate-photo-wrapper {
-  // How to make these sizes relative?
-//   padding-top: 1em;
-//   padding-down: 1em;
+.candidate-labeling {
+  @extend .centerize-column;
 }
+
+.candidate-name {
+  text-transform: uppercase;
+  font-size: 28px;
+  letter-spacing: 5px;
+
+}
+
+.candidate-label {
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 5px;
+  margin-top: 20px;
+}
+
+// TODO: Candidate Labling - Options, chose one
+// .candidate-name { color: #7bafc7; font-weight: 500; }
+// .candidate-name { color: #7bafc7; font-weight: 100; } .candidate-label { font-weight: 700; }
+// .candidate-name { font-weight: 100; } .candidate-label { font-weight: 700; }
+.candidate-name { font-weight: 100; color: #003366;} .candidate-label { font-weight: 700; }
+
 
 /* What to customize to make more text fit in the side column
  * - Font size

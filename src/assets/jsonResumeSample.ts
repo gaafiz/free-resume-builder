@@ -1,6 +1,6 @@
 export const resume = {
   "basics": {
-    "name": "John Doe",
+    "name": "Caroline Jane Watson",
     "birthday": "01 Jun 1980",
     "label": "Software Engineer",
     "image": "http://glasshalfull.net/wp-content/uploads/2017/03/headshot_placeholder.jpg", // Image Link or Encoded picture
