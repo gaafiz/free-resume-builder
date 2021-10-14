@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { resume } from '../assets/jsonResumeSample';
+import { templateConfigs } from '../assets/resumeTemplateConfig';
 
 
 @Component({
@@ -9,12 +10,15 @@ import { resume } from '../assets/jsonResumeSample';
 })
 export class AppComponent {
   title = 'free-resume-builder';
-  resumeJsonContent = resume;
-  resumeJsonContentString = ""
+  jsonResume = resume;
+  templateConf = templateConfigs;
 
   updateJsonResume(newJsonResume) {
-    this.resumeJsonContent = newJsonResume;
-    this.resumeJsonContentString = JSON.stringify(this.resumeJsonContent);
+    this.jsonResume = newJsonResume;
   }
+
+  updateTemplateConf(newTemplateConf) {
+      this.templateConf = newTemplateConf;
+    }
 
 }

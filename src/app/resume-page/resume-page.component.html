@@ -1,6 +1,7 @@
 <div id="resume-page">
   <div id="resume-page-side-column">
       <app-candidate-photo [jsonResume]=jsonResume></app-candidate-photo>
+      <app-candidate-personal-info [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-personal-info>
   </div>
   <div id="resume-page-main-column">
     {{jsonResume.basics.name}}

@@ -1,5 +1,12 @@
 <input
   style="display: none"
-  type="file" (change)="onFileChanged($event)"
-  #fileInput>
-<button (click)="fileInput.click()">Select File</button>
+  type="file" (change)="onContentFileChanged($event)"
+  #contentFileInput>
+<button (click)="contentFileInput.click()">Upload Resume Content</button>
+
+
+<input
+  style="display: none"
+  type="file" (change)="onConfFileChanged($event)"
+  #confFile>
+<button (click)="confFile.click()">Upload Resume Template Config</button>

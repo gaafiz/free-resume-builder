@@ -10,16 +10,17 @@ import { resume } from '../../assets/jsonResumeSample';
 })
 export class EditContentTabComponent implements OnInit {
   userJsonResume : any;
-  @Output() public onUserJsonResumeChanged = new EventEmitter<any>();
+  userTemplateConf : any;
+  @Output() public userJsonResumeChanged = new EventEmitter<any>();
+  @Output() public userTemplateConfChanged = new EventEmitter<any>();
 
   constructor() {
-    this.onUserJsonResumeChanged.emit(this.userJsonResume);
   }
 
   ngOnInit(): void {
   }
 
-  onFileChanged(event) {
+  onContentFileChanged(event) {
     const files = event.target.files
     if (files.length >= 1 ) {
       const selectedFile = event.target.files[0];
@@ -28,12 +29,29 @@ export class EditContentTabComponent implements OnInit {
       fileReader.onload = () => {
         const fileAsText = fileReader.result as string;
         this.userJsonResume = JSON.parse(fileAsText);
-        this.onUserJsonResumeChanged.emit(this.userJsonResume);
+        this.userJsonResumeChanged.emit(this.userJsonResume);
       }
       fileReader.onerror = (error) => {
         console.log(error);
       }
     }
   }
+
+  onConfFileChanged(event) {
+      const files = event.target.files
+      if (files.length >= 1 ) {
+        const selectedFile = event.target.files[0];
+        const fileReader = new FileReader();
+        fileReader.readAsText(selectedFile, "UTF-8");
+        fileReader.onload = () => {
+          const fileAsText = fileReader.result as string;
+          this.userTemplateConf = JSON.parse(fileAsText);
+          this.userTemplateConfChanged.emit(this.userJsonResume);
+        }
+        fileReader.onerror = (error) => {
+          console.log(error);
+        }
+      }
+    }
 
 }

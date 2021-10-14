@@ -9,6 +9,7 @@ import { Input } from '@angular/core';
 export class ResumePageComponent implements OnInit {
 
   @Input() jsonResume: any;
+  @Input() templateConf: any;
 
   constructor() { }
 
