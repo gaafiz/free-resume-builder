@@ -31,6 +31,14 @@ $side-column-to-photo-ratio: 65%;
 }
 
 
+hr.separator {
+  width: 100%;
+  border: 0;
+//   height: 2px; background-image: linear-gradient(to right, transparent, #7bafc8, transparent);
+  height: 1px; background-image: linear-gradient(to right, transparent, #003366, transparent);
+}
+
+
 /* Global Rules */
 html, body { height: 100%; }
 body {
@@ -82,7 +90,7 @@ div.section-head {
 }
 
 #resume-page-main-column div.content-section {
-  margin-bottom: 1em
+  margin-bottom: 1.5em
 }
 
 img.candidate-photo {
@@ -98,22 +106,24 @@ img.candidate-photo {
   text-transform: uppercase;
   font-size: 28px;
   letter-spacing: 5px;
-
+  margin-top: 5px;
+  font-weight: 500; // Maybe Remove
 }
 
 .candidate-label {
-  margin-top: 5px;
   text-transform: uppercase;
   font-size: 18px;
   letter-spacing: 5px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 // TODO: Candidate Labling - Options, chose one
 // .candidate-name { color: #7bafc7; font-weight: 500; }
 // .candidate-name { color: #7bafc7; font-weight: 100; } .candidate-label { font-weight: 700; }
 // .candidate-name { font-weight: 100; } .candidate-label { font-weight: 700; }
-.candidate-name { font-weight: 100; color: #003366;} .candidate-label { font-weight: 700; }
+// .candidate-name { font-weight: 100; color: #003366;} .candidate-label { font-weight: 700; }
+.candidate-name { color: #3c3c3c; } .candidate-label { color: #3a6e87; font-weight: 500; }
+
 
 
 /* What to customize to make more text fit in the side column
