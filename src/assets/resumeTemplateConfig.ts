@@ -1,7 +1,7 @@
 export const templateConfigs = {
   "sections": {
     "personalInfo" : {
-      "title": "Personal"
+      "title": "Personal Info"
     },
     "summary" : {
       "title": "Summary"
