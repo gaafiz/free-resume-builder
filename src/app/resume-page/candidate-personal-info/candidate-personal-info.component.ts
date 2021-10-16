@@ -39,18 +39,15 @@ export class CandidatePersonalInfoComponent implements OnInit {
   appendAttachments(personalInfoList, jsonResume) {
     let attachments = jsonResume?.attachments;
     if (!!attachments) {
-      let strings = [""];
-      strings.pop();
       attachments.forEach( doc => {
         let label = doc.label;
         let link = doc.link;
         let str = label + ': <span class="link-in-content">' + link + '</span>'
-        strings.push(str);
-      });
-      personalInfoList.push({
-        key: 'attachments',
-        styleClass: 'fas fa-file',
-        value: strings.join('<br>')
+        personalInfoList.push({
+          key: 'attachments',
+          styleClass: 'fa fa-link',
+          value: str
+        });
       });
     }
   }

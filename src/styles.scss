@@ -69,6 +69,7 @@ body {
   min-height: 29.6cm; // Min a a4 page height
   font-size: $resume-page-text-font-size;
   letter-spacing: $resume-page-text-font-letter-spacing;
+  min-width: 21cm;
 }
 
 #resume-page-side-column-wrapper {
@@ -153,7 +154,7 @@ img.candidate-photo {
   display: flex;
   align-items: center;
   align-content: center;
-  margin-bottom: 10px; // TODO Make it relative
+  margin-bottom: 8px; // TODO Make it relative
 }
 
 .personalInfo-section .section-body li:last-child .wrapper {
@@ -161,23 +162,7 @@ img.candidate-photo {
 }
 
 .personalInfo-section .section-body li span.personalInfo-text {
-  margin-left: 7px; // TODO Make it relative
   word-break: break-word;
-}
-
-$contact-icon-box-side: 26px;
-
-.personalInfo-section .section-body li i.personalInfo-icon {
-  font-size: $resume-page-text-font-size;
-  background-color: white;
-  color: $side-column-bkg-color;
-  box-sizing: border-box;
-  border-radius: 1000px;
-  height: $contact-icon-box-side;
-  line-height: $contact-icon-box-side;
-  width: $contact-icon-box-side;
-  text-align: center;
-  zoom: 0.85;
 }
 
 .contacts-section .section-body li i.personalInfo-icon.fab {
