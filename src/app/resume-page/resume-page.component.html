@@ -1,4 +1,5 @@
 <div id="resume-page">
+  <div id="resume-page-side-column-wrapper">
   <div id="resume-page-side-column">
 
     <app-candidate-photo [jsonResume]=jsonResume></app-candidate-photo>
@@ -7,6 +8,8 @@
 
 
   </div>
+  </div>
+  <div id="resume-page-main-column-wrapper">
   <div id="resume-page-main-column">
 
     <app-candidate-labeling [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-labeling>
@@ -14,5 +17,6 @@
     <app-candidate-personal-info [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-personal-info>
 
 
+  </div>
   </div>
 </div>

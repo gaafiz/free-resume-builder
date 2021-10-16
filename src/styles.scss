@@ -10,7 +10,7 @@ $main-content-width: $resume-page-width - $side-column-width;
 $side-column-bkg-color: $elegant-dark-blue;
 $side-column-font-color: white;
 
-$resume-page-text-font-size: 14px; // TODO: Make it relative to the page size
+$resume-page-text-font-size: 13px; // TODO: Make it relative to the page size
 $resume-page-text-font-letter-spacing: 0px;
 $resume-page-section-head-font-size: 17px;
 $resume-page-section-head-font-letter-spacing: 3px;
@@ -71,15 +71,20 @@ body {
   letter-spacing: $resume-page-text-font-letter-spacing;
 }
 
-#resume-page-side-column {
+#resume-page-side-column-wrapper {
   width: $side-column-width;
   background-color: $side-column-bkg-color;
+}
+
+#resume-page-side-column {
   color: $side-column-font-color;
   padding: 1em;
 }
 
-#resume-page-main-column {
+#resume-page-main-column-wrapper {
   width: $main-content-width;
+}
+#resume-page-main-column {
   padding: 1em;
 }
 
