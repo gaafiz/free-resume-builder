@@ -15,12 +15,18 @@ export class CandidateLabelingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showSection() {
+    let name = this.candidateName();
+    return name != undefined && name !== "";
+  }
+
   candidateName() {
     return this.jsonResume?.basics?.name;
   }
 
   showCandidateLabel() {
-    return this.jsonResume?.basics?.label != undefined;
+    let candidateLabel = this.candidateLabel();
+    return candidateLabel != undefined && candidateLabel !== "";
   }
 
   candidateLabel() {

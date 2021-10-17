@@ -17,7 +17,8 @@ export class CandidatePhotoComponent implements OnInit {
   }
 
   visible() {
-    return this.candidatePhoto() != undefined;
+    let candidatePhoto = this.candidatePhoto();
+    return candidatePhoto != undefined && candidatePhoto !== "";
   }
 
   candidatePhoto() {

@@ -15,12 +15,24 @@ export class CandidateSummaryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showTitle() {
+    let title = this.title();
+    return title != undefined && title !== "";
+  }
+
+  title() {
+    return this.templateConf?.sections?.summary?.title;
+  }
+
+  showSection() {
+    let summary = this.summary();
+    return summary != undefined && summary !== "";
+  }
+
   summary() {
     return this.jsonResume?.basics?.summary;
   }
 
-  title() {
-    return this.templateConf?.sections?.summary?.title
-  }
+
 
 }

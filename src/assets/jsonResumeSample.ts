@@ -43,5 +43,23 @@ export const resume = {
       "label": "Reference",
       "link": "http://my-references.doc"
     },
+  ],
+  "skills": [
+      {
+        "name": "Soft Skill",
+        "keywords": [
+          "Team Player",
+          "Quick Learner",
+          "Leadership",
+        ]
+      },
+      {
+        "name": "Program Languages",
+        "keywords": [
+          "Java",
+          "Python",
+          "Scala",
+        ]
+      }
   ]
 }

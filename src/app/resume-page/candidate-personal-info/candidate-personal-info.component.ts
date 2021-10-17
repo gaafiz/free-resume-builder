@@ -20,7 +20,8 @@ export class CandidatePersonalInfoComponent implements OnInit {
   }
 
   showSection() {
-    return this.personalInfoList() !== [];
+    let infoList = this.personalInfoList();
+    return infoList != undefined && infoList.length > 0;
   }
 
   personalInfoList() {

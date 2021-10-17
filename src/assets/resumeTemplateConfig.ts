@@ -4,7 +4,10 @@ export const templateConfigs = {
       "title": "Personal Info"
     },
     "summary" : {
-      "title": "Summary"
+      "title": ""
+    },
+    "skills" : {
+      "title": "Skills"
     }
   }
 }

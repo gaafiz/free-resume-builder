@@ -6,7 +6,7 @@
 html, body { height: 100%; }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+//   font-family: Roboto, "Helvetica Neue", sans-serif; - Roboto seems to be appearing blurry when highlighted
   -webkit-font-smoothing:antialiased;
 }
 
@@ -23,6 +23,10 @@ div.section-head {
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+#resume-page {
+    font-family: arial;
 }
 
 #resume-page-side-column div.content-section {

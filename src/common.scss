@@ -42,3 +42,18 @@ hr.separator {
   margin-bottom: 0;
   margin-top: 0;
 }
+
+.highlight-oval {
+	border-radius: 10px;
+	background-color: $highlight-bkg-color;
+	display: inline-flex;
+	margin-bottom: 4px;
+  margin-left:4px;
+
+  // Chode about the next styles
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 18px;
+  color: $side-col-bkg-color;
+  padding: 0px 6px;
+}
