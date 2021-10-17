@@ -1,47 +1,8 @@
-/* VARIABLES */
-
-$elegant-dark-blue: rgb(0, 51, 102);
-
-$a4-width: 21cm;
-$resume-page-width: $a4-width;
-$side-column-width: $resume-page-width/3;
-$main-content-width: $resume-page-width - $side-column-width;
-
-$side-column-bkg-color: $elegant-dark-blue;
-$side-column-font-color: white;
-
-$resume-page-text-font-size: 13px; // TODO: Make it relative to the page size
-$resume-page-text-font-letter-spacing: 0px;
-$resume-page-section-head-font-size: 17px;
-$resume-page-section-head-font-letter-spacing: 3px;
-
-$side-column-to-photo-ratio: 65%;
-
-/* UTILITY classes */
-
-.centerize {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.centerize-column {
-  @extend .centerize;
-  flex-direction: column;
-}
-
-
-hr.separator {
-  width: 100%;
-  border: 0;
-//   height: 2px; background-image: linear-gradient(to right, transparent, #7bafc8, transparent);
-  height: 1px; background-image: linear-gradient(to right, transparent, #003366, transparent);
-  margin-bottom: 0;
-  margin-top: 0;
-}
+@import 'src/common.scss';
 
 
 /* Global Rules */
+
 html, body { height: 100%; }
 body {
   margin: 0;
@@ -55,44 +16,10 @@ body {
   }
 }
 
-/* What to customize to make more text fit in the side column
- * - Font size
- * - Side column padding
- */
-
-
-#resume-page {
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  min-height: 29.6cm; // Min a a4 page height
-  font-size: $resume-page-text-font-size;
-  letter-spacing: $resume-page-text-font-letter-spacing;
-  min-width: 21cm;
-}
-
-#resume-page-side-column-wrapper {
-  width: $side-column-width;
-  background-color: $side-column-bkg-color;
-}
-
-#resume-page-side-column {
-  color: $side-column-font-color;
-  padding: 1em;
-}
-
-#resume-page-main-column-wrapper {
-  width: $main-content-width;
-}
-#resume-page-main-column {
-  padding: 1em;
-}
-
 div.section-head {
   @extend .centerize;
-  font-size: $resume-page-section-head-font-size;
-  letter-spacing: $resume-page-section-head-font-letter-spacing;
+  font-size: $resume-headline-size;
+  letter-spacing: $resume-headline-letter-spacing;
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 10px;
@@ -104,69 +31,6 @@ div.section-head {
 
 #resume-page-main-column div.content-section {
   margin-bottom: 1.5em
-}
-
-img.candidate-photo {
-  border-radius: 50%;
-  width: $side-column-to-photo-ratio;
-}
-
-.candidate-labeling {
-  @extend .centerize-column;
-}
-
-.candidate-name {
-  text-transform: uppercase;
-  font-size: 28px;
-  letter-spacing: 5px;
-  margin-top: 5px;
-  font-weight: 500; // Maybe Remove
-}
-
-.candidate-label {
-  text-transform: uppercase;
-  font-size: 18px;
-  letter-spacing: 5px;
-  margin-top: 15px;
-}
-
-// TODO: Candidate Labling - Options, chose one
-// .candidate-name { color: #7bafc7; font-weight: 500; }
-// .candidate-name { color: #7bafc7; font-weight: 100; } .candidate-label { font-weight: 700; }
-// .candidate-name { font-weight: 100; } .candidate-label { font-weight: 700; }
-// .candidate-name { font-weight: 100; color: #003366;} .candidate-label { font-weight: 700; }
-.candidate-name { color: #3c3c3c; } .candidate-label { color: #3a6e87; font-weight: 500; }
-
-
-
-.personalInfo-section .section-body ul {
-  padding: 0;
-  list-style: none;
-  margin-left: -10px;
-}
-
-.personalInfo-section .section-body li {
-  display: inline-block;
-  margin-left: 10px;
-}
-
-.personalInfo-section .section-body li .wrapper {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  margin-bottom: 8px; // TODO Make it relative
-}
-
-.personalInfo-section .section-body li:last-child .wrapper {
-  margin-bottom: 0;
-}
-
-.personalInfo-section .section-body li span.personalInfo-text {
-  word-break: break-word;
-}
-
-.contacts-section .section-body li i.personalInfo-icon.fab {
-  font-size: ($resume-page-text-font-size + 3px);
 }
 
 

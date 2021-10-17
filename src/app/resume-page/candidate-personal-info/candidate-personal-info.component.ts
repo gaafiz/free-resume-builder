@@ -40,9 +40,13 @@ export class CandidatePersonalInfoComponent implements OnInit {
     let attachments = jsonResume?.attachments;
     if (!!attachments) {
       attachments.forEach( doc => {
-        let label = doc.label;
+
+        var label = doc.label;
+        if (label) {
+          label = label + ": ";
+        }
         let link = doc.link;
-        let str = label + ': <span class="link-in-content">' + link + '</span>'
+        let str = label + '<a>' + link + '</a>'
         personalInfoList.push({
           key: 'attachments',
           styleClass: 'fa fa-link',
@@ -153,10 +157,13 @@ export class CandidatePersonalInfoComponent implements OnInit {
 
   getIconClassForNetwork(networkName) {
     let networkIconMappingDic = {
-      Linkedin: 'fab fa-linkedin',
-      GitHub: 'fab fa-github',
+      "linkedin": 'fab fa-linkedin',
+      "github": 'fab fa-github',
+      "facebook": 'fab fa-facebook',
+      "youtube": 'fab fa-youtube',
+      "stackoverflow": 'fab fa-stack-overflow',
     };
-    let icon = networkIconMappingDic[networkName];
+    let icon = networkIconMappingDic[networkName.toLowerCase()];
     return icon;
   }
 

@@ -1,0 +1,44 @@
+// COLORS
+$elegant-dark-blue: #036;
+$bright-orange: orange;
+$medium-yellow: #efb01d;
+$dark-grey: #3c3c3c;
+
+$side-col-bkg-color: $elegant-dark-blue;
+$side-col-text-color: white;
+$highlight-text-color: $bright-orange;
+$highlight-bkg-color: $medium-yellow;
+
+// LAYOUT
+$a4-width: 21cm;
+$resume-page-width: $a4-width;
+$side-column-width: $resume-page-width/3;
+$main-content-width: $resume-page-width - $side-column-width;
+
+// Text Style
+$resume-text-size: 13px;
+$resume-text-letter-spacing: 0px;
+
+$resume-headline-size: 17px;
+$resume-headline-letter-spacing: 3px;
+
+/* UTILITY classes */
+.centerize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerize-column {
+  @extend .centerize;
+  flex-direction: column;
+}
+
+hr.separator {
+  width: 100%;
+  border: 0;
+//   height: 2px; background-image: linear-gradient(to right, transparent, #7bafc8, transparent);
+  height: 1px; background-image: linear-gradient(to right, transparent, #003366, transparent);
+  margin-bottom: 0;
+  margin-top: 0;
+}

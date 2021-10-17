@@ -1,0 +1,6 @@
+$side-column-to-photo-ratio: 65%;
+
+img.candidate-photo {
+  border-radius: 50%;
+  width: $side-column-to-photo-ratio;
+}

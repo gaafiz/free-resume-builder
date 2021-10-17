@@ -1,0 +1,30 @@
+@import 'src/common.scss';
+
+#resume-page {
+  padding: 0;
+  display: flex; flex-direction: row; justify-content: center;
+  font-size: $resume-text-size;
+  letter-spacing: $resume-text-letter-spacing;
+  // Min a a4 page sizes
+  min-width: 21cm;
+  min-height: 29.6cm;
+}
+
+#resume-page-side-column-wrapper {
+  width: $side-column-width;
+  background-color: $side-col-bkg-color;
+}
+
+#resume-page-side-column {
+  color: $side-col-text-color;
+  padding: 1em;
+}
+
+#resume-page-main-column-wrapper {
+  width: $main-content-width;
+}
+
+#resume-page-main-column {
+  padding: 1em;
+}
+

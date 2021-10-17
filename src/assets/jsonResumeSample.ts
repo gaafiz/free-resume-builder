@@ -1,6 +1,6 @@
 export const resume = {
   "basics": {
-    "name": "Caroline Jane Watson",
+    "name": "John Doe",
     "label": "Software Engineer",
     "image": "http://glasshalfull.net/wp-content/uploads/2017/03/headshot_placeholder.jpg", // Image Link or Encoded picture
     "birthday": "01 Jun 1980",
@@ -18,10 +18,20 @@ export const resume = {
     },
     "profiles": [
       {
-        "network": "Linkedin",
+        "network": "linkedin",
         "username": "user-name",
-        "url": "<span class=\"link-in-content\">linkedin.com/in/caroline-watson</span>"
-      }
+        "url": "linkedin.com/in/john-doe"
+      },
+      {
+        "network": "github",
+        "username": "user-name",
+        "url": "github.com/johnDoe"
+      },
+      {
+        "network": "stackoverflow",
+        "username": "user-name",
+        "url": "stackoverflow.com/u/1234"
+      },
     ]
   },
   "attachments": [
