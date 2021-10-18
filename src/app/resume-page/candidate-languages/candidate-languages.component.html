@@ -1,0 +1,21 @@
+<div *ngIf="showSection()" class="languages-section content-section">
+  <div *ngIf="showTitle()" class="section-head">
+    {{title()}}
+  </div>
+  <div class="section-body">
+    <ul class="languages">
+      <li *ngFor="let language of languages()" class="language">
+          <span class="flag-icon flag-icon-{{language.countryCode}}"></span>
+          <span class="language-name"
+                [innerHTML]=language.language
+          >
+          </span>
+        <span class="language-proficiency"
+              [innerHTML]=language.fluency>
+          </span>
+
+      </li>
+    </ul>
+
+  </div>
+</div>

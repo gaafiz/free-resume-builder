@@ -4,6 +4,7 @@
   padding: 0;
   display: flex; flex-direction: row; justify-content: center;
   font-size: $resume-text-size;
+  line-height: initial;
   letter-spacing: $resume-text-letter-spacing;
   // Min a a4 page sizes
   min-width: 21cm;
@@ -15,9 +16,11 @@
   background-color: $side-col-bkg-color;
 }
 
+$col-padding: 1.2ex;
+
 #resume-page-side-column {
   color: $side-col-text-color;
-  padding: 1em;
+  padding: $col-padding;
 }
 
 #resume-page-main-column-wrapper {
@@ -25,6 +28,6 @@
 }
 
 #resume-page-main-column {
-  padding: 1em;
+  padding: $col-padding;
 }
 

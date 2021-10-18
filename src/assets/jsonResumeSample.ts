@@ -61,5 +61,22 @@ export const resume = {
           "Scala",
         ]
       }
+  ],
+  "languages": [
+    {
+      "countryCode": "id",
+      "language": "Indonesian",
+      "fluency": "Native Speaker"
+    },
+    {
+      "countryCode": "gb",
+      "language": "English",
+      "fluency": "Working Proficiency"
+    },
+    {
+      "countryCode": "it",
+      "language": "Italian",
+      "fluency": "Basic Knowledge"
+    }
   ]
 }

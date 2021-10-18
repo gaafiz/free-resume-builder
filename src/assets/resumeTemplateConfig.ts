@@ -8,6 +8,9 @@ export const templateConfigs = {
     },
     "skills" : {
       "title": "Skills"
+    },
+    "languages" : {
+      "title": "Languages"
     }
   }
 }
