@@ -1,24 +1,23 @@
+$horizontal-space : 1ex;
+
 ul {
   padding: 0;
   list-style: none;
-  margin-left: -1ex;
+  margin-left: -($horizontal-space);
 }
 
 li.language {
-  margin-left: 1ex;
+  margin-left: $horizontal-space;
   margin-bottom: 4px;
   display: inline-flex;
 }
 
 .flag-icon {
-  margin-right: 1ex;
+  margin-right: $horizontal-space;
 }
 
 .language-name {
-  margin-right: 1ex;
+  margin-right: $horizontal-space;
+  font-weight: bold;
 }
 
-.language-proficiency:before {
-  content: "|";
-  margin-right: 1ex;
-}
