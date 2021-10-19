@@ -1,13 +1,13 @@
 // COLORS
 $elegant-dark-blue: #036;
 $bright-orange: orange;
-$medium-yellow: #efb01d;
+$cold-orange: #efb01d;
 $dark-grey: #3c3c3c;
 
 $side-col-bkg-color: $elegant-dark-blue;
 $side-col-text-color: white;
-$highlight-text-color: $bright-orange;
-$highlight-bkg-color: $medium-yellow;
+$highlight-text-color: $cold-orange;
+$highlight-bkg-color: $cold-orange;
 
 // LAYOUT
 $a4-width: 21cm;
@@ -56,4 +56,15 @@ hr.separator {
   line-height: 16px;
   color: white;
   padding: 0px 6px;
+}
+
+.quoted-body {
+  padding-left: 1ex;
+  border-left: 1px solid;
+  border-left-color: $highlight-text-color;
+  line-height: 120%;
+}
+.right .quoted-body {
+  text-align: justify;
+  border-left-width: 2px;
 }

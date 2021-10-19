@@ -11,6 +11,9 @@ export const templateConfigs = {
     },
     "languages" : {
       "title": "Languages"
+    },
+    "experience" : {
+      "title": "Work Experience"
     }
   }
 }

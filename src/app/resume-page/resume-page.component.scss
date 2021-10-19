@@ -16,7 +16,7 @@
   background-color: $side-col-bkg-color;
 }
 
-$col-padding: 1.2ex;
+$col-padding: 1.4ex;
 
 #resume-page-side-column {
   color: $side-col-text-color;
@@ -25,6 +25,7 @@ $col-padding: 1.2ex;
 
 #resume-page-main-column-wrapper {
   width: $main-content-width;
+//   background-color: lightgrey;
 }
 
 #resume-page-main-column {

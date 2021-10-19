@@ -1,0 +1,35 @@
+@import 'src/common.scss';
+
+.expItem-role {
+  font-weight: bold;
+}
+.left .expItem-role { font-size: 14px; }
+.right .expItem-role { font-size: 15px; }
+
+
+.expItem-quickInfo {
+    color: $highlight-text-color;
+    font-weight: bold;
+}
+.left .expItem-quickInfo { font-size: 12px; margin-bottom: 4px; }
+.right .expItem-quickInfo { margin-bottom: 5px; }
+
+
+.expItem-body {
+  @extend .quoted-body;
+}
+
+ul.expItem-projects {
+  padding: 0;
+  list-style: none;
+}
+
+.expItem-projectName {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.expItem-projectSummary {
+  @extend .quoted-body;
+  margin-bottom: 1ex;
+}

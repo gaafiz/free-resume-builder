@@ -1,0 +1,28 @@
+<div *ngIf="showSection()" class="experience-section content-section {{side}}">
+  <div *ngIf="showTitle()" class="section-head">
+    {{title()}}
+  </div>
+  <div class="section-body">
+    <div *ngFor="let expItem of experiences()" class="expItem">
+      <div class="expItem-role" [innerHTML]=expItem.position>
+      </div>
+      <div class="expItem-quickInfo">
+        {{expItem.company}} | {{expItem.website}} | {{expItem.address}} | {{expItem.startDate}} - {{expItem.endDate || 'Present'}}
+      </div>
+
+      <div class="expItem-body">
+        <div
+          class="expItem-summary"
+          [innerHTML]="expItem.summary"
+        ></div>
+        <ul *ngIf="hasProjects(expItem)" class="expItem-projects">
+          <li *ngFor="let project of expItem.projects"  class="expItem-project">
+            <div class="expItem-projectName">{{project.name}}</div>
+            <div class="expItem-projectSummary" [innerHTML]=project.summary></div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>

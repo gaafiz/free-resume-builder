@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## TODO
+- Handle break-page well for all sections
+- Body to expand the background always to the full page. I.e. if the resume start using the second page, #resume-page should get height: 2 times A4 lenght
+- Breaking of expItem quickInfo in 2 lines when is in left column
+- 

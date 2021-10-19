@@ -8,7 +8,7 @@ export const resume = {
     "email": "johndoe@gmail.com",
     "phone": "555-111-222",
     "url": "example.com",
-    "summary": "This is my summary where I describe myself. Html style is <b>supported</b>",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id enim faucibus, ornare ipsum a, porta mauris. Vivamus iaculis orci a tellus vestibulum mollis. Donec interdum libero id dictum condimentum.",
     "location": {
       "address": "my street 120",
       "postalCode": "8888",
@@ -78,5 +78,35 @@ export const resume = {
       "language": "Italian",
       "fluency": "Basic Knowledge"
     }
+  ],
+  "work": [
+      {
+          "company": "Fun Company",
+          "position": "Software Engineer",
+          "address": "Paris, France",
+          "website": "www.example.com",
+          "startDate": "2018-04",
+          "endDate": "Present",
+          "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id enim faucibus, ornare ipsum a, porta mauris. Vivamus iaculis orci a tellus vestibulum mollis. Donec interdum libero id dictum condimentum.",
+          "projects": [
+            {
+              "name": "Project 1",
+              "summary": "Donec dui turpis, rhoncus at mauris vel, aliquet imperdiet lectus. Donec gravida tempus odio sed blandit. Vestibulum lobortis cursus odio, hendrerit egestas diam volutpat a."
+            },
+            {
+              "name": "Project 2",
+              "summary": "Morbi vitae sagittis massa. Morbi tristique euismod turpis vitae consequat. Sed vitae nisi ornare, consequat augue ac, euismod mauris. Aliquam eu porta mauris. Fusce molestie condimentum tempor. Fusce id aliquam velit. Donec rhoncus maximus ipsum eu commodo. Curabitur imperdiet euismod dignissim. Cras sit amet vestibulum velit, sed condimentum nunc. In mollis nec sem non luctus."
+            }
+          ]
+      },
+      {
+          "company": "Old Company",
+          "position": "Software Developer",
+          "address": "Berlin, Germany",
+          "website": "www.example.com",
+          "startDate": "2012-08",
+          "endDate": "2018-03",
+          "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id enim faucibus, ornare ipsum a, porta mauris. Vivamus iaculis orci a tellus vestibulum mollis. Donec interdum libero id dictum condimentum.",
+      },
   ]
 }

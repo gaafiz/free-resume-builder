@@ -13,6 +13,7 @@ import { CandidateLabelingComponent } from './resume-page/candidate-labeling/can
 import { CandidateSummaryComponent } from './resume-page/candidate-summary/candidate-summary.component';
 import { CandidateSkillsComponent } from './resume-page/candidate-skills/candidate-skills.component';
 import { CandidateLanguagesComponent } from './resume-page/candidate-languages/candidate-languages.component';
+import { CandidateExperienceComponent } from './resume-page/candidate-experience/candidate-experience.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CandidateLanguagesComponent } from './resume-page/candidate-languages/c
     CandidateLabelingComponent,
     CandidateSummaryComponent,
     CandidateSkillsComponent,
-    CandidateLanguagesComponent
+    CandidateLanguagesComponent,
+    CandidateExperienceComponent
   ],
   imports: [
     BrowserModule,
