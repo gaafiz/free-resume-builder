@@ -108,5 +108,28 @@ export const resume = {
           "endDate": "2018-03",
           "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id enim faucibus, ornare ipsum a, porta mauris. Vivamus iaculis orci a tellus vestibulum mollis. Donec interdum libero id dictum condimentum.",
       },
+  ],
+  "education": [
+      {
+        "studyType": "Bachelor\'s Degree",
+        "area": "Computer Science",
+        "institution": "University of Berlin",
+        "url": "www.fu-berlin.de",
+        "address" : "Berlin, DE",
+        "startDate": "2009",
+        "endDate": "2012",
+        "score": "110/110 cum Laude (4.0 GPA)",
+        "info": "Curabitur quis congue massa. Vivamus vel aliquam erat, et fermentum arcu. Duis mattis diam non dapibus volutpat. Curabitur sem justo, dignissim gravida turpis ac, suscipit facilisis neque. Vivamus non eros hendrerit, bibendum augue et, lobortis dolor.",
+      },
+      {
+        "studyType": "Course",
+        "area": "Machine Learning",
+        "institution": "Udemy",
+        "url": "www.udemy.com",
+        "startDate": "2012",
+        "endDate": "2013",
+        "score": "98/100",
+        "info": "Curabitur quis congue massa. Vivamus vel aliquam erat, et fermentum arcu. Duis mattis diam non dapibus volutpat. Curabitur sem justo, dignissim gravida turpis ac, suscipit facilisis neque. Vivamus non eros hendrerit, bibendum augue et, lobortis dolor.",
+      },
   ]
 }

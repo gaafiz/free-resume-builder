@@ -44,7 +44,8 @@ hr.separator {
 }
 
 .highlight-oval {
-	border-radius: 10px;
+// 	border-radius: 10px;
+	border-radius: 5px;
 	background-color: $highlight-bkg-color;
 	display: inline-flex;
 	margin-bottom: 4px;
@@ -55,6 +56,7 @@ hr.separator {
   font-size: 10px;
   line-height: 16px;
   color: white;
+  color: #036;
   padding: 0px 6px;
 }
 

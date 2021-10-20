@@ -1,0 +1,26 @@
+@import 'src/common.scss';
+
+.eduItem-head {
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 15px;
+}
+.left .eduItem-head { font-size: 14px; }
+.eduItem:first-child .eduItem-head { margin-top:0; }
+
+.eduItem-score {
+  @extend .highlight-oval;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.eduItem-quickInfo {
+    color: $highlight-text-color;
+    font-weight: bold;
+    margin-top: 1px;
+}
+.left .eduItem-quickInfo { font-size: 12px; line-height: 15px; margin-top: 2px;}
+
+.eduItem-info { @extend .quoted-body; }
+.right .eduItem-info { margin-top: 4px; }
+.left .eduItem-info { margin-top: 3px; }

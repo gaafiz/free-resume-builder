@@ -2,34 +2,38 @@
 
 .expItem-role {
   font-weight: bold;
+  margin-top: 10px;
 }
 .left .expItem-role { font-size: 14px; }
 .right .expItem-role { font-size: 15px; }
-
+.expItem:first-child .expItem-role { margin-top:0; }
 
 .expItem-quickInfo {
     color: $highlight-text-color;
     font-weight: bold;
+    margin-top: 1px;
 }
-.left .expItem-quickInfo { font-size: 12px; margin-bottom: 4px; }
-.right .expItem-quickInfo { margin-bottom: 5px; }
+.left .expItem-quickInfo { font-size: 12px; line-height: 15px; }
 
+.expItem-body { @extend .quoted-body; }
 
-.expItem-body {
-  @extend .quoted-body;
-}
+.right .expItem-summary { margin-top: 4px; }
+.left .expItem-summary { margin-top: 3px; }
 
 ul.expItem-projects {
   padding: 0;
   list-style: none;
+  margin: 0;
 }
 
 .expItem-projectName {
   font-weight: bold;
-  margin-bottom: 3px;
+  margin-top: 5px;
 }
+.left .expItem-projectName { margin-top: 4px; }
 
 .expItem-projectSummary {
   @extend .quoted-body;
-  margin-bottom: 1ex;
+  margin-top: 2px;
 }
+.left .expItem-projectSummary { margin-top: 1px; }

@@ -39,4 +39,13 @@ export class CandidateExperienceComponent implements OnInit {
     return projects != undefined && projects.length > 0;
   }
 
+  getWebsite(expItem) {
+    let website = expItem?.website;
+    if (website != undefined && website !== "") {
+      return "| " + website;
+    } else {
+      return "";
+    }
+  }
+
 }

@@ -6,12 +6,21 @@
     <div *ngFor="let expItem of experiences()" class="expItem">
       <div class="expItem-role" [innerHTML]=expItem.position>
       </div>
-      <div class="expItem-quickInfo">
-        {{expItem.company}} | {{expItem.website}} | {{expItem.address}} | {{expItem.startDate}} - {{expItem.endDate || 'Present'}}
+
+      <div *ngIf="side == 'right'" class="expItem-quickInfo">
+        {{expItem.company}} {{getWebsite(expItem)}} | {{expItem.address}} | {{expItem.startDate}} - {{expItem.endDate || 'Present'}}
+      </div>
+
+      <div *ngIf="side == 'left'" class="expItem-quickInfo">
+        {{expItem.company}} | {{expItem.website}}
+      </div>
+      <div *ngIf="side == 'left'" class="expItem-quickInfo">
+        {{expItem.address}} | {{expItem.startDate}} - {{expItem.endDate || 'Present'}}
       </div>
 
       <div class="expItem-body">
         <div
+          *ngIf="expItem.summary != undefined && expItem.summary !== ''"
           class="expItem-summary"
           [innerHTML]="expItem.summary"
         ></div>

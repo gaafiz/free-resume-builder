@@ -1,0 +1,22 @@
+<div *ngIf="showSection()" class="education-section content-section {{side}}">
+  <div *ngIf="showTitle()"  class="section-head">
+    {{title()}}
+  </div>
+  <div class="section-body">
+    <div class='educationItem' *ngFor='let eduItem of educationList()'>
+
+      <div class='eduItem-head' [innerHTML]="eduItem.name"></div>
+      <div *ngIf='eduItem.score' class='eduItem-score' [innerHTML]="eduItem.score"></div>
+      <div *ngIf="side == 'right'" class='eduItem-quickInfo'>
+        {{eduItem.head}}
+      </div>
+      <div *ngIf="side == 'left'" class='eduItem-quickInfo'>
+        {{eduItem.institution}} <br> {{eduItem.addressAndPeriod}}
+      </div>
+      <div *ngIf="nonEmpty(eduItem.info)" class='eduItem-info' [innerHTML]="eduItem.info"></div>
+
+
+
+    </div>
+  </div>
+</div>
