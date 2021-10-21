@@ -1,4 +1,5 @@
 export const resume = {
+  "version": "1.0",
   "basics": {
     "name": "John Doe",
     "label": "Software Engineer",
