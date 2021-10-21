@@ -129,7 +129,7 @@ export const resume = {
         "startDate": "2012",
         "endDate": "2013",
         "score": "98/100",
-        "info": "Curabitur quis congue massa. Vivamus vel aliquam erat, et fermentum arcu. Duis mattis diam non dapibus volutpat. Curabitur sem justo, dignissim gravida turpis ac, suscipit facilisis neque. Vivamus non eros hendrerit, bibendum augue et, lobortis dolor.",
+        "info": "Curabitur quis congue massa. Vivamus vel aliquam erat, et fermentum arcu. Duis mattis diam non dapibus volutpat. Curabitur sem justo, dignissim gravida turpis ac, suscipit facilisis neque. Vivamus non eros hendrerit, bibendum augue et, lobortis dolor. Vivamus non eros hendrerit, bibendum augue et, lobortis dolor. Vivamus non eros hendrerit, bibendum augue et, lobortis dolor. Vivamus non eros hendrerit, bibendum augue et, lobortis dolor.",
       },
   ]
 }

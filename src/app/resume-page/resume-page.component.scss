@@ -14,6 +14,10 @@
 #resume-page-side-column-wrapper {
   width: $side-column-width;
   background-color: $side-col-bkg-color;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 $col-padding: 1.4ex;
@@ -32,3 +36,8 @@ $col-padding: 1.4ex;
   padding: $col-padding;
 }
 
+#test {
+  color: white;
+  background-color: red;
+  margin-top: -1.5em
+}

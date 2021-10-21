@@ -18,7 +18,10 @@
       setInterval(
         () => $('#resume-page').height(function(i, h) {
           let unit = 1121;
-          return Math.ceil($('#resume-page-side-column').height() / unit) * unit;
+          let sideColSize = $('#resume-page-side-column').height() + $('#test').height();
+          let mainColSize = $('#resume-page-main-column').height();
+          let size = Math.min(sideColSize, mainColSize);
+          return Math.ceil(size / unit) * unit;
         }),
         500
       );
