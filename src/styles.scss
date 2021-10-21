@@ -52,4 +52,20 @@ ul {
   margin: 0;
 }
 
-
+.light {
+  #resume-page-side-column-wrapper {
+    background-color: white !important;
+    color: black !important;
+    border-right: 1px solid $elegant-dark-blue;
+  }
+  .personalInfo-icon, .eduItem-quickInfo, .expItem-quickInfo {
+    color: $elegant-dark-blue !important;
+  }
+  .eduItem-score, .skill-keyword {
+    background-color: $medium-grey !important;
+    color: white !important;
+  }
+  .eduItem-info, .expItem-body, .expItem-projectSummary {
+    border-left-color: $elegant-dark-blue !important;
+  }
+}

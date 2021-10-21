@@ -10,6 +10,7 @@ export class ResumePageComponent implements OnInit {
 
   @Input() jsonResume: any;
   @Input() templateConf: any;
+  @Input() style: any;
 
   constructor() { }
 

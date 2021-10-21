@@ -18,12 +18,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: $side-col-text-color;
 }
 
 $col-padding: 1.4ex;
 
 #resume-page-side-column {
-  color: $side-col-text-color;
   padding: $col-padding;
 }
 
