@@ -19,6 +19,6 @@ export const templateConfigs = {
       "title": "Education"
     }
   },
-  "leftColSections" : ["photo", "personalInfo", "languages", "skills"],
-  "rightColSections" : ["labeling", "summary", "experience", "education"]
+  "leftColSections" : ["photo", "personalInfo", "languages", "skills", "education"],
+  "rightColSections" : ["labeling", "summary", "experience"]
 }

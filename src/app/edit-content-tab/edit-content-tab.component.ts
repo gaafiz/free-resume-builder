@@ -9,8 +9,6 @@ import { Input } from '@angular/core';
   styleUrls: ['./edit-content-tab.component.scss']
 })
 export class EditContentTabComponent implements OnInit {
-  userJsonResume : any;
-  userTemplateConf : any;
   @Input() inputJsonResume: any;
   @Input() inputTemplateConfig: any;
   @Output() public userJsonResumeChanged = new EventEmitter<any>();
@@ -30,12 +28,12 @@ export class EditContentTabComponent implements OnInit {
       fileReader.readAsText(selectedFile, "UTF-8");
       fileReader.onload = () => {
         const fileAsText = fileReader.result as string;
-        this.userJsonResume = JSON.parse(fileAsText);
-        this.userJsonResumeChanged.emit(this.userJsonResume);
+        this.userJsonResumeChanged.emit(JSON.parse(fileAsText));
       }
       fileReader.onerror = (error) => {
         console.log(error);
       }
+      event.target.value = '';
     }
   }
 
@@ -47,12 +45,13 @@ export class EditContentTabComponent implements OnInit {
         fileReader.readAsText(selectedFile, "UTF-8");
         fileReader.onload = () => {
           const fileAsText = fileReader.result as string;
-          this.userTemplateConf = JSON.parse(fileAsText);
-          this.userTemplateConfChanged.emit(this.userJsonResume);
+          this.userTemplateConfChanged.emit(JSON.parse(fileAsText));
         }
         fileReader.onerror = (error) => {
           console.log(error);
         }
+
+        event.target.value = '';
       }
     }
 
@@ -67,12 +66,12 @@ export class EditContentTabComponent implements OnInit {
   }
 
   downloadJsonResumeContent() {
-    let resume = this.userJsonResume || this.inputJsonResume;
+    let resume = this.inputJsonResume;
     this.downloadObjectAsJson(resume, "jsonResumeContent");
   }
 
   downloadTemplateConfig() {
-    let templateConf = this.userTemplateConf || this.inputTemplateConfig;
+    let templateConf = this.inputTemplateConfig;
     this.downloadObjectAsJson(templateConf, "resumeTemplateConfig");
   }
 
