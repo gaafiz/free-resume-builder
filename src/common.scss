@@ -3,6 +3,7 @@ $elegant-dark-blue: #036;
 $bright-orange: orange;
 $cold-orange: #efb01d;
 $dark-grey: #3c3c3c;
+$medium-grey: #939393;
 
 $side-col-bkg-color: $elegant-dark-blue;
 $side-col-text-color: white;
@@ -47,6 +48,9 @@ hr.separator {
 // 	border-radius: 10px;
 	border-radius: 5px;
 	background-color: $highlight-bkg-color;
+	background-color: orange;
+// 	background-color: $dark-grey;
+// 	background-color: $medium-grey;
 	display: inline-flex;
 	margin-bottom: 4px;
   margin-left:4px;
@@ -64,6 +68,7 @@ hr.separator {
   padding-left: 1ex;
   border-left: 1px solid;
   border-left-color: $highlight-text-color;
+//   border-left-color: $medium-grey;
   line-height: 120%;
 }
 .right .quoted-body {

@@ -6,13 +6,14 @@
     <div class='educationItem' *ngFor='let eduItem of educationList()'>
 
       <div class='eduItem-head' [innerHTML]="eduItem.name"></div>
-      <div *ngIf='eduItem.score' class='eduItem-score' [innerHTML]="eduItem.score"></div>
+      <div *ngIf='eduItem.score' class='eduItem-score before' [innerHTML]="eduItem.score"></div>
       <div *ngIf="side == 'right'" class='eduItem-quickInfo'>
         {{eduItem.head}}
       </div>
       <div *ngIf="side == 'left'" class='eduItem-quickInfo'>
         {{eduItem.institution}} <br> {{eduItem.addressAndPeriod}}
       </div>
+      <div *ngIf='eduItem.score' class='eduItem-score after' [innerHTML]="eduItem.score"></div>
       <div *ngIf="nonEmpty(eduItem.info)" class='eduItem-info' [innerHTML]="eduItem.info"></div>
 
 
