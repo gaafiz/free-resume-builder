@@ -17,4 +17,12 @@ export class ResumePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  leftSections() {
+    return this.templateConf?.leftColSections;
+  }
+
+  rightSections() {
+    return this.templateConf?.rightColSections;
+  }
+
 }

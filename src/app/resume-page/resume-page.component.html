@@ -1,30 +1,32 @@
 <div id="resume-page" class="{{style}}">
   <div id="resume-page-side-column-wrapper">
   <div id="resume-page-side-column">
-
-    <app-candidate-photo [jsonResume]=jsonResume></app-candidate-photo>
-<!--    <app-candidate-summary [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-summary>-->
-    <app-candidate-personal-info [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-personal-info>
-    <app-candidate-skills [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-skills>
-    <app-candidate-languages [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-languages>
-<!--    <app-candidate-experience [jsonResume]=jsonResume [templateConf]=templateConf [side]='"left"'></app-candidate-experience>-->
-    <app-candidate-education [jsonResume]=jsonResume [templateConf]=templateConf [side]='"left"'></app-candidate-education>
-<!--    <app-candidate-education [jsonResume]=jsonResume [templateConf]=templateConf [side]='"left"'></app-candidate-education>-->
-
+    <div *ngFor='let section of leftSections()'>
+      <app-candidate-photo *ngIf="section == 'photo'" [jsonResume]=jsonResume></app-candidate-photo>
+      <app-candidate-labeling *ngIf="section == 'labeling'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-labeling>
+      <app-candidate-summary *ngIf="section == 'summary'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-summary>
+      <app-candidate-personal-info *ngIf="section == 'personalInfo'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-personal-info>
+      <app-candidate-languages *ngIf="section == 'languages'"  [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-languages>
+      <app-candidate-skills *ngIf="section == 'skills'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-skills>
+      <app-candidate-experience *ngIf="section == 'experience'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"left"'></app-candidate-experience>
+      <app-candidate-education *ngIf="section == 'education'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"left"'></app-candidate-education>
+    </div>
   </div>
     <app-resume-version [jsonResume]=jsonResume></app-resume-version>
   </div>
+
   <div id="resume-page-main-column-wrapper">
   <div id="resume-page-main-column">
-
-    <app-candidate-labeling [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-labeling>
-    <app-candidate-summary [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-summary>
-<!--    <app-candidate-personal-info [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-personal-info>-->
-<!--    <app-candidate-skills [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-skills>-->
-<!--    <app-candidate-languages [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-languages>-->
-    <app-candidate-experience [jsonResume]=jsonResume [templateConf]=templateConf [side]='"right"'></app-candidate-experience>
-    <app-candidate-education [jsonResume]=jsonResume [templateConf]=templateConf [side]='"right"'></app-candidate-education>
-
+    <div *ngFor='let section of rightSections()'>
+      <app-candidate-photo *ngIf="section == 'photo'" [jsonResume]=jsonResume></app-candidate-photo>
+      <app-candidate-labeling *ngIf="section == 'labeling'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-labeling>
+      <app-candidate-summary *ngIf="section == 'summary'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-summary>
+      <app-candidate-personal-info *ngIf="section == 'personalInfo'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-personal-info>
+      <app-candidate-languages *ngIf="section == 'languages'"  [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-languages>
+      <app-candidate-skills *ngIf="section == 'skills'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-skills>
+      <app-candidate-experience *ngIf="section == 'experience'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"left"'></app-candidate-experience>
+      <app-candidate-education *ngIf="section == 'education'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"left"'></app-candidate-education>
+    </div>
   </div>
   </div>
 </div>
