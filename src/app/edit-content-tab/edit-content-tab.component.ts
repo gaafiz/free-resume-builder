@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventEmitter, Output } from '@angular/core';
-import { resume } from '../../assets/jsonResumeSample';
+import { Input } from '@angular/core';
 
 
 @Component({
@@ -11,6 +11,8 @@ import { resume } from '../../assets/jsonResumeSample';
 export class EditContentTabComponent implements OnInit {
   userJsonResume : any;
   userTemplateConf : any;
+  @Input() inputJsonResume: any;
+  @Input() inputTemplateConfig: any;
   @Output() public userJsonResumeChanged = new EventEmitter<any>();
   @Output() public userTemplateConfChanged = new EventEmitter<any>();
 
@@ -53,5 +55,25 @@ export class EditContentTabComponent implements OnInit {
         }
       }
     }
+
+  downloadObjectAsJson(exportObj, exportName) {
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj, null, 2));
+    var downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href",     dataStr);
+    downloadAnchorNode.setAttribute("download", exportName + ".json");
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  }
+
+  downloadJsonResumeContent() {
+    let resume = this.userJsonResume || this.inputJsonResume;
+    this.downloadObjectAsJson(resume, "jsonResumeContent");
+  }
+
+  downloadTemplateConfig() {
+    let templateConf = this.userTemplateConf || this.inputTemplateConfig;
+    this.downloadObjectAsJson(templateConf, "resumeTemplateConfig");
+  }
 
 }

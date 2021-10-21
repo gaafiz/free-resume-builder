@@ -13,6 +13,8 @@
   ></app-resume-page></mat-tab>
 
   <mat-tab label="Edit"><app-edit-content-tab
+    [inputJsonResume]=jsonResume
+    [inputTemplateConfig]=templateConf
     (userJsonResumeChanged)="updateJsonResume($event)"
     (userTemplateConfChanged)="updateTemplateConf($event)"
   ></app-edit-content-tab></mat-tab>

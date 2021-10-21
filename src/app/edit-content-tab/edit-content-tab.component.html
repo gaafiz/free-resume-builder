@@ -1,12 +1,23 @@
-<input
-  style="display: none"
-  type="file" (change)="onContentFileChanged($event)"
-  #contentFileInput>
-<button (click)="contentFileInput.click()">Upload Resume Content</button>
+
+<div>
+  <div>Resume Content</div>
+  <input
+    style="display: none"
+    type="file" (change)="onContentFileChanged($event)"
+    #contentFileInput>
+  <button (click)="contentFileInput.click()">Load</button>
+  <button (click)="downloadJsonResumeContent()">Save</button>
+</div>
+
+<div>
+  <div>Resume Template Configuration</div>
+  <input
+    style="display: none"
+    type="file" (change)="onConfFileChanged($event)"
+    #confFile>
+  <button (click)="confFile.click()">Load</button>
+  <button (click)="downloadTemplateConfig()">Save</button>
+</div>
 
 
-<input
-  style="display: none"
-  type="file" (change)="onConfFileChanged($event)"
-  #confFile>
-<button (click)="confFile.click()">Upload Resume Template Config</button>
+
