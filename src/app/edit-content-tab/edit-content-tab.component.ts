@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { EventEmitter, Output } from '@angular/core';
 import { Input } from '@angular/core';
-
+import { CKEditorComponent } from 'ng2-ckeditor';
 
 @Component({
   selector: 'app-edit-content-tab',
@@ -13,6 +13,7 @@ export class EditContentTabComponent implements OnInit {
   @Input() inputTemplateConfig: any;
   @Output() public userJsonResumeChanged = new EventEmitter<any>();
   @Output() public userTemplateConfChanged = new EventEmitter<any>();
+  @ViewChild('ckeditor') ckeditor: CKEditorComponent;
 
   constructor() {
   }
@@ -74,5 +75,16 @@ export class EditContentTabComponent implements OnInit {
     let templateConf = this.inputTemplateConfig;
     this.downloadObjectAsJson(templateConf, "resumeTemplateConfig");
   }
+
+  config: any = {
+      allowedContent: true,
+      toolbar: [['Bold', 'Italic', 'Underline', '-', 'NumberedList', 'BulletedList', 'Link', '-', 'CreatePlaceholder']],
+      removePlugins: 'elementspath',
+      resize_enabled: false,
+      extraPlugins: 'font,divarea,placeholder',
+      contentsCss: ["body {font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;}"],
+      autoParagraph: false,
+      enterMode: 2
+    };
 
 }

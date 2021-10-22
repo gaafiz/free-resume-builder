@@ -1,6 +1,6 @@
 
 <div>
-  <div>Resume Content</div>
+  <span><b>Resume Content </b></span>
   <input
     style="display: none"
     type="file" (change)="onContentFileChanged($event)"
@@ -10,13 +10,70 @@
 </div>
 
 <div>
-  <div>Resume Template Configuration</div>
+  <span><b>Resume Template Configuration </b></span>
   <input
     style="display: none"
     type="file" (change)="onConfFileChanged($event)"
     #confFile>
   <button (click)="confFile.click()">Load</button>
   <button (click)="downloadTemplateConfig()">Save</button>
+</div>
+<hr>
+<div style="font-size:18px; font-weight:bold; margin-bottom:1ex">Edit Resume Content</div>
+<div>
+  <label for="version">Resume Version: </label>
+  <input type="text" id="version" [(ngModel)]="inputJsonResume.version">
+</div>
+
+<div>
+  <label for="name">Candidate Name: </label>
+  <input type="text" id="name" [(ngModel)]="inputJsonResume.basics.name">
+</div>
+
+<div>
+  <label for="label">Candidate Role: </label>
+  <input type="text" id="label" [(ngModel)]="inputJsonResume.basics.label">
+</div>
+
+<div>
+  <label for="photo">Photo: </label>
+  <input type="text" id="photo" [(ngModel)]="inputJsonResume.basics.image">
+</div>
+
+<div>
+  <label for="birthday">Birthday: </label>
+  <input type="text" id="birthday" [(ngModel)]="inputJsonResume.basics.birthday">
+</div>
+
+<div>
+  <label for="nationality">Nationality: </label>
+  <input type="text" id="nationality" [(ngModel)]="inputJsonResume.basics.nationality">
+</div>
+
+<div>
+  <label for="email">Email: </label>
+  <input type="text" id="email" [(ngModel)]="inputJsonResume.basics.email">
+</div>
+
+<div>
+  <label for="phone">Phone: </label>
+  <input type="text" id="phone" [(ngModel)]="inputJsonResume.basics.phone">
+</div>
+
+<div>
+  <label for="url">Personal Website: </label>
+  <input type="text" id="url" [(ngModel)]="inputJsonResume.basics.url">
+</div>
+
+<div>
+  <label>Summary: </label>
+  <ckeditor
+    [(ngModel)]="inputJsonResume.basics.summary"
+    [config]="config"
+    [readonly]="false"
+    debounce="500">
+
+  </ckeditor>
 </div>
 
 
