@@ -27,6 +27,7 @@
 //     margin-top: 1px;
 }
 .left .eduItem-quickInfo { font-size: 12px; line-height: 15px; margin-top: 2px;}
+.right .eduItem-quickInfo { color: $highlight-text-color-neg; }
 
 .eduItem-info { @extend .quoted-body; }
 .right .eduItem-info { margin-top: 4px; }

@@ -4,11 +4,17 @@ $bright-orange: orange;
 $cold-orange: #efb01d;
 $dark-grey: #3c3c3c;
 $medium-grey: #939393;
+$washed-out-yellow: #f6e884;
+$cold-yellow: #eed94c;
+
 
 $side-col-bkg-color: $elegant-dark-blue;
 $side-col-text-color: white;
-$highlight-text-color: $cold-orange;
-$highlight-bkg-color: $cold-orange;
+
+$highlight-text-color: $washed-out-yellow;
+$highlight-bkg-color: $washed-out-yellow;
+$highlight-text-color-neg: $elegant-dark-blue;
+$highlight-bkg-color-neg: $elegant-dark-blue;
 
 // LAYOUT
 $a4-width: 21cm;
@@ -45,12 +51,8 @@ hr.separator {
 }
 
 .highlight-oval {
-// 	border-radius: 10px;
 	border-radius: 5px;
 	background-color: $highlight-bkg-color;
-	background-color: orange;
-// 	background-color: $dark-grey;
-// 	background-color: $medium-grey;
 	display: inline-flex;
 	margin-bottom: 4px;
   margin-left:4px;
@@ -59,19 +61,22 @@ hr.separator {
   font-weight: bold;
   font-size: 10px;
   line-height: 16px;
-  color: white;
-  color: #036;
+  color: black;
   padding: 0px 6px;
+}
+.right .highlight-oval {
+  background-color: $highlight-bkg-color-neg;
+  color: white;
 }
 
 .quoted-body {
   padding-left: 1ex;
   border-left: 1px solid;
   border-left-color: $highlight-text-color;
-//   border-left-color: $medium-grey;
   line-height: 120%;
 }
 .right .quoted-body {
   text-align: justify;
   border-left-width: 2px;
+  border-left-color: $highlight-text-color-neg;
 }
