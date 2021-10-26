@@ -1,5 +1,9 @@
 @import 'src/common.scss';
 
+.expItem {
+  margin-top: 3ex;
+}
+
 .expItem-role {
   font-weight: bold;
   margin-top: 10px;
@@ -16,12 +20,14 @@
 .left .expItem-quickInfo { font-size: 12px; line-height: 15px; }
 .right .expItem-quickInfo { color: $highlight-text-color-neg; }
 
-.expItem-body { @extend .quoted-body; }
+.expItem-body {
+  @extend .quoted-body;
+}
 
 .right .expItem-summary { margin-top: 4px; }
 .left .expItem-summary { margin-top: 3px; }
 
-ul.expItem-projects {
+.expItem-body ul.expItem-projects {
   padding: 0;
   list-style: none;
   margin: 0;

@@ -50,6 +50,7 @@ div.section-head {
 
 ul {
   margin: 0;
+  padding-left: 4ex;
 }
 
 .light {
@@ -62,7 +63,7 @@ ul {
     color: $elegant-dark-blue !important;
   }
   .eduItem-score, .skill-keyword {
-    background-color: $medium-grey !important;
+    background-color: #036 !important;
     color: white !important;
   }
   .eduItem-info, .expItem-body, .expItem-projectSummary {

@@ -1,8 +1,11 @@
 @import 'src/common.scss';
 
+.educationItem {
+  margin-top: 3ex;
+}
+
 .eduItem-head {
   font-weight: bold;
-  margin-top: 10px;
   font-size: 15px;
 }
 .left .eduItem-head { font-size: 14px; }
