@@ -138,6 +138,29 @@
   <button (click)="addNewAttachment()">Add Document</button>
 </div>
 
+<div>
+  <div>Skills:</div>
+  <div *ngFor="let skill of inputJsonResume.skills" style="display:flex">
+    <div >
+      <label >Skill Category: </label>
+      <input type="text" [(ngModel)]="skill.name">
+      <button (click)="removeSkill(skill)">Remove Skill</button>
+    </div>
+    <div>
+      <label >Skill Keywords: </label>
+      <div *ngFor="let kw of skill.keywords; let i = index;">
+        <div>
+          <input  type="text" [(ngModel)]="skill.keywords[i]">
+          <button (click)="removeItem(skill.keywords, kw)">Remove Keyword</button>
+        </div>
+      </div>
+      <button (click)="addItem(skill.keywords, 'sample keyword')">Add New Keyword</button>
+    </div>
+
+  </div>
+  <button (click)="addNewSkill()">Add Skill</button>
+</div>
+
 
 
 

@@ -58,6 +58,7 @@ ul {
     background-color: white !important;
     color: black !important;
     border-right: 1px solid $elegant-dark-blue;
+    box-sizing: border-box;
   }
   .personalInfo-icon, .eduItem-quickInfo, .expItem-quickInfo {
     color: $elegant-dark-blue !important;

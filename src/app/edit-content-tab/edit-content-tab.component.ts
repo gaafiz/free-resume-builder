@@ -104,6 +104,31 @@ export class EditContentTabComponent implements OnInit {
     })
   }
 
+  removeSkill(skill) {
+    let idx = this.inputJsonResume.skills.indexOf(skill)
+    if (idx !== -1) {
+      this.inputJsonResume.skills.splice(idx, 1);
+    }
+  }
+
+  addNewSkill() {
+    this.inputJsonResume.skills.push({
+      "name": "A Skill of Mine",
+      "keywords": [ "sample keyword" ],
+    })
+  }
+
+  removeItem(arr, item) {
+    let idx = arr.indexOf(item)
+    if (idx !== -1) {
+      arr.splice(idx, 1);
+    }
+  }
+
+  addItem(arr, item) {
+    arr.push(item);
+  }
+
   config: any = {
       allowedContent: true,
       toolbar: [['Bold', 'Italic', 'Underline', '-', 'NumberedList', 'BulletedList', 'Link', '-', 'CreatePlaceholder']],
