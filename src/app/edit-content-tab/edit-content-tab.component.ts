@@ -82,6 +82,13 @@ export class EditContentTabComponent implements OnInit {
       this.inputJsonResume.basics.profiles.splice(idx, 1);
     }
   }
+  addNewProfile() {
+    this.inputJsonResume.basics.profiles.push({
+      "network": "network",
+      "username": "username",
+      "url": "Link",
+    })
+  }
 
   config: any = {
       allowedContent: true,
