@@ -118,6 +118,14 @@ export class EditContentTabComponent implements OnInit {
     })
   }
 
+  addNewLanguage() {
+    this.inputJsonResume.languages.push({
+      "countryCode": "gb",
+      "language": "English",
+      "fluency": "Working Proficiency",
+    })
+  }
+
   removeItem(arr, item) {
     let idx = arr.indexOf(item)
     if (idx !== -1) {

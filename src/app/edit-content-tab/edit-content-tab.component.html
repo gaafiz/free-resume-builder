@@ -161,6 +161,26 @@
   <button (click)="addNewSkill()">Add Skill</button>
 </div>
 
+<div>
+  <div>Languages:</div>
+  <div *ngFor="let language of inputJsonResume.languages" style="display:flex">
+    <div >
+      <label >Country Code: </label>
+      <input type="text" [(ngModel)]="language.countryCode">
+    </div>
+    <div>
+      <label >Language: </label>
+      <input type="text" [(ngModel)]="language.language">
+    </div>
+    <div>
+      <label >Fluency: </label>
+      <input type="text" [(ngModel)]="language.fluency">
+    </div>
+    <button (click)="removeItem(inputJsonResume.languages, language)">Remove</button>
+  </div>
+  <button (click)="addNewLanguage()">Add Language</button>
+</div>
+
 
 
 
