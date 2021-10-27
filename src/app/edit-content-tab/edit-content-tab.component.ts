@@ -90,6 +90,20 @@ export class EditContentTabComponent implements OnInit {
     })
   }
 
+  removeAttachment(attachment) {
+    let idx = this.inputJsonResume.attachments.indexOf(attachment)
+    if (idx !== -1) {
+      this.inputJsonResume.attachments.splice(idx, 1);
+    }
+  }
+
+  addNewAttachment() {
+    this.inputJsonResume.attachments.push({
+      "label": "My Document",
+      "url": "My Document Link",
+    })
+  }
+
   config: any = {
       allowedContent: true,
       toolbar: [['Bold', 'Italic', 'Underline', '-', 'NumberedList', 'BulletedList', 'Link', '-', 'CreatePlaceholder']],

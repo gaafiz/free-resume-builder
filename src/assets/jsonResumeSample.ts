@@ -38,11 +38,11 @@ export const resume = {
   "attachments": [
     {
       "label": "Certificates",
-      "link": "http://my-certs.doc"
+      "url": "http://my-certs.doc"
     },
     {
       "label": "Reference",
-      "link": "http://my-references.doc"
+      "url": "http://my-references.doc"
     },
   ],
   "skills": [

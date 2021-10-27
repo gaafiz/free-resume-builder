@@ -47,7 +47,7 @@ export class CandidatePersonalInfoComponent implements OnInit {
         if (label) {
           label = label + ": ";
         }
-        let link = doc.link;
+        let link = doc.url;
         let str = label + '<a>' + link + '</a>'
         personalInfoList.push({
           key: 'attachments',

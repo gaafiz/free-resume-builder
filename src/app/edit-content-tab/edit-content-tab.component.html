@@ -72,7 +72,6 @@
     [config]="config"
     [readonly]="false"
     debounce="500">
-
   </ckeditor>
 </div>
 
@@ -121,6 +120,22 @@
   </div>
   <button (click)="addNewProfile()">Add Profile</button>
 
+</div>
+
+<div>
+  <div>Attachments:</div>
+  <div *ngFor="let attachment of inputJsonResume.attachments" style="display:flex">
+    <div >
+      <label >Document Name: </label>
+      <input type="text" [(ngModel)]="attachment.label">
+    </div>
+    <div>
+      <label >Document Link: </label>
+      <input type="text" [(ngModel)]="attachment.url">
+    </div>
+    <button (click)="removeAttachment(attachment)">Remove</button>
+  </div>
+  <button (click)="addNewAttachment()">Add Document</button>
 </div>
 
 

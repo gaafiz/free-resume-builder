@@ -32,3 +32,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - Body to expand the background always to the full page. I.e. if the resume start using the second page, #resume-page should get height: 2 times A4 lenght
 - Breaking of expItem quickInfo in 2 lines when is in left column
 - If experience summary is empty don't show the div
+- add skype icon support
