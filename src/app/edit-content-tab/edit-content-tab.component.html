@@ -102,10 +102,25 @@
   </div>
 </div>
 
-<!--<div *ngfor="let profile of inputJsonResume.basics.profiles">-->
-<!--  <label for="countryCode">Country: </label>-->
-<!--  <input type="text" id="countryCode" [(ngModel)]="inputJsonResume.basics.location.countryCode">-->
-<!--</div>-->
+<div>
+  <div>Profiles:</div>
+  <div *ngFor="let profile of inputJsonResume.basics.profiles" style="display:flex">
+    <div >
+      <label >Network: </label>
+      <input type="text" [(ngModel)]="profile.network">
+    </div>
+    <div>
+      <label >Username: </label>
+      <input type="text" [(ngModel)]="profile.username">
+    </div>
+    <div>
+      <label >Link: </label>
+      <input type="text" [(ngModel)]="profile.url">
+    </div>
+    <button (click)="removeProfile(profile)">Remove</button>
+  </div>
+</div>
+
 
 
 

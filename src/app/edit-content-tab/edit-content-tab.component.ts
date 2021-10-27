@@ -76,6 +76,13 @@ export class EditContentTabComponent implements OnInit {
     this.downloadObjectAsJson(templateConf, "resumeTemplateConfig");
   }
 
+  removeProfile(profile) {
+    let idx = this.inputJsonResume.basics.profiles.indexOf(profile)
+    if (idx !== -1) {
+      this.inputJsonResume.basics.profiles.splice(idx, 1);
+    }
+  }
+
   config: any = {
       allowedContent: true,
       toolbar: [['Bold', 'Italic', 'Underline', '-', 'NumberedList', 'BulletedList', 'Link', '-', 'CreatePlaceholder']],
