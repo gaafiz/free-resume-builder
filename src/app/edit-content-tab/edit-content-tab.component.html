@@ -76,5 +76,36 @@
   </ckeditor>
 </div>
 
+<div>
+  <div>Address</div>
+  <div style="display:flex">
+    <div>
+      <label for="street">Street: </label>
+      <input type="text" id="street" [(ngModel)]="inputJsonResume.basics.location.address">
+    </div>
+    <div>
+      <label for="postalCode">Postal Code: </label>
+      <input type="text" id="postalCode" [(ngModel)]="inputJsonResume.basics.location.postalCode">
+    </div>
+    <div>
+      <label for="city">City: </label>
+      <input type="text" id="city" [(ngModel)]="inputJsonResume.basics.location.city">
+    </div>
+    <div>
+      <label for="region">Region: </label>
+      <input type="text" id="region" [(ngModel)]="inputJsonResume.basics.location.region">
+    </div>
+    <div>
+      <label for="countryCode">Country: </label>
+      <input type="text" id="countryCode" [(ngModel)]="inputJsonResume.basics.location.countryCode">
+    </div>
+  </div>
+</div>
+
+<!--<div *ngfor="let profile of inputJsonResume.basics.profiles">-->
+<!--  <label for="countryCode">Country: </label>-->
+<!--  <input type="text" id="countryCode" [(ngModel)]="inputJsonResume.basics.location.countryCode">-->
+<!--</div>-->
+
 
 
