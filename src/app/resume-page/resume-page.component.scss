@@ -21,10 +21,11 @@
   color: $side-col-text-color;
 }
 
-$col-padding: 1.4ex;
+$col-padding-vertical: 1.4ex;
+$col-padding-horizontal: 1.6ex;
 
 #resume-page-side-column {
-  padding: $col-padding;
+  padding: $col-padding-vertical $col-padding-horizontal;
 }
 
 #resume-page-main-column-wrapper {
@@ -33,6 +34,6 @@ $col-padding: 1.4ex;
 }
 
 #resume-page-main-column {
-  padding: $col-padding;
+  padding: $col-padding-vertical $col-padding-horizontal;
 }
 
