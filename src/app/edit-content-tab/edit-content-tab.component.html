@@ -1,185 +1,211 @@
+<mat-tab-group id="edit-content-tab" mat-align-tabs="center" dynamicHeight="true" class="centerize">
 
-<div>
-  <span><b>Resume Content </b></span>
-  <input
-    style="display: none"
-    type="file" (change)="onContentFileChanged($event)"
-    #contentFileInput>
-  <button (click)="contentFileInput.click()">Load</button>
-  <button (click)="downloadJsonResumeContent()">Save</button>
-</div>
+  <mat-tab label="Basics" >
+    <div class="tab-body">
 
-<div>
-  <span><b>Resume Template Configuration </b></span>
-  <input
-    style="display: none"
-    type="file" (change)="onConfFileChanged($event)"
-    #confFile>
-  <button (click)="confFile.click()">Load</button>
-  <button (click)="downloadTemplateConfig()">Save</button>
-</div>
-<hr>
-<div style="font-size:18px; font-weight:bold; margin-bottom:1ex">Edit Resume Content</div>
-<div>
-  <label for="version">Resume Version: </label>
-  <input type="text" id="version" [(ngModel)]="inputJsonResume.version">
-</div>
+    <div class="fields-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Candidate Full Name</mat-label>
+      <input matInput [(ngModel)]="inputJsonResume.basics.name" name="fullname" required>
+      <mat-hint align="start">Full Name (Incl. middle names)</mat-hint>
+    </mat-form-field>
 
-<div>
-  <label for="name">Candidate Name: </label>
-  <input type="text" id="name" [(ngModel)]="inputJsonResume.basics.name">
-</div>
-
-<div>
-  <label for="label">Candidate Role: </label>
-  <input type="text" id="label" [(ngModel)]="inputJsonResume.basics.label">
-</div>
-
-<div>
-  <label for="photo">Photo: </label>
-  <input type="text" id="photo" [(ngModel)]="inputJsonResume.basics.image">
-</div>
-
-<div>
-  <label for="birthday">Birthday: </label>
-  <input type="text" id="birthday" [(ngModel)]="inputJsonResume.basics.birthday">
-</div>
-
-<div>
-  <label for="nationality">Nationality: </label>
-  <input type="text" id="nationality" [(ngModel)]="inputJsonResume.basics.nationality">
-</div>
-
-<div>
-  <label for="email">Email: </label>
-  <input type="text" id="email" [(ngModel)]="inputJsonResume.basics.email">
-</div>
-
-<div>
-  <label for="phone">Phone: </label>
-  <input type="text" id="phone" [(ngModel)]="inputJsonResume.basics.phone">
-</div>
-
-<div>
-  <label for="url">Personal Website: </label>
-  <input type="text" id="url" [(ngModel)]="inputJsonResume.basics.url">
-</div>
-
-<div>
-  <label>Summary: </label>
-  <ckeditor
-    [(ngModel)]="inputJsonResume.basics.summary"
-    [config]="config"
-    [readonly]="false"
-    debounce="500">
-  </ckeditor>
-</div>
-
-<div>
-  <div>Address</div>
-  <div style="display:flex">
-    <div>
-      <label for="street">Street: </label>
-      <input type="text" id="street" [(ngModel)]="inputJsonResume.basics.location.address">
+    <mat-form-field appearance="fill" >
+      <mat-label>Candidate Role</mat-label>
+      <input matInput [(ngModel)]="inputJsonResume.basics.label" name="role">
+      <mat-hint align="start">Label/Role which identify you professionally. I.e. "Graphic Designer"</mat-hint>
+    </mat-form-field>
     </div>
-    <div>
-      <label for="postalCode">Postal Code: </label>
-      <input type="text" id="postalCode" [(ngModel)]="inputJsonResume.basics.location.postalCode">
-    </div>
-    <div>
-      <label for="city">City: </label>
-      <input type="text" id="city" [(ngModel)]="inputJsonResume.basics.location.city">
-    </div>
-    <div>
-      <label for="region">Region: </label>
-      <input type="text" id="region" [(ngModel)]="inputJsonResume.basics.location.region">
-    </div>
-    <div>
-      <label for="countryCode">Country: </label>
-      <input type="text" id="countryCode" [(ngModel)]="inputJsonResume.basics.location.countryCode">
-    </div>
-  </div>
-</div>
 
-<div>
-  <div>Profiles:</div>
-  <div *ngFor="let profile of inputJsonResume.basics.profiles" style="display:flex">
-    <div >
-      <label >Network: </label>
-      <input type="text" [(ngModel)]="profile.network">
+    <div class="fields-row">
+      <mat-form-field appearance="fill" class="field-photo">
+        <mat-label>Photo</mat-label>
+        <input matInput [(ngModel)]="inputJsonResume.basics.image" name="photo">
+        <mat-hint align="start">Enter an image link or upload a local picture</mat-hint>
+      </mat-form-field>
+      <input hidden type="file" #imgFileInput (change)="uploadPicture($event)"/>
+      <button type="button" mat-raised-button color="primary" (click)="imgFileInput.click()">Upload Picture</button>
     </div>
-    <div>
-      <label >Username: </label>
-      <input type="text" [(ngModel)]="profile.username">
-    </div>
-    <div>
-      <label >Link: </label>
-      <input type="text" [(ngModel)]="profile.url">
-    </div>
-    <button (click)="removeProfile(profile)">Remove</button>
-  </div>
-  <button (click)="addNewProfile()">Add Profile</button>
 
-</div>
+    <mat-form-field appearance="fill" >
+      <mat-label>Birthday</mat-label>
+      <input matInput [(ngModel)]="inputJsonResume.basics.birthday" name="role">
+      <mat-hint align="start">It is a simple text field, choose the date format you prefer.</mat-hint>
+    </mat-form-field>
 
-<div>
-  <div>Attachments:</div>
-  <div *ngFor="let attachment of inputJsonResume.attachments" style="display:flex">
-    <div >
-      <label >Document Name: </label>
-      <input type="text" [(ngModel)]="attachment.label">
-    </div>
-    <div>
-      <label >Document Link: </label>
-      <input type="text" [(ngModel)]="attachment.url">
-    </div>
-    <button (click)="removeAttachment(attachment)">Remove</button>
-  </div>
-  <button (click)="addNewAttachment()">Add Document</button>
-</div>
+    <mat-form-field appearance="fill" >
+      <mat-label>Nationality</mat-label>
+      <input matInput [(ngModel)]="inputJsonResume.basics.nationality" name="role">
+      <mat-hint align="start">Enter Nationality and VISA, if needed. I.e. Japanese with EU working Permit</mat-hint>
+    </mat-form-field>
 
-<div>
-  <div>Skills:</div>
-  <div *ngFor="let skill of inputJsonResume.skills" style="display:flex">
-    <div >
-      <label >Skill Category: </label>
-      <input type="text" [(ngModel)]="skill.name">
-      <button (click)="removeSkill(skill)">Remove Skill</button>
-    </div>
-    <div>
-      <label >Skill Keywords: </label>
-      <div *ngFor="let kw of skill.keywords; let i = index;">
-        <div>
-          <input  type="text" [(ngModel)]="skill.keywords[i]">
-          <button (click)="removeItem(skill.keywords, kw)">Remove Keyword</button>
-        </div>
-      </div>
-      <button (click)="addItem(skill.keywords, 'sample keyword')">Add New Keyword</button>
-    </div>
 
   </div>
-  <button (click)="addNewSkill()">Add Skill</button>
-</div>
+  </mat-tab>
 
-<div>
-  <div>Languages:</div>
-  <div *ngFor="let language of inputJsonResume.languages" style="display:flex">
-    <div >
-      <label >Country Code: </label>
-      <input type="text" [(ngModel)]="language.countryCode">
-    </div>
-    <div>
-      <label >Language: </label>
-      <input type="text" [(ngModel)]="language.language">
-    </div>
-    <div>
-      <label >Fluency: </label>
-      <input type="text" [(ngModel)]="language.fluency">
-    </div>
-    <button (click)="removeItem(inputJsonResume.languages, language)">Remove</button>
-  </div>
-  <button (click)="addNewLanguage()">Add Language</button>
-</div>
+
+</mat-tab-group>
+
+
+
+
+<!--<div>-->
+<!--  <span><b>Resume Content </b></span>-->
+<!--  <input-->
+<!--    style="display: none"-->
+<!--    type="file" (change)="onContentFileChanged($event)"-->
+<!--    #contentFileInput>-->
+<!--  <button (click)="contentFileInput.click()">Load</button>-->
+<!--  <button (click)="downloadJsonResumeContent()">Save</button>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--  <span><b>Resume Template Configuration </b></span>-->
+<!--  <input-->
+<!--    style="display: none"-->
+<!--    type="file" (change)="onConfFileChanged($event)"-->
+<!--    #confFile>-->
+<!--  <button (click)="confFile.click()">Load</button>-->
+<!--  <button (click)="downloadTemplateConfig()">Save</button>-->
+<!--</div>-->
+<!--<hr>-->
+
+
+<!--<div>-->
+<!--  <label for="nationality">Nationality: </label>-->
+<!--  <input type="text" id="nationality" [(ngModel)]="inputJsonResume.basics.nationality">-->
+<!--</div>-->
+
+<!--<div>-->
+<!--  <label for="email">Email: </label>-->
+<!--  <input type="text" id="email" [(ngModel)]="inputJsonResume.basics.email">-->
+<!--</div>-->
+
+<!--<div>-->
+<!--  <label for="phone">Phone: </label>-->
+<!--  <input type="text" id="phone" [(ngModel)]="inputJsonResume.basics.phone">-->
+<!--</div>-->
+
+<!--<div>-->
+<!--  <label for="url">Personal Website: </label>-->
+<!--  <input type="text" id="url" [(ngModel)]="inputJsonResume.basics.url">-->
+<!--</div>-->
+
+<!--<div>-->
+<!--  <label>Summary: </label>-->
+<!--  <ckeditor-->
+<!--    [(ngModel)]="inputJsonResume.basics.summary"-->
+<!--    [config]="config"-->
+<!--    [readonly]="false"-->
+<!--    debounce="500">-->
+<!--  </ckeditor>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--  <div>Address</div>-->
+<!--  <div style="display:flex">-->
+<!--    <div>-->
+<!--      <label for="street">Street: </label>-->
+<!--      <input type="text" id="street" [(ngModel)]="inputJsonResume.basics.location.address">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <label for="postalCode">Postal Code: </label>-->
+<!--      <input type="text" id="postalCode" [(ngModel)]="inputJsonResume.basics.location.postalCode">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <label for="city">City: </label>-->
+<!--      <input type="text" id="city" [(ngModel)]="inputJsonResume.basics.location.city">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <label for="region">Region: </label>-->
+<!--      <input type="text" id="region" [(ngModel)]="inputJsonResume.basics.location.region">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <label for="countryCode">Country: </label>-->
+<!--      <input type="text" id="countryCode" [(ngModel)]="inputJsonResume.basics.location.countryCode">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--  <div>Profiles:</div>-->
+<!--  <div *ngFor="let profile of inputJsonResume.basics.profiles" style="display:flex">-->
+<!--    <div >-->
+<!--      <label >Network: </label>-->
+<!--      <input type="text" [(ngModel)]="profile.network">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <label >Username: </label>-->
+<!--      <input type="text" [(ngModel)]="profile.username">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <label >Link: </label>-->
+<!--      <input type="text" [(ngModel)]="profile.url">-->
+<!--    </div>-->
+<!--    <button (click)="removeProfile(profile)">Remove</button>-->
+<!--  </div>-->
+<!--  <button (click)="addNewProfile()">Add Profile</button>-->
+
+<!--</div>-->
+
+<!--<div>-->
+<!--  <div>Attachments:</div>-->
+<!--  <div *ngFor="let attachment of inputJsonResume.attachments" style="display:flex">-->
+<!--    <div >-->
+<!--      <label >Document Name: </label>-->
+<!--      <input type="text" [(ngModel)]="attachment.label">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <label >Document Link: </label>-->
+<!--      <input type="text" [(ngModel)]="attachment.url">-->
+<!--    </div>-->
+<!--    <button (click)="removeAttachment(attachment)">Remove</button>-->
+<!--  </div>-->
+<!--  <button (click)="addNewAttachment()">Add Document</button>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--  <div>Skills:</div>-->
+<!--  <div *ngFor="let skill of inputJsonResume.skills" style="display:flex">-->
+<!--    <div >-->
+<!--      <label >Skill Category: </label>-->
+<!--      <input type="text" [(ngModel)]="skill.name">-->
+<!--      <button (click)="removeSkill(skill)">Remove Skill</button>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <label >Skill Keywords: </label>-->
+<!--      <div *ngFor="let kw of skill.keywords; let i = index;">-->
+<!--        <div>-->
+<!--          <input  type="text" [(ngModel)]="skill.keywords[i]">-->
+<!--          <button (click)="removeItem(skill.keywords, kw)">Remove Keyword</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <button (click)="addItem(skill.keywords, 'sample keyword')">Add New Keyword</button>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--  <button (click)="addNewSkill()">Add Skill</button>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--  <div>Languages:</div>-->
+<!--  <div *ngFor="let language of inputJsonResume.languages" style="display:flex">-->
+<!--    <div >-->
+<!--      <label >Country Code: </label>-->
+<!--      <input type="text" [(ngModel)]="language.countryCode">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <label >Language: </label>-->
+<!--      <input type="text" [(ngModel)]="language.language">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <label >Fluency: </label>-->
+<!--      <input type="text" [(ngModel)]="language.fluency">-->
+<!--    </div>-->
+<!--    <button (click)="removeItem(inputJsonResume.languages, language)">Remove</button>-->
+<!--  </div>-->
+<!--  <button (click)="addNewLanguage()">Add Language</button>-->
+<!--</div>-->
 
 
 

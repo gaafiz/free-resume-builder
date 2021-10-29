@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { FormsModule } from '@angular/forms';
 
@@ -39,6 +42,9 @@ import { ResumeVersionComponent } from './resume-page/resume-version/resume-vers
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
     CKEditorModule,
     FormsModule
   ],

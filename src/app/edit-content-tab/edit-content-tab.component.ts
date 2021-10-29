@@ -56,6 +56,26 @@ export class EditContentTabComponent implements OnInit {
       }
     }
 
+  uploadPicture(event) {
+    const files = event.target.files
+    if (files.length >= 1 ) {
+      const selectedFile = event.target.files[0];
+      this.getBase64(selectedFile).then( data => {
+        this.inputJsonResume.basics.image = data;
+        event.target.value = '';
+      });
+    }
+  }
+
+  getBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+  }
+
   downloadObjectAsJson(exportObj, exportName) {
     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj, null, 2));
     var downloadAnchorNode = document.createElement('a');
