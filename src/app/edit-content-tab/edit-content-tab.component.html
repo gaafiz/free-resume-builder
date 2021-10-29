@@ -110,8 +110,50 @@
   </div>
   </mat-tab>
 
+
+
   <mat-tab label="Basics 2" >
   <div class="tab-body">
+
+    <div class="mat-divider-with-text">
+      <div class="line"><mat-divider></mat-divider></div>
+      <div class="text mat-typography">Languages</div>
+      <div class="line"><mat-divider></mat-divider></div>
+    </div>
+
+    <div class="fields-row" *ngFor="let language of inputJsonResume.languages; let i = index;">
+      <mat-form-field appearance="fill" >
+        <mat-label>Flag Country Code</mat-label>
+        <span matPrefix><span class="flag-icon flag-icon-{{language.countryCode | lowercase}}"></span> &nbsp;</span>
+        <input matInput [(ngModel)]="language.countryCode" name="{{'countryCode - ' + i}}">
+        <mat-hint align="start">Use a 2-digit country code</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" >
+        <mat-label>Language</mat-label>
+        <input matInput [(ngModel)]="language.language" name="{{'language - ' + i}}">
+        <mat-hint align="start"></mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" >
+        <mat-label>Fluency</mat-label>
+        <input matInput [(ngModel)]="language.fluency" name="{{'fluency - ' + i}}">
+        <mat-hint align="start"></mat-hint>
+      </mat-form-field>
+
+      <button mat-mini-fab class="mat-fab" color="warn" (click)="removeItem(inputJsonResume.languages, language)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+    <button
+      class="mat-raised-button add-element-btn"
+      type="button"
+      mat-raised-button
+      color="primary"
+      (click)="addNewLanguage()">
+      Add Language
+    </button>
+
     <div class="mat-divider-with-text">
       <div class="line"><mat-divider></mat-divider></div>
       <div class="text mat-typography">Network Profiles</div>
@@ -179,27 +221,6 @@
 <!--</div>-->
 <!--<hr>-->
 
-
-<!--<div>-->
-<!--  <div>Profiles:</div>-->
-<!--  <div *ngFor="let profile of inputJsonResume.basics.profiles" style="display:flex">-->
-<!--    <div >-->
-<!--      <label >Network: </label>-->
-<!--      <input type="text" [(ngModel)]="profile.network">-->
-<!--    </div>-->
-<!--    <div>-->
-<!--      <label >Username: </label>-->
-<!--      <input type="text" [(ngModel)]="profile.username">-->
-<!--    </div>-->
-<!--    <div>-->
-<!--      <label >Link: </label>-->
-<!--      <input type="text" [(ngModel)]="profile.url">-->
-<!--    </div>-->
-<!--    <button (click)="removeProfile(profile)">Remove</button>-->
-<!--  </div>-->
-<!--  <button (click)="addNewProfile()">Add Profile</button>-->
-
-<!--</div>-->
 
 <!--<div>-->
 <!--  <div>Attachments:</div>-->
