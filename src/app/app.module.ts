@@ -4,6 +4,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import {MatDividerModule} from '@angular/material/divider';
@@ -50,7 +51,8 @@ import { ResumeVersionComponent } from './resume-page/resume-version/resume-vers
     CKEditorModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

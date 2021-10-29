@@ -24,7 +24,7 @@
         <mat-hint align="start">Enter an image link or upload a local picture</mat-hint>
       </mat-form-field>
       <input hidden type="file" #imgFileInput (change)="uploadPicture($event)"/>
-      <button type="button" mat-raised-button color="primary" (click)="imgFileInput.click()">Upload Picture</button>
+      <button class="mat-raised-button" type="button" mat-raised-button color="primary" (click)="imgFileInput.click()">Upload Picture</button>
     </div>
 
     <div class="fields-row">
@@ -97,12 +97,57 @@
 <!--      </mat-form-field>-->
     </div>
 
-    <div>
-      <label>Summary</label>
-      <ckeditor [(ngModel)]="inputJsonResume.basics.summary" [config]="config" [readonly]="false" debounce="500">
-      </ckeditor>
+    <div class="mat-divider-with-text">
+      <div class="line"><mat-divider></mat-divider></div>
+      <div class="text mat-typography">Summary</div>
+      <div class="line"><mat-divider></mat-divider></div>
     </div>
+    <ckeditor [(ngModel)]="inputJsonResume.basics.summary" [config]="config" [readonly]="false" debounce="500">
+    </ckeditor>
 
+
+
+  </div>
+  </mat-tab>
+
+  <mat-tab label="Basics 2" >
+  <div class="tab-body">
+    <div class="mat-divider-with-text">
+      <div class="line"><mat-divider></mat-divider></div>
+      <div class="text mat-typography">Network Profiles</div>
+      <div class="line"><mat-divider></mat-divider></div>
+    </div>
+    <div class="fields-row" *ngFor="let profile of inputJsonResume.basics.profiles; let i = index;">
+      <mat-form-field appearance="fill" >
+        <mat-label>Network</mat-label>
+        <input matInput [(ngModel)]="profile.network" name="{{'profileNetwork - ' + i}}">
+        <mat-hint align="start"></mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" >
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="profile.username" name="{{'profileUsername - ' + i}}">
+        <mat-hint align="start"></mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" >
+        <mat-label>Profile Link</mat-label>
+        <input matInput [(ngModel)]="profile.url" name="{{'profileUrl - ' + i}}">
+        <mat-hint align="start"></mat-hint>
+      </mat-form-field>
+
+      <button mat-mini-fab class="mat-fab" color="warn" (click)="removeProfile(profile)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+    <button
+      class="mat-raised-button add-element-btn"
+      type="button"
+      mat-raised-button
+      color="primary"
+      (click)="addNewProfile()">
+        Add Network Profile
+    </button>
 
   </div>
   </mat-tab>
