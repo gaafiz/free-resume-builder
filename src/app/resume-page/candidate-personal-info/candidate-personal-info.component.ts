@@ -48,7 +48,7 @@ export class CandidatePersonalInfoComponent implements OnInit {
           label = label + ": ";
         }
         let link = doc.url;
-        let str = label + '<a>' + link + '</a>'
+        let str = label + '<a href="' + link + '">' + link + '</a>';
         personalInfoList.push({
           key: 'attachments',
           styleClass: 'fa fa-link',
@@ -62,12 +62,16 @@ export class CandidatePersonalInfoComponent implements OnInit {
     let profiles = jsonResume?.basics?.profiles;
     if (!!profiles) {
       profiles.forEach(profile => {
+        var profileLink = undefined as any;
+        if (profile.url) {
+          profileLink = '<a href="' + profile.url + '">' + profile.url + '</a>'
+        }
         let profileIconClass = this.getIconClassForNetwork(profile.network);
         if (!!profileIconClass) {
           personalInfoList.push({
             key: profile.network,
             styleClass: profileIconClass,
-            value: profile.url || profile.username,
+            value: profileLink || profile.username,
           });
         }
       });

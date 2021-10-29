@@ -27,17 +27,45 @@
       <button type="button" mat-raised-button color="primary" (click)="imgFileInput.click()">Upload Picture</button>
     </div>
 
-    <mat-form-field appearance="fill" >
-      <mat-label>Birthday</mat-label>
-      <input matInput [(ngModel)]="inputJsonResume.basics.birthday" name="role">
-      <mat-hint align="start">It is a simple text field, choose the date format you prefer.</mat-hint>
-    </mat-form-field>
+    <div class="fields-row">
+      <mat-form-field appearance="fill" >
+        <mat-label>Birthday</mat-label>
+        <input matInput [(ngModel)]="inputJsonResume.basics.birthday" name="role">
+        <mat-hint align="start">It is a simple text field, choose the date format you prefer.</mat-hint>
+      </mat-form-field>
 
-    <mat-form-field appearance="fill" >
-      <mat-label>Nationality</mat-label>
-      <input matInput [(ngModel)]="inputJsonResume.basics.nationality" name="role">
-      <mat-hint align="start">Enter Nationality and VISA, if needed. I.e. Japanese with EU working Permit</mat-hint>
-    </mat-form-field>
+      <mat-form-field appearance="fill" >
+        <mat-label>Nationality</mat-label>
+        <input matInput [(ngModel)]="inputJsonResume.basics.nationality" name="role">
+        <mat-hint align="start">Enter Nationality and VISA, if needed. I.e. Japanese with EU working Permit</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="fields-row">
+      <mat-form-field appearance="fill" >
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [(ngModel)]="inputJsonResume.basics.email" name="role" email="true">
+        <mat-hint align="start">Enter a valid Email</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" >
+        <mat-label>Phone Number</mat-label>
+        <input matInput [(ngModel)]="inputJsonResume.basics.phone" name="role">
+        <mat-hint align="start"></mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" >
+        <mat-label>Personal Website</mat-label>
+        <input matInput [(ngModel)]="inputJsonResume.basics.url" name="role">
+        <mat-hint align="start"></mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <label>Summary</label>
+      <ckeditor [(ngModel)]="inputJsonResume.basics.summary" [config]="config" [readonly]="false" debounce="500">
+      </ckeditor>
+    </div>
 
 
   </div>
@@ -71,25 +99,9 @@
 <!--<hr>-->
 
 
-<!--<div>-->
-<!--  <label for="nationality">Nationality: </label>-->
-<!--  <input type="text" id="nationality" [(ngModel)]="inputJsonResume.basics.nationality">-->
-<!--</div>-->
 
-<!--<div>-->
-<!--  <label for="email">Email: </label>-->
-<!--  <input type="text" id="email" [(ngModel)]="inputJsonResume.basics.email">-->
-<!--</div>-->
 
-<!--<div>-->
-<!--  <label for="phone">Phone: </label>-->
-<!--  <input type="text" id="phone" [(ngModel)]="inputJsonResume.basics.phone">-->
-<!--</div>-->
 
-<!--<div>-->
-<!--  <label for="url">Personal Website: </label>-->
-<!--  <input type="text" id="url" [(ngModel)]="inputJsonResume.basics.url">-->
-<!--</div>-->
 
 <!--<div>-->
 <!--  <label>Summary: </label>-->

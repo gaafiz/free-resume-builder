@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { EventEmitter, Output } from '@angular/core';
 import { Input } from '@angular/core';
 import { CKEditorComponent } from 'ng2-ckeditor';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-edit-content-tab',
@@ -14,6 +15,8 @@ export class EditContentTabComponent implements OnInit {
   @Output() public userJsonResumeChanged = new EventEmitter<any>();
   @Output() public userTemplateConfChanged = new EventEmitter<any>();
   @ViewChild('ckeditor') ckeditor: CKEditorComponent;
+
+  emailFormControl = new FormControl('', [Validators.email]);
 
   constructor() {
   }
@@ -159,7 +162,7 @@ export class EditContentTabComponent implements OnInit {
 
   config: any = {
       allowedContent: true,
-      toolbar: [['Bold', 'Italic', 'Underline', '-', 'NumberedList', 'BulletedList', 'Link', '-', 'CreatePlaceholder']],
+      toolbar: [['Bold', 'Italic', 'Underline', '-', 'BulletedList', 'NumberedList', 'Link', '-', 'CreatePlaceholder']],
       removePlugins: 'elementspath',
       resize_enabled: false,
       extraPlugins: 'font,divarea,placeholder',
