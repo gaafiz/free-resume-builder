@@ -112,7 +112,7 @@
 
 
 
-  <mat-tab label="Basics 2" >
+  <mat-tab label="Languages & Profiles" >
   <div class="tab-body">
 
     <div class="mat-divider-with-text">
@@ -194,6 +194,47 @@
   </div>
   </mat-tab>
 
+  <mat-tab label="Misc" >
+    <div class="tab-body">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Resume Version</mat-label>
+        <input matInput [(ngModel)]="inputJsonResume.version" name="version" required>
+        <mat-hint align="start">Identify the last version of your Resume</mat-hint>
+      </mat-form-field>
+
+      <div class="mat-divider-with-text">
+        <div class="line"><mat-divider></mat-divider></div>
+        <div class="text mat-typography">Attachments</div>
+        <div class="line"><mat-divider></mat-divider></div>
+      </div>
+      <div class="fields-row" *ngFor="let attachment of inputJsonResume.attachments; let i = index;">
+        <mat-form-field appearance="fill" >
+          <mat-label>Document Name</mat-label>
+          <input matInput [(ngModel)]="attachment.label" name="{{'attachmentName - ' + i}}">
+          <mat-hint align="start"></mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" >
+          <mat-label>Document Link</mat-label>
+          <input matInput [(ngModel)]="attachment.url" name="{{'attachmentLink - ' + i}}">
+          <mat-hint align="start"></mat-hint>
+        </mat-form-field>
+
+        <button mat-mini-fab class="mat-fab" color="warn" (click)="removeAttachment(attachment)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <button
+        class="mat-raised-button add-element-btn"
+        type="button"
+        mat-raised-button
+        color="primary"
+        (click)="addNewAttachment()">
+        Add Attachment
+      </button>
+    </div>
+  </mat-tab>
 
 </mat-tab-group>
 
@@ -222,21 +263,6 @@
 <!--<hr>-->
 
 
-<!--<div>-->
-<!--  <div>Attachments:</div>-->
-<!--  <div *ngFor="let attachment of inputJsonResume.attachments" style="display:flex">-->
-<!--    <div >-->
-<!--      <label >Document Name: </label>-->
-<!--      <input type="text" [(ngModel)]="attachment.label">-->
-<!--    </div>-->
-<!--    <div>-->
-<!--      <label >Document Link: </label>-->
-<!--      <input type="text" [(ngModel)]="attachment.url">-->
-<!--    </div>-->
-<!--    <button (click)="removeAttachment(attachment)">Remove</button>-->
-<!--  </div>-->
-<!--  <button (click)="addNewAttachment()">Add Document</button>-->
-<!--</div>-->
 
 <!--<div>-->
 <!--  <div>Skills:</div>-->
@@ -260,27 +286,6 @@
 <!--  </div>-->
 <!--  <button (click)="addNewSkill()">Add Skill</button>-->
 <!--</div>-->
-
-<!--<div>-->
-<!--  <div>Languages:</div>-->
-<!--  <div *ngFor="let language of inputJsonResume.languages" style="display:flex">-->
-<!--    <div >-->
-<!--      <label >Country Code: </label>-->
-<!--      <input type="text" [(ngModel)]="language.countryCode">-->
-<!--    </div>-->
-<!--    <div>-->
-<!--      <label >Language: </label>-->
-<!--      <input type="text" [(ngModel)]="language.language">-->
-<!--    </div>-->
-<!--    <div>-->
-<!--      <label >Fluency: </label>-->
-<!--      <input type="text" [(ngModel)]="language.fluency">-->
-<!--    </div>-->
-<!--    <button (click)="removeItem(inputJsonResume.languages, language)">Remove</button>-->
-<!--  </div>-->
-<!--  <button (click)="addNewLanguage()">Add Language</button>-->
-<!--</div>-->
-
 
 
 
