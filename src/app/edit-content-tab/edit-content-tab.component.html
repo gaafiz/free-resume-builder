@@ -231,6 +231,96 @@
     </div>
   </mat-tab>
 
+  <mat-tab label="Experiences" >
+    <div class="tab-body">
+      <div *ngFor="let expItem of inputJsonResume.work; let i = index;">
+        <div class="mat-divider-with-text">
+          <div class="line"><mat-divider></mat-divider></div>
+          <div class="text mat-typography">Experience {{i+1}}</div>
+          <div class="line"><mat-divider></mat-divider></div>
+        </div>
+
+        <div class="fields-row">
+          <mat-form-field appearance="fill">
+            <mat-label>Company</mat-label>
+            <input matInput [(ngModel)]="expItem.company" name="{{'expItemCompany - ' + i}}" required>
+            <mat-hint align="start"></mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Company Address</mat-label>
+            <input matInput [(ngModel)]="expItem.address" name="{{'expItemAddress - ' + i}}">
+            <mat-hint align="start"></mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Company Website</mat-label>
+            <input matInput [(ngModel)]="expItem.website" name="{{'expItemWebsite- ' + i}}">
+            <mat-hint align="start"></mat-hint>
+          </mat-form-field>
+        </div>
+
+        <div class="fields-row">
+          <mat-form-field appearance="fill">
+            <mat-label>Job Position</mat-label>
+            <input matInput [(ngModel)]="expItem.position" name="{{'expItemPosition - ' + i}}" required>
+            <mat-hint align="start"></mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Start Date</mat-label>
+            <input matInput [(ngModel)]="expItem.startDate" name="{{'expItemStartDate - ' + i}}" required>
+            <mat-hint align="start"></mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>End Date</mat-label>
+            <input matInput [(ngModel)]="expItem.endDate" name="{{'expItemEndDate - ' + i}}">
+            <mat-hint align="start">If empty, 'Present' is assumed</mat-hint>
+          </mat-form-field>
+        </div>
+
+        <div class="mat-divider-with-text">
+          <div class="line"><mat-divider></mat-divider></div>
+          <div class="text mat-typography">Summary</div>
+          <div class="line"><mat-divider></mat-divider></div>
+        </div>
+        <div class="fields-row">
+          <ckeditor [(ngModel)]="expItem.summary" [config]="config" [readonly]="false" debounce="500">
+          </ckeditor>
+        </div>
+
+
+        <div *ngFor="let project of expItem.projects; let j = index;" class="normal-flow">
+          <div class="mat-divider-with-text">
+            <div class="line"><mat-divider></mat-divider></div>
+            <div class="text mat-typography">Experience {{i+1}} - Project {{j+1}}</div>
+            <div class="line"><mat-divider></mat-divider></div>
+          </div>
+          <div class="fields-row">
+            <mat-form-field appearance="fill">
+              <mat-label>Project Name</mat-label>
+              <input matInput [(ngModel)]="project.name" name="{{'projName - ' + i + ' - ' + j}}" required>
+              <mat-hint align="start"></mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="fields-row">
+          <ckeditor [(ngModel)]="project.summary" [config]="config" [readonly]="false" debounce="500">
+          </ckeditor>
+          </div>
+          <button
+            class="mat-raised-button add-element-btn"
+            type="button"
+            mat-raised-button
+            color="warn"
+            (click)="removeItem(expItem.projects, project) ">
+            Remove Project
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </mat-tab>
+
   <mat-tab label="Misc" >
     <div class="tab-body">
 
