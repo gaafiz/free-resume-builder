@@ -194,6 +194,43 @@
   </div>
   </mat-tab>
 
+  <mat-tab label="Skills" >
+    <div class="tab-body">
+      <div class="mat-divider-with-text">
+        <div class="line"><mat-divider></mat-divider></div>
+        <div class="text mat-typography">Skills</div>
+        <div class="line"><mat-divider></mat-divider></div>
+      </div>
+      <div class="fields-row" *ngFor="let skill of inputJsonResume.skills; let i = index;">
+        <mat-form-field appearance="fill" >
+          <mat-label>Skill Category</mat-label>
+          <input matInput [(ngModel)]="skill.name" name="{{'skillName - ' + i}}">
+          <mat-hint align="start"></mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="skill-keyword">
+          <mat-label>Keyword</mat-label>
+          <input matInput [value]="getSkillKeywords(skill)" (change)="setSkillKeywords(skill, $event.target.value)" name="{{'skillKeywords - ' + i}}">
+          <mat-hint align="start">Enter keywords separated by semicolumn ';'</mat-hint>
+        </mat-form-field>
+
+        <button mat-mini-fab class="mat-fab" color="warn" (click)="removeItem(skill.keywords, kw)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+
+
+      <button
+        class="mat-raised-button add-element-btn"
+        type="button"
+        mat-raised-button
+        color="primary"
+        (click)="addNewSkill()">
+        Add Skill
+      </button>
+    </div>
+  </mat-tab>
+
   <mat-tab label="Misc" >
     <div class="tab-body">
 
@@ -236,6 +273,7 @@
     </div>
   </mat-tab>
 
+
 </mat-tab-group>
 
 
@@ -264,28 +302,7 @@
 
 
 
-<!--<div>-->
-<!--  <div>Skills:</div>-->
-<!--  <div *ngFor="let skill of inputJsonResume.skills" style="display:flex">-->
-<!--    <div >-->
-<!--      <label >Skill Category: </label>-->
-<!--      <input type="text" [(ngModel)]="skill.name">-->
-<!--      <button (click)="removeSkill(skill)">Remove Skill</button>-->
-<!--    </div>-->
-<!--    <div>-->
-<!--      <label >Skill Keywords: </label>-->
-<!--      <div *ngFor="let kw of skill.keywords; let i = index;">-->
-<!--        <div>-->
-<!--          <input  type="text" [(ngModel)]="skill.keywords[i]">-->
-<!--          <button (click)="removeItem(skill.keywords, kw)">Remove Keyword</button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <button (click)="addItem(skill.keywords, 'sample keyword')">Add New Keyword</button>-->
-<!--    </div>-->
 
-<!--  </div>-->
-<!--  <button (click)="addNewSkill()">Add Skill</button>-->
-<!--</div>-->
 
 
 

@@ -141,6 +141,22 @@ export class EditContentTabComponent implements OnInit {
     })
   }
 
+  getSkillKeywords(skill) {
+    if (skill && skill.keywords && skill.keywords.length > 0) {
+      return skill.keywords.join("; ");
+    } else {
+      return ""
+    }
+  }
+
+  setSkillKeywords(skill, keywordsStr) {
+    if (keywordsStr && keywordsStr != "") {
+      skill.keywords = keywordsStr.split(";").map(s => s.trim()).filter(s => s != "");
+    } else {
+      skill.keywords = [];
+    }
+  }
+
   addNewLanguage() {
     this.inputJsonResume.languages.push({
       "countryCode": "gb",
