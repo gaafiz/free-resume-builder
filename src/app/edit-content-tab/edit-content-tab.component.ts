@@ -162,11 +162,11 @@ export class EditContentTabComponent implements OnInit {
 
   config: any = {
       allowedContent: true,
-      toolbar: [['Bold', 'Italic', 'Underline', '-', 'BulletedList', 'NumberedList', 'Link', '-', 'CreatePlaceholder']],
+      toolbar: [['Bold', 'Italic', 'Underline', '-', 'BulletedList', 'NumberedList', 'Link', '-', 'Table', 'Image', '-', 'Source']],
       removePlugins: 'elementspath',
-      resize_enabled: false,
-      extraPlugins: 'font,divarea,placeholder',
-      contentsCss: ["body {font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;}"],
+      resize_enabled: true,
+      extraPlugins: 'font, divarea',
+      contentsCss: ["body {font-family: arial, sans-serif;}"],
       autoParagraph: false,
       enterMode: 2
     };
