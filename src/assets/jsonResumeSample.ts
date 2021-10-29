@@ -12,7 +12,7 @@ export const resume = {
     "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id enim faucibus, ornare ipsum a, porta mauris. Vivamus iaculis orci a tellus vestibulum mollis. Donec interdum libero id dictum condimentum.",
     "location": {
       "address": "my street 120",
-      "postalCode": "8888",
+      "postalCode": "",
       "city": "my city",
       "region": "",
       "countryCode": "DE"

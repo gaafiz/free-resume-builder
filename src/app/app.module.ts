@@ -6,6 +6,8 @@ import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -47,7 +49,8 @@ import { ResumeVersionComponent } from './resume-page/resume-version/resume-vers
     MatButtonModule,
     CKEditorModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -24,3 +24,21 @@ button {
   flex-grow: 8;
 }
 
+
+
+.mat-divider-with-text {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  flex: 1;
+}
+
+.text {
+  padding-left: 10px;
+  padding-right: 10px;
+}

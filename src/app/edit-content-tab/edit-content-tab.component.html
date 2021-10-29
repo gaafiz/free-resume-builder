@@ -30,35 +30,71 @@
     <div class="fields-row">
       <mat-form-field appearance="fill" >
         <mat-label>Birthday</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.birthday" name="role">
+        <input matInput [(ngModel)]="inputJsonResume.basics.birthday" name="birthday">
         <mat-hint align="start">It is a simple text field, choose the date format you prefer.</mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="fill" >
         <mat-label>Nationality</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.nationality" name="role">
+        <input matInput [(ngModel)]="inputJsonResume.basics.nationality" name="nationality">
         <mat-hint align="start">Enter Nationality and VISA, if needed. I.e. Japanese with EU working Permit</mat-hint>
       </mat-form-field>
     </div>
 
+    <div class="mat-divider-with-text">
+      <div class="line"><mat-divider></mat-divider></div>
+      <div class="text mat-typography">Contacts</div>
+      <div class="line"><mat-divider></mat-divider></div>
+    </div>
     <div class="fields-row">
       <mat-form-field appearance="fill" >
         <mat-label>Email</mat-label>
-        <input matInput type="email" [(ngModel)]="inputJsonResume.basics.email" name="role" email="true">
+        <input matInput type="email" [(ngModel)]="inputJsonResume.basics.email" name="email" email="true">
         <mat-hint align="start">Enter a valid Email</mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="fill" >
         <mat-label>Phone Number</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.phone" name="role">
+        <input matInput [(ngModel)]="inputJsonResume.basics.phone" name="phone">
         <mat-hint align="start"></mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="fill" >
         <mat-label>Personal Website</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.url" name="role">
+        <input matInput [(ngModel)]="inputJsonResume.basics.url" name="personalWebsite">
         <mat-hint align="start"></mat-hint>
       </mat-form-field>
+    </div>
+
+    <div class="mat-divider-with-text">
+      <div class="line"><mat-divider></mat-divider></div>
+      <div class="text mat-typography">Current Address</div>
+      <div class="line"><mat-divider></mat-divider></div>
+    </div>
+    <div class="fields-row">
+      <mat-form-field appearance="fill" >
+        <mat-label>Country</mat-label>
+        <input matInput [(ngModel)]="inputJsonResume.basics.location.countryCode" name="country">
+        <mat-hint align="start">Enter a Country name or abbreviation</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" >
+        <mat-label>City</mat-label>
+        <input matInput [(ngModel)]="inputJsonResume.basics.location.city" name="city">
+        <mat-hint align="start"></mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" >
+        <mat-label>Street</mat-label>
+        <input matInput [(ngModel)]="inputJsonResume.basics.location.address" name="addressStreet">
+        <mat-hint align="start"></mat-hint>
+      </mat-form-field>
+
+<!--      <mat-form-field appearance="fill" >-->
+<!--        <mat-label>Postal Code</mat-label>-->
+<!--        <input matInput [(ngModel)]="inputJsonResume.basics.location.postalCode" name="postalCode">-->
+<!--        <mat-hint align="start"></mat-hint>-->
+<!--      </mat-form-field>-->
     </div>
 
     <div>
@@ -98,46 +134,6 @@
 <!--</div>-->
 <!--<hr>-->
 
-
-
-
-
-
-<!--<div>-->
-<!--  <label>Summary: </label>-->
-<!--  <ckeditor-->
-<!--    [(ngModel)]="inputJsonResume.basics.summary"-->
-<!--    [config]="config"-->
-<!--    [readonly]="false"-->
-<!--    debounce="500">-->
-<!--  </ckeditor>-->
-<!--</div>-->
-
-<!--<div>-->
-<!--  <div>Address</div>-->
-<!--  <div style="display:flex">-->
-<!--    <div>-->
-<!--      <label for="street">Street: </label>-->
-<!--      <input type="text" id="street" [(ngModel)]="inputJsonResume.basics.location.address">-->
-<!--    </div>-->
-<!--    <div>-->
-<!--      <label for="postalCode">Postal Code: </label>-->
-<!--      <input type="text" id="postalCode" [(ngModel)]="inputJsonResume.basics.location.postalCode">-->
-<!--    </div>-->
-<!--    <div>-->
-<!--      <label for="city">City: </label>-->
-<!--      <input type="text" id="city" [(ngModel)]="inputJsonResume.basics.location.city">-->
-<!--    </div>-->
-<!--    <div>-->
-<!--      <label for="region">Region: </label>-->
-<!--      <input type="text" id="region" [(ngModel)]="inputJsonResume.basics.location.region">-->
-<!--    </div>-->
-<!--    <div>-->
-<!--      <label for="countryCode">Country: </label>-->
-<!--      <input type="text" id="countryCode" [(ngModel)]="inputJsonResume.basics.location.countryCode">-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
 
 <!--<div>-->
 <!--  <div>Profiles:</div>-->
