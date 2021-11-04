@@ -18,9 +18,9 @@ $highlight-bkg-color-neg: $elegant-dark-blue;
 
 // LAYOUT
 $a4-width: 21cm;
-$resume-page-width: $a4-width;
-$side-column-width: $resume-page-width/3;
-$main-content-width: $resume-page-width - $side-column-width;
+$a4-height: 29.6cm;
+$side-column-width: $a4-width/3;
+$main-content-width: $a4-width - $side-column-width;
 
 // Text Style
 $resume-text-size: 13px;

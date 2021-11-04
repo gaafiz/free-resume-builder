@@ -7,13 +7,14 @@
 html, body { height: 100%; }
 body {
   margin: 0;
-//   font-family: Roboto, "Helvetica Neue", sans-serif; - Roboto seems to be appearing blurry when highlighted
   -webkit-font-smoothing:antialiased;
 }
-#resume-page a {
-  color: inherit;
-  text-decoration: underline;
+
+ul {
+  margin: 0;
+  padding-left: 4ex;
 }
+
 
 @media print {
   #main-tab .mat-tab-header {
@@ -21,57 +22,8 @@ body {
   }
   @page {
     size: A4 portrait;
-    margin:0cm;
+    margin: 0cm;
     overflow: hidden !important;
   }
   ::-webkit-scrollbar {display: none;}
-}
-
-div.section-head {
-  @extend .centerize;
-  font-size: $resume-headline-size;
-  letter-spacing: $resume-headline-letter-spacing;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-#resume-page {
-    font-family: arial;
-}
-
-#resume-page-side-column div.content-section {
-  margin-bottom: 1.5em
-}
-
-#resume-page-main-column div.content-section {
-  margin-bottom: 1.5em
-}
-
-// #resume-page-main-column div.section-body {
-//   text-align: center;
-// }
-
-ul {
-  margin: 0;
-  padding-left: 4ex;
-}
-
-.light {
-  #resume-page-side-column-wrapper {
-    background-color: white !important;
-    color: black !important;
-    border-right: 1px solid $elegant-dark-blue;
-    box-sizing: border-box;
-  }
-  .personalInfo-icon, .eduItem-quickInfo, .expItem-quickInfo {
-    color: $elegant-dark-blue !important;
-  }
-  .eduItem-score, .skill-keyword {
-    background-color: #036 !important;
-    color: white !important;
-  }
-  .eduItem-info, .expItem-body, .expItem-projectSummary {
-    border-left-color: $elegant-dark-blue !important;
-  }
 }
