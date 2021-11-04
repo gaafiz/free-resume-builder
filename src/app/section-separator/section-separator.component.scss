@@ -1,0 +1,41 @@
+$line-color: #003366;
+
+.mat-divider-with-text {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1ex;
+  margin-top: 1ex;
+}
+
+.line {
+  flex: 1;
+}
+
+.text {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+mat-divider {
+  border-color: $line-color;
+}
+
+.fade mat-divider {
+  border: 0;
+  height: 1px;
+}
+
+.fade {
+  .left {
+    background-image: linear-gradient(to right, transparent, $line-color, $line-color, $line-color);
+  }
+  .right {
+    background-image: linear-gradient(to left, transparent, $line-color, $line-color, $line-color);
+  }
+  .single {
+    background-image: linear-gradient(to right, transparent, $line-color, $line-color, transparent);
+  }
+}

@@ -24,6 +24,7 @@ import { CandidateLanguagesComponent } from './resume-page/candidate-languages/c
 import { CandidateExperienceComponent } from './resume-page/candidate-experience/candidate-experience.component';
 import { CandidateEducationComponent } from './resume-page/candidate-education/candidate-education.component';
 import { ResumeVersionComponent } from './resume-page/resume-version/resume-version.component';
+import { SectionSeparatorComponent } from './section-separator/section-separator.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ResumeVersionComponent } from './resume-page/resume-version/resume-vers
     CandidateLanguagesComponent,
     CandidateExperienceComponent,
     CandidateEducationComponent,
-    ResumeVersionComponent
+    ResumeVersionComponent,
+    SectionSeparatorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+<div *ngIf="showText()" class="mat-divider-with-text {{fadeClass()}}">
+  <div class="left line"><mat-divider></mat-divider></div>
+  <div class="text mat-typography">{{text}}</div>
+  <div class="right line"><mat-divider></mat-divider></div>
+</div>
+
+<div *ngIf="!showText()" class="mat-divider-with-text {{fadeClass()}}">
+  <div class="single line"><mat-divider></mat-divider></div>
+</div>
+
+

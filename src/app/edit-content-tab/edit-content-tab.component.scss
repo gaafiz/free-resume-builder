@@ -40,22 +40,3 @@ button.mat-raised-button {
 }
 
 
-
-.mat-divider-with-text {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1ex;
-  margin-top: 1ex;
-}
-
-.line {
-  flex: 1;
-}
-
-.text {
-  padding-left: 10px;
-  padding-right: 10px;
-}

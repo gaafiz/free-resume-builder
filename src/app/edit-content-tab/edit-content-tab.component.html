@@ -41,11 +41,7 @@
       </mat-form-field>
     </div>
 
-    <div class="mat-divider-with-text">
-      <div class="line"><mat-divider></mat-divider></div>
-      <div class="text mat-typography">Contacts</div>
-      <div class="line"><mat-divider></mat-divider></div>
-    </div>
+    <app-section-separator text="Contacts"></app-section-separator>
     <div class="fields-row">
       <mat-form-field appearance="fill" >
         <mat-label>Email</mat-label>
@@ -66,11 +62,8 @@
       </mat-form-field>
     </div>
 
-    <div class="mat-divider-with-text">
-      <div class="line"><mat-divider></mat-divider></div>
-      <div class="text mat-typography">Current Address</div>
-      <div class="line"><mat-divider></mat-divider></div>
-    </div>
+    <app-section-separator text="Current Address"></app-section-separator>
+
     <div class="fields-row">
       <mat-form-field appearance="fill" >
         <mat-label>Country</mat-label>
@@ -97,11 +90,7 @@
 <!--      </mat-form-field>-->
     </div>
 
-    <div class="mat-divider-with-text">
-      <div class="line"><mat-divider></mat-divider></div>
-      <div class="text mat-typography">Summary</div>
-      <div class="line"><mat-divider></mat-divider></div>
-    </div>
+    <app-section-separator text="Summary"></app-section-separator>
     <ckeditor [(ngModel)]="inputJsonResume.basics.summary" [config]="config" [readonly]="false" debounce="500">
     </ckeditor>
 
@@ -115,12 +104,7 @@
   <mat-tab label="Languages & Profiles" >
   <div class="tab-body">
 
-    <div class="mat-divider-with-text">
-      <div class="line"><mat-divider></mat-divider></div>
-      <div class="text mat-typography">Languages</div>
-      <div class="line"><mat-divider></mat-divider></div>
-    </div>
-
+    <app-section-separator text="Languages"></app-section-separator>
     <div class="fields-row" *ngFor="let language of inputJsonResume.languages; let i = index;">
       <mat-form-field appearance="fill" >
         <mat-label>Flag Country Code</mat-label>
@@ -154,11 +138,7 @@
       Add Language
     </button>
 
-    <div class="mat-divider-with-text">
-      <div class="line"><mat-divider></mat-divider></div>
-      <div class="text mat-typography">Network Profiles</div>
-      <div class="line"><mat-divider></mat-divider></div>
-    </div>
+    <app-section-separator text="Network Profiles"></app-section-separator>
     <div class="fields-row" *ngFor="let profile of inputJsonResume.basics.profiles; let i = index;">
       <mat-form-field appearance="fill" >
         <mat-label>Network</mat-label>
@@ -196,11 +176,7 @@
 
   <mat-tab label="Skills" >
     <div class="tab-body">
-      <div class="mat-divider-with-text">
-        <div class="line"><mat-divider></mat-divider></div>
-        <div class="text mat-typography">Skills</div>
-        <div class="line"><mat-divider></mat-divider></div>
-      </div>
+      <app-section-separator text="Skills"></app-section-separator>
       <div class="fields-row" *ngFor="let skill of inputJsonResume.skills; let i = index;">
         <mat-form-field appearance="fill" >
           <mat-label>Skill Category</mat-label>
@@ -234,11 +210,7 @@
   <mat-tab label="Experiences" >
     <div class="tab-body">
       <div *ngFor="let expItem of inputJsonResume.work; let i = index;">
-        <div class="mat-divider-with-text">
-          <div class="line"><mat-divider></mat-divider></div>
-          <div class="text mat-typography">Experience {{i+1}}</div>
-          <div class="line"><mat-divider></mat-divider></div>
-        </div>
+        <app-section-separator text="Experience {{i+1}}"></app-section-separator>
 
         <div class="fields-row">
           <mat-form-field appearance="fill">
@@ -278,11 +250,7 @@
           </mat-form-field>
         </div>
 
-        <div class="mat-divider-with-text">
-          <div class="line"><mat-divider></mat-divider></div>
-          <div class="text mat-typography">Summary</div>
-          <div class="line"><mat-divider></mat-divider></div>
-        </div>
+        <app-section-separator text="Summary"></app-section-separator>
         <div class="fields-row">
           <ckeditor [(ngModel)]="expItem.summary" [config]="config" [readonly]="false" debounce="500">
           </ckeditor>
@@ -290,11 +258,7 @@
 
 
         <div *ngFor="let project of expItem.projects; let j = index;" class="normal-flow">
-          <div class="mat-divider-with-text">
-            <div class="line"><mat-divider></mat-divider></div>
-            <div class="text mat-typography">Experience {{i+1}} - Project {{j+1}}</div>
-            <div class="line"><mat-divider></mat-divider></div>
-          </div>
+          <app-section-separator text="Experience {{i+1}} - Project {{j+1}}"></app-section-separator>
           <div class="fields-row">
             <mat-form-field appearance="fill">
               <mat-label>Project Name</mat-label>
@@ -321,6 +285,10 @@
     </div>
   </mat-tab>
 
+  <mat-tab label="Education" >
+    <div class="tab-body">
+    </div></mat-tab>
+
   <mat-tab label="Misc" >
     <div class="tab-body">
 
@@ -330,11 +298,7 @@
         <mat-hint align="start">Identify the last version of your Resume</mat-hint>
       </mat-form-field>
 
-      <div class="mat-divider-with-text">
-        <div class="line"><mat-divider></mat-divider></div>
-        <div class="text mat-typography">Attachments</div>
-        <div class="line"><mat-divider></mat-divider></div>
-      </div>
+      <app-section-separator text="Attachments"></app-section-separator>
       <div class="fields-row" *ngFor="let attachment of inputJsonResume.attachments; let i = index;">
         <mat-form-field appearance="fill" >
           <mat-label>Document Name</mat-label>
