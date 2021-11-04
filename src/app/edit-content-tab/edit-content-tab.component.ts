@@ -176,6 +176,37 @@ export class EditContentTabComponent implements OnInit {
     arr.push(item);
   }
 
+  arrayChunks(inputArray, perChunk) {
+    if (inputArray == undefined) {
+      return [];
+    }
+
+    var result = inputArray.reduce((resultArray, item, index) => {
+      const chunkIndex = Math.floor(index/perChunk)
+
+      if(!resultArray[chunkIndex]) {
+        resultArray[chunkIndex] = [] // start a new chunk
+      }
+
+      resultArray[chunkIndex].push(item)
+
+      return resultArray
+    }, [])
+
+    return result;
+  }
+
+  arrayChunksIdxs(inputArray, chunkSize) {
+      if (inputArray?.length == undefined) {
+        return [];
+      }
+
+      let l = inputArray.length;
+      let rg = [...Array(l).keys()];
+      return this.arrayChunks(rg, chunkSize);
+  }
+
+
   config: any = {
       allowedContent: true,
       toolbar: [['Bold', 'Italic', 'Underline', '-', 'BulletedList', 'NumberedList', 'Link', '-', 'Table', 'Image', '-', 'Source']],
@@ -186,5 +217,13 @@ export class EditContentTabComponent implements OnInit {
       autoParagraph: false,
       enterMode: 2
     };
+
+  toString(obj) {
+    return JSON.stringify(obj);
+  }
+
+  toJson(str) {
+    return JSON.parse(str);
+  }
 
 }

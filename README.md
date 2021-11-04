@@ -33,3 +33,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - Breaking of expItem quickInfo in 2 lines when is in left column
 - If experience summary is empty don't show the div
 - add skype icon support
+- Handle labeling and Summary style on left side
+- Handle photo style on right side
