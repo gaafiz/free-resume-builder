@@ -59,4 +59,12 @@ export class EditExpItemProjectComponent implements OnInit {
         enterMode: 2,
         height: 75
       };
+
+  addNewProject() {
+      this.projects.push({
+        "name": "Project Name",
+        "summary": "A Brief Project Summary",
+      });
+      this.projectsChunks = this.arrayChunks(this.projects, 2);
+    }
 }
