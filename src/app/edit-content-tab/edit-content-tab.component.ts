@@ -177,7 +177,7 @@ export class EditContentTabComponent implements OnInit {
   }
 
   arrayChunks(inputArray, perChunk) {
-    if (inputArray == undefined) {
+    if (inputArray == undefined || inputArray.length == 0) {
       return [];
     }
 
@@ -215,7 +215,8 @@ export class EditContentTabComponent implements OnInit {
       extraPlugins: 'font, divarea',
       contentsCss: ["body {font-family: arial, sans-serif;}"],
       autoParagraph: false,
-      enterMode: 2
+      enterMode: 2,
+      height: 120
     };
 
   toString(obj) {

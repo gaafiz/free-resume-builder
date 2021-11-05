@@ -4,17 +4,17 @@
     <div class="tab-body">
 
     <div class="fields-row">
-    <mat-form-field appearance="fill">
-      <mat-label>Candidate Full Name</mat-label>
-      <input matInput [(ngModel)]="inputJsonResume.basics.name" name="fullname" required>
-      <mat-hint align="start">Full Name (Incl. middle names)</mat-hint>
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Candidate Full Name</mat-label>
+        <input matInput [(ngModel)]="inputJsonResume.basics.name" name="fullname" required>
+        <mat-hint align="start">Full Name (Incl. middle names)</mat-hint>
+      </mat-form-field>
 
-    <mat-form-field appearance="fill" >
-      <mat-label>Candidate Role</mat-label>
-      <input matInput [(ngModel)]="inputJsonResume.basics.label" name="role">
-      <mat-hint align="start">Label/Role which identify you professionally. I.e. "Graphic Designer"</mat-hint>
-    </mat-form-field>
+      <mat-form-field appearance="fill" >
+        <mat-label>Candidate Role</mat-label>
+        <input matInput [(ngModel)]="inputJsonResume.basics.label" name="role">
+        <mat-hint align="start">Label/Role which identify you professionally. I.e. "Graphic Designer"</mat-hint>
+      </mat-form-field>
     </div>
 
     <div class="fields-row">
@@ -91,14 +91,10 @@
     </div>
 
     <app-section-separator text="Summary"></app-section-separator>
-    <ckeditor [(ngModel)]="inputJsonResume.basics.summary" [config]="config" [readonly]="false" debounce="500">
-    </ckeditor>
-
-
+    <ckeditor [(ngModel)]="inputJsonResume.basics.summary" [config]="config" [readonly]="false" debounce="500"></ckeditor>
 
   </div>
   </mat-tab>
-
 
 
   <mat-tab label="Languages & Profiles" >
@@ -116,13 +112,11 @@
       <mat-form-field appearance="fill" >
         <mat-label>Language</mat-label>
         <input matInput [(ngModel)]="language.language" name="{{'language - ' + i}}">
-        <mat-hint align="start"></mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="fill" >
         <mat-label>Fluency</mat-label>
         <input matInput [(ngModel)]="language.fluency" name="{{'fluency - ' + i}}">
-        <mat-hint align="start"></mat-hint>
       </mat-form-field>
 
       <button mat-mini-fab class="mat-fab" color="warn" (click)="removeItem(inputJsonResume.languages, language)">
@@ -143,19 +137,16 @@
       <mat-form-field appearance="fill" >
         <mat-label>Network</mat-label>
         <input matInput [(ngModel)]="profile.network" name="{{'profileNetwork - ' + i}}">
-        <mat-hint align="start"></mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="fill" >
         <mat-label>Username</mat-label>
         <input matInput [(ngModel)]="profile.username" name="{{'profileUsername - ' + i}}">
-        <mat-hint align="start"></mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="fill" >
         <mat-label>Profile Link</mat-label>
         <input matInput [(ngModel)]="profile.url" name="{{'profileUrl - ' + i}}">
-        <mat-hint align="start"></mat-hint>
       </mat-form-field>
 
       <button mat-mini-fab class="mat-fab" color="warn" (click)="removeProfile(profile)">
@@ -174,6 +165,7 @@
   </div>
   </mat-tab>
 
+
   <mat-tab label="Skills" >
     <div class="tab-body">
       <app-section-separator text="Skills"></app-section-separator>
@@ -181,7 +173,6 @@
         <mat-form-field appearance="fill" >
           <mat-label>Skill Category</mat-label>
           <input matInput [(ngModel)]="skill.name" name="{{'skillName - ' + i}}">
-          <mat-hint align="start"></mat-hint>
         </mat-form-field>
 
         <mat-form-field appearance="fill" class="skill-keyword">
@@ -207,87 +198,62 @@
     </div>
   </mat-tab>
 
+
   <mat-tab label="Experiences" >
     <div class="tab-body">
-      <div *ngFor="let expItem of inputJsonResume.work; let i = index;">
-        <app-section-separator text="Experience {{i+1}}"></app-section-separator>
+      <div *ngFor="let expItem of inputJsonResume.work; let expIdx = index;">
+        <app-section-separator text="Experience {{expIdx+1}}"></app-section-separator>
 
         <div class="fields-row">
           <mat-form-field appearance="fill">
             <mat-label>Company</mat-label>
-            <input matInput [(ngModel)]="expItem.company" name="{{'expItemCompany - ' + i}}" required>
-            <mat-hint align="start"></mat-hint>
+            <input matInput [(ngModel)]="expItem.company" name="{{'expItemCompany - ' + expIdx}}" required>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Company Address</mat-label>
-            <input matInput [(ngModel)]="expItem.address" name="{{'expItemAddress - ' + i}}">
-            <mat-hint align="start"></mat-hint>
+            <input matInput [(ngModel)]="expItem.address" name="{{'expItemAddress - ' + expIdx}}">
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Company Website</mat-label>
-            <input matInput [(ngModel)]="expItem.website" name="{{'expItemWebsite- ' + i}}">
-            <mat-hint align="start"></mat-hint>
+            <input matInput [(ngModel)]="expItem.website" name="{{'expItemWebsite- ' + expIdx}}">
           </mat-form-field>
         </div>
 
         <div class="fields-row">
           <mat-form-field appearance="fill">
             <mat-label>Job Position</mat-label>
-            <input matInput [(ngModel)]="expItem.position" name="{{'expItemPosition - ' + i}}" required>
-            <mat-hint align="start"></mat-hint>
+            <input matInput [(ngModel)]="expItem.position" name="{{'expItemPosition - ' + expIdx}}" required>
           </mat-form-field>
 
           <mat-form-field appearance="fill">
             <mat-label>Start Date</mat-label>
-            <input matInput [(ngModel)]="expItem.startDate" name="{{'expItemStartDate - ' + i}}" required>
-            <mat-hint align="start"></mat-hint>
+            <input matInput [(ngModel)]="expItem.startDate" name="{{'expItemStartDate - ' + expIdx}}" required>
           </mat-form-field>
 
           <mat-form-field appearance="fill">
             <mat-label>End Date</mat-label>
-            <input matInput [(ngModel)]="expItem.endDate" name="{{'expItemEndDate - ' + i}}">
+            <input matInput [(ngModel)]="expItem.endDate" name="{{'expItemEndDate - ' + expIdx}}">
             <mat-hint align="start">If empty, 'Present' is assumed</mat-hint>
           </mat-form-field>
         </div>
 
+        <app-edit-exp-item-project [(projects)]="expItem.projects"></app-edit-exp-item-project>
+
         <app-section-separator text="Summary"></app-section-separator>
         <div class="fields-row">
-          <ckeditor [(ngModel)]="expItem.summary" [config]="config" [readonly]="false" debounce="500">
-          </ckeditor>
+          <ckeditor [(ngModel)]="expItem.summary" [config]="config" [readonly]="false" debounce="500"></ckeditor>
         </div>
 
-
-        <div *ngFor="let project of expItem.projects; let j = index;" class="normal-flow">
-          <app-section-separator text="Experience {{i+1}} - Project {{j+1}}"></app-section-separator>
-          <div class="fields-row">
-            <mat-form-field appearance="fill">
-              <mat-label>Project Name</mat-label>
-              <input matInput [(ngModel)]="project.name" name="{{'projName - ' + i + ' - ' + j}}" required>
-              <mat-hint align="start"></mat-hint>
-            </mat-form-field>
-          </div>
-
-          <div class="fields-row">
-          <ckeditor [(ngModel)]="project.summary" [config]="config" [readonly]="false" debounce="500">
-          </ckeditor>
-          </div>
-          <button
-            class="mat-raised-button add-element-btn"
-            type="button"
-            mat-raised-button
-            color="warn"
-            (click)="removeItem(expItem.projects, project) ">
-            Remove Project
-          </button>
-        </div>
 
       </div>
     </div>
   </mat-tab>
 
+
   <mat-tab label="Education" >
     <div class="tab-body">
     </div></mat-tab>
+
 
   <mat-tab label="Misc" >
     <div class="tab-body">
