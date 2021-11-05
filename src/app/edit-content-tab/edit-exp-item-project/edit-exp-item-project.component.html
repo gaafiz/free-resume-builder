@@ -1,0 +1,27 @@
+<app-section-separator text="Projects"></app-section-separator>
+<div class="fields-row" *ngFor="let projectChunk of projectsChunks">
+
+  <div *ngFor="let project of projectChunk" class="normal-flow">
+
+    <div class="fields-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Project Name</mat-label>
+        <input matInput [(ngModel)]="project.name" name="projName">
+      </mat-form-field>
+    </div>
+
+    <div class="fields-row">
+      <ckeditor [(ngModel)]="project.summary" [config]="config" [readonly]="false" debounce="500"></ckeditor>
+    </div>
+
+    <button
+      class="mat-raised-button add-element-btn"
+      type="button"
+      mat-raised-button
+      color="warn"
+      (click)="removeProject(project)">
+      Remove Project
+    </button>
+  </div>
+
+</div>
