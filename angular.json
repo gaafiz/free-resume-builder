@@ -35,7 +35,9 @@
               "src/fontawesome/css/all.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/common.js"
+            ]
           },
           "configurations": {
             "production": {
