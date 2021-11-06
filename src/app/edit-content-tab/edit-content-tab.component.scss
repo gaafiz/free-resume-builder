@@ -1,23 +1,9 @@
-.tab-body, .normal-flow {
+.normal-flow {
   display: flex;
   width: 21cm;
   flex-direction: column;
-  gap: 1ex 0;
+  gap: 1.5ex 0;
   padding-top: 2ex;
-}
-
-.fields-row > button.mat-raised-button {
-    height: 3.5em;
-}
-
-.fields-row button.mat-fab {
-    flex-grow: unset !important;
-    margin-top: 0.8ex;
-}
-
-.add-element-btn {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .fields-row {
@@ -25,18 +11,31 @@
   display: flex;
   flex-direction: row;
   gap: 0 1ex;
+
+  > * {
+    flex-grow: 1;
+  }
+
+  > mat-form-field.field-photo {
+    flex-grow: 8;
+  }
+
+  > mat-form-field.skill-keyword {
+    flex-grow: 3;
+  }
+
+  > button.mat-raised-button {
+      height: 3.5em;
+  }
+  > button.mat-fab {
+      flex-grow: unset !important;
+      margin-top: 0.8ex;
+  }
 }
 
-.fields-row > * {
-  flex-grow: 1;
-}
 
-.fields-row > mat-form-field.field-photo {
-  flex-grow: 8;
+.mat-raised-button {
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.fields-row > mat-form-field.skill-keyword {
-  flex-grow: 3;
-}
-
 

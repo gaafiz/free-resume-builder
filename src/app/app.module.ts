@@ -26,6 +26,7 @@ import { CandidateEducationComponent } from './resume-page/candidate-education/c
 import { ResumeVersionComponent } from './resume-page/resume-version/resume-version.component';
 import { SectionSeparatorComponent } from './section-separator/section-separator.component';
 import { EditExpItemProjectComponent } from './edit-content-tab/edit-exp-item-project/edit-exp-item-project.component';
+import { EditBasicInfoComponent } from './edit-content-tab/edit-basic-info/edit-basic-info.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { EditExpItemProjectComponent } from './edit-content-tab/edit-exp-item-pr
     CandidateEducationComponent,
     ResumeVersionComponent,
     SectionSeparatorComponent,
-    EditExpItemProjectComponent
+    EditExpItemProjectComponent,
+    EditBasicInfoComponent
   ],
   imports: [
     BrowserModule,

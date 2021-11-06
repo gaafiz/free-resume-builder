@@ -1,104 +1,12 @@
 <mat-tab-group id="edit-content-tab" mat-align-tabs="center" dynamicHeight="true" class="centerize">
 
-  <mat-tab label="Basics" >
-    <div class="tab-body">
-
-    <div class="fields-row">
-      <mat-form-field appearance="fill">
-        <mat-label>Candidate Full Name</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.name" name="fullname" required>
-        <mat-hint align="start">Full Name (Incl. middle names)</mat-hint>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" >
-        <mat-label>Candidate Role</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.label" name="role">
-        <mat-hint align="start">Label/Role which identify you professionally. I.e. "Graphic Designer"</mat-hint>
-      </mat-form-field>
-    </div>
-
-    <div class="fields-row">
-      <mat-form-field appearance="fill" class="field-photo">
-        <mat-label>Photo</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.image" name="photo">
-        <mat-hint align="start">Enter an image link or upload a local picture</mat-hint>
-      </mat-form-field>
-      <input hidden type="file" #imgFileInput (change)="uploadPicture($event)"/>
-      <button class="mat-raised-button" type="button" mat-raised-button color="primary" (click)="imgFileInput.click()">Upload Picture</button>
-    </div>
-
-    <div class="fields-row">
-      <mat-form-field appearance="fill" >
-        <mat-label>Birthday</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.birthday" name="birthday">
-        <mat-hint align="start">It is a simple text field, choose the date format you prefer.</mat-hint>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" >
-        <mat-label>Nationality</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.nationality" name="nationality">
-        <mat-hint align="start">Enter Nationality and VISA, if needed. I.e. Japanese with EU working Permit</mat-hint>
-      </mat-form-field>
-    </div>
-
-    <app-section-separator text="Contacts"></app-section-separator>
-    <div class="fields-row">
-      <mat-form-field appearance="fill" >
-        <mat-label>Email</mat-label>
-        <input matInput type="email" [(ngModel)]="inputJsonResume.basics.email" name="email" email="true">
-        <mat-hint align="start">Enter a valid Email</mat-hint>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" >
-        <mat-label>Phone Number</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.phone" name="phone">
-        <mat-hint align="start"></mat-hint>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" >
-        <mat-label>Personal Website</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.url" name="personalWebsite">
-        <mat-hint align="start"></mat-hint>
-      </mat-form-field>
-    </div>
-
-    <app-section-separator text="Current Address"></app-section-separator>
-
-    <div class="fields-row">
-      <mat-form-field appearance="fill" >
-        <mat-label>Country</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.location.countryCode" name="country">
-        <mat-hint align="start">Enter a Country name or abbreviation</mat-hint>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" >
-        <mat-label>City</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.location.city" name="city">
-        <mat-hint align="start"></mat-hint>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" >
-        <mat-label>Street</mat-label>
-        <input matInput [(ngModel)]="inputJsonResume.basics.location.address" name="addressStreet">
-        <mat-hint align="start"></mat-hint>
-      </mat-form-field>
-
-<!--      <mat-form-field appearance="fill" >-->
-<!--        <mat-label>Postal Code</mat-label>-->
-<!--        <input matInput [(ngModel)]="inputJsonResume.basics.location.postalCode" name="postalCode">-->
-<!--        <mat-hint align="start"></mat-hint>-->
-<!--      </mat-form-field>-->
-    </div>
-
-    <app-section-separator text="Summary"></app-section-separator>
-    <ckeditor [(ngModel)]="inputJsonResume.basics.summary" [config]="config" [readonly]="false" debounce="500"></ckeditor>
-
-  </div>
+  <mat-tab label="Basics">
+      <app-edit-basic-info class="normal-flow " [(inputJsonResume)]="inputJsonResume"></app-edit-basic-info>
   </mat-tab>
 
 
   <mat-tab label="Languages & Profiles" >
-  <div class="tab-body">
+  <div class="normal-flow">
 
     <app-section-separator text="Languages"></app-section-separator>
     <div class="fields-row" *ngFor="let language of inputJsonResume.languages; let i = index;">
@@ -124,7 +32,7 @@
       </button>
     </div>
     <button
-      class="mat-raised-button add-element-btn"
+      class="mat-raised-button"
       type="button"
       mat-raised-button
       color="primary"
@@ -154,7 +62,7 @@
       </button>
     </div>
     <button
-      class="mat-raised-button add-element-btn"
+      class="mat-raised-button"
       type="button"
       mat-raised-button
       color="primary"
@@ -167,7 +75,7 @@
 
 
   <mat-tab label="Skills" >
-    <div class="tab-body">
+    <div class="normal-flow">
       <app-section-separator text="Skills"></app-section-separator>
       <div class="fields-row" *ngFor="let skill of inputJsonResume.skills; let i = index;">
         <mat-form-field appearance="fill" >
@@ -188,7 +96,7 @@
 
 
       <button
-        class="mat-raised-button add-element-btn"
+        class="mat-raised-button"
         type="button"
         mat-raised-button
         color="primary"
@@ -200,7 +108,7 @@
 
 
   <mat-tab label="Experiences" >
-    <div class="tab-body">
+    <div class="normal-flow">
       <div *ngFor="let expItem of inputJsonResume.work; let expIdx = index;">
         <app-section-separator text="Experience {{expIdx+1}}"></app-section-separator>
 
@@ -251,12 +159,12 @@
 
 
   <mat-tab label="Education" >
-    <div class="tab-body">
+    <div class="normal-flow">
     </div></mat-tab>
 
 
   <mat-tab label="Misc" >
-    <div class="tab-body">
+    <div class="normal-flow">
 
       <mat-form-field appearance="fill">
         <mat-label>Resume Version</mat-label>
@@ -283,7 +191,7 @@
         </button>
       </div>
       <button
-        class="mat-raised-button add-element-btn"
+        class="mat-raised-button"
         type="button"
         mat-raised-button
         color="primary"
