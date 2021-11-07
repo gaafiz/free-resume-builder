@@ -1,4 +1,5 @@
 
+<app-section-separator text="Personal Details"></app-section-separator>
 <!-- NAME & Professional Role -->
 <div class="fields-row">
   <mat-form-field appearance="fill">
@@ -22,7 +23,7 @@
     <mat-hint align="start">Enter an image link or upload a local picture</mat-hint>
   </mat-form-field>
   <input hidden type="file" accept="image/*" #imgFileInput (change)="uploadPicture($event)"/>
-  <button class="mat-raised-button" type="button" mat-raised-button color="primary" (click)="imgFileInput.click()">Upload Picture</button>
+  <button mat-raised-button color="primary" (click)="imgFileInput.click()">Upload Picture</button>
 </div>
 
 

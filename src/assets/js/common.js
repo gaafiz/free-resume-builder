@@ -21,6 +21,41 @@ let _commonJs = {
     height: 120
   },
 
+  removeItem(arr, item) {
+    let idx = arr.indexOf(item)
+    if (idx !== -1) {
+      arr.splice(idx, 1);
+    }
+  },
+
+  arrayChunks(inputArray, perChunk) {
+    if (inputArray == undefined || inputArray.length == 0) {
+      return [];
+    }
+
+    var result = inputArray.reduce((resultArray, item, index) => {
+      const chunkIndex = Math.floor(index/perChunk)
+
+      if(!resultArray[chunkIndex]) {
+        resultArray[chunkIndex] = [] // start a new chunk
+      }
+
+      resultArray[chunkIndex].push(item)
+
+      return resultArray
+    }, [])
+
+    return result;
+  },
+
+  clone(obj) {
+    return JSON.parse(JSON.stringify(obj));
+  },
+
+  extendObj(obj, ext) {
+    return Object.assign(this.clone(obj), ext);
+  },
+
 }
 
 

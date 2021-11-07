@@ -9,7 +9,7 @@ import  'src/assets/js/common';
 })
 export class EditBasicInfoComponent implements OnInit {
   @Input() inputJsonResume: any;
-  commonJs = _commonJs
+  commonJs = _commonJs;
 
 
   constructor() { }

@@ -6,7 +6,7 @@ $line-color: #003366;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1ex;
+  margin-bottom: 2ex;
   margin-top: 2ex;
 }
 
@@ -17,6 +17,8 @@ $line-color: #003366;
 .text {
   padding-left: 10px;
   padding-right: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 mat-divider {

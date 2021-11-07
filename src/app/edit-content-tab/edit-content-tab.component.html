@@ -27,18 +27,9 @@
         <input matInput [(ngModel)]="language.fluency" name="{{'fluency - ' + i}}">
       </mat-form-field>
 
-      <button mat-mini-fab class="mat-fab" color="warn" (click)="removeItem(inputJsonResume.languages, language)">
-        <mat-icon>delete</mat-icon>
-      </button>
+      <button mat-mini-fab class="mat-fab" color="warn" (click)="commonJs.removeItem(inputJsonResume.languages, language)"><mat-icon>delete</mat-icon></button>
     </div>
-    <button
-      class="mat-raised-button"
-      type="button"
-      mat-raised-button
-      color="primary"
-      (click)="addNewLanguage()">
-      Add Language
-    </button>
+    <button mat-raised-button color="primary" (click)="addNewLanguage()">Add Language</button>
 
     <app-section-separator text="Network Profiles"></app-section-separator>
     <div class="fields-row" *ngFor="let profile of inputJsonResume.basics.profiles; let i = index;">
@@ -61,14 +52,7 @@
         <mat-icon>delete</mat-icon>
       </button>
     </div>
-    <button
-      class="mat-raised-button"
-      type="button"
-      mat-raised-button
-      color="primary"
-      (click)="addNewProfile()">
-        Add Network Profile
-    </button>
+    <button mat-raised-button color="primary" (click)="addNewProfile()">Add Network Profile</button>
 
   </div>
   </mat-tab>
@@ -89,72 +73,18 @@
           <mat-hint align="start">Enter keywords separated by semicolumn ';'</mat-hint>
         </mat-form-field>
 
-        <button mat-mini-fab class="mat-fab" color="warn" (click)="removeItem(skill.keywords, kw)">
+        <button mat-mini-fab class="mat-fab" color="warn" (click)="commonJs.removeItem(inputJsonResume.skills, skill)">
           <mat-icon>delete</mat-icon>
         </button>
       </div>
 
-
-      <button
-        class="mat-raised-button"
-        type="button"
-        mat-raised-button
-        color="primary"
-        (click)="addNewSkill()">
-        Add Skill
-      </button>
+      <button mat-raised-button color="primary" (click)="addNewSkill()">Add Skill</button>
     </div>
   </mat-tab>
 
 
   <mat-tab label="Experiences" >
-    <div class="normal-flow">
-      <div *ngFor="let expItem of inputJsonResume.work; let expIdx = index;">
-        <app-section-separator text="Experience {{expIdx+1}}"></app-section-separator>
-
-        <div class="fields-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Company</mat-label>
-            <input matInput [(ngModel)]="expItem.company" name="{{'expItemCompany - ' + expIdx}}" required>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>Company Address</mat-label>
-            <input matInput [(ngModel)]="expItem.address" name="{{'expItemAddress - ' + expIdx}}">
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>Company Website</mat-label>
-            <input matInput [(ngModel)]="expItem.website" name="{{'expItemWebsite- ' + expIdx}}">
-          </mat-form-field>
-        </div>
-
-        <div class="fields-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Job Position</mat-label>
-            <input matInput [(ngModel)]="expItem.position" name="{{'expItemPosition - ' + expIdx}}" required>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Start Date</mat-label>
-            <input matInput [(ngModel)]="expItem.startDate" name="{{'expItemStartDate - ' + expIdx}}" required>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>End Date</mat-label>
-            <input matInput [(ngModel)]="expItem.endDate" name="{{'expItemEndDate - ' + expIdx}}">
-            <mat-hint align="start">If empty, 'Present' is assumed</mat-hint>
-          </mat-form-field>
-        </div>
-
-        <app-edit-exp-item-project [(projects)]="expItem.projects"></app-edit-exp-item-project>
-
-        <app-section-separator text="Summary"></app-section-separator>
-        <div class="fields-row">
-          <ckeditor [(ngModel)]="expItem.summary" [config]="config" [readonly]="false" debounce="500"></ckeditor>
-        </div>
-
-
-      </div>
-    </div>
+    <app-edit-experience-info class="normal-flow" [(inputJsonResume)]="inputJsonResume"></app-edit-experience-info>
   </mat-tab>
 
 

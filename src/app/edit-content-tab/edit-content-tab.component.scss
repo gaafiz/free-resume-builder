@@ -1,9 +1,26 @@
-.normal-flow {
-  display: flex;
+::ng-deep .mat-tab-body{
+  margin-top: 2ex;
   width: 21cm;
+}
+
+::ng-deep .normal-flow {
+  display: flex;
   flex-direction: column;
   gap: 1.5ex 0;
-  padding-top: 2ex;
+  width: 100%;
+
+  > app-section-separator .mat-divider-with-text {
+    margin-top: 0.25ex;
+    margin-bottom: 0.25ex;
+  }
+}
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1ex;
+  grid-row-gap: 1ex;
+  width: 100%;
 }
 
 .fields-row {
@@ -33,9 +50,14 @@
   }
 }
 
-
 .mat-raised-button {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1.5ex;
 }
 
+
+
+mat-expansion-panel-header {
+  background-color: lightgray;
+}

@@ -97,6 +97,10 @@ export const resume = {
             {
               "name": "Project 2",
               "summary": "Morbi vitae sagittis massa. Morbi tristique euismod turpis vitae consequat. Sed vitae nisi ornare, consequat augue ac, euismod mauris. Aliquam eu porta mauris. Fusce molestie condimentum tempor. Fusce id aliquam velit. Donec rhoncus maximus ipsum eu commodo. Curabitur imperdiet euismod dignissim. Cras sit amet vestibulum velit, sed condimentum nunc. In mollis nec sem non luctus."
+            },
+            {
+              "name": "Project 3",
+              "summary": "Morbi vitae sagittis massa. Morbi tristique euismod turpis vitae consequat. Sed vitae nisi ornare, consequat augue ac, euismod mauris. Aliquam eu porta mauris. Fusce molestie condimentum tempor. Fusce id aliquam velit. Donec rhoncus maximus ipsum eu commodo. Curabitur imperdiet euismod dignissim. Cras sit amet vestibulum velit, sed condimentum nunc. In mollis nec sem non luctus."
             }
           ]
       },

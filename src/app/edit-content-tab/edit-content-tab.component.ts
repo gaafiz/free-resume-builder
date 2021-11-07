@@ -3,6 +3,7 @@ import { EventEmitter, Output } from '@angular/core';
 import { Input } from '@angular/core';
 import { CKEditorComponent } from 'ng2-ckeditor';
 import {FormControl, Validators} from '@angular/forms';
+import 'src/assets/js/common';
 
 @Component({
   selector: 'app-edit-content-tab',
@@ -15,6 +16,7 @@ export class EditContentTabComponent implements OnInit {
   @Output() public userJsonResumeChanged = new EventEmitter<any>();
   @Output() public userTemplateConfChanged = new EventEmitter<any>();
   @ViewChild('ckeditor') ckeditor: CKEditorComponent;
+  commonJs = _commonJs
 
   emailFormControl = new FormControl('', [Validators.email]);
 
@@ -147,13 +149,6 @@ export class EditContentTabComponent implements OnInit {
       "language": "English",
       "fluency": "Working Proficiency",
     })
-  }
-
-  removeItem(arr, item) {
-    let idx = arr.indexOf(item)
-    if (idx !== -1) {
-      arr.splice(idx, 1);
-    }
   }
 
   addItem(arr, item) {

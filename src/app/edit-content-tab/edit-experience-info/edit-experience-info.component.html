@@ -1,0 +1,77 @@
+
+<mat-expansion-panel *ngFor="let expItem of inputJsonResume.work; let expIdx = index;" [expanded]="expItemExpandend === expIdx" (opened)="expItemExpandend = expIdx">
+  <mat-expansion-panel-header color="primary">
+    <mat-panel-title> Experience {{expIdx+1}} - {{expItem.position}} at {{expItem.company}} </mat-panel-title>
+    <mat-panel-description> Expand to edit </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <app-section-separator text="Company and Job Details"></app-section-separator>
+
+  <!--  Company Details: Name, Address and Website-->
+  <div class="fields-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Company</mat-label>
+      <input matInput [(ngModel)]="expItem.company" name="expItemCompany" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Company Address</mat-label>
+      <input matInput [(ngModel)]="expItem.address" name="expItemAddress">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Company Website</mat-label>
+      <input matInput [(ngModel)]="expItem.website" name="expItemWebsite">
+    </mat-form-field>
+  </div>
+
+  <!--  Job Details: Position, Start Date, End Date -->
+  <div class="fields-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Job Position</mat-label>
+      <input matInput [(ngModel)]="expItem.position" name="expItemPosition" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Start Date</mat-label>
+      <input matInput [(ngModel)]="expItem.startDate" name="expItemStartDate" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>End Date</mat-label>
+      <input matInput [(ngModel)]="expItem.endDate" name="expItemEndDate">
+      <mat-hint align="start">If empty, 'Present' is assumed</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <!--  Experience Projects -->
+  <app-section-separator text="Projects"></app-section-separator>
+  <div class="grid-2-col" >
+    <div *ngFor="let project of expItem.projects" class="normal-flow">
+      <mat-form-field appearance="fill">
+        <mat-label>Project Name</mat-label>
+        <input matInput [(ngModel)]="project.name" name="projName">
+      </mat-form-field>
+      <ckeditor [(ngModel)]="project.summary" [config]="ckEditorProjectFieldConfig" [readonly]="false" debounce="500"></ckeditor>
+      <button mat-raised-button color="warn" (click)="removeProject(expItem, project)"> Remove Project </button>
+    </div>
+  </div>
+  <div class="normal-flow">
+    <button mat-raised-button color="primary" (click)="addNewProject(expItem)"> Add new Project </button>
+  </div>
+
+  <!-- Summary -->
+  <app-section-separator text="Summary"></app-section-separator>
+  <ckeditor [(ngModel)]="expItem.summary" [config]="commonJs.ckEditorDefaultConfig" [readonly]="false" debounce="500"></ckeditor>
+
+  <!-- Actions on Experience: Collapse, delete, move !-->
+  <mat-action-row>
+    <button mat-button color="warn" (click)="commonJs.removeItem(inputJsonResume.work, expItem)">Remove Experience</button>
+    <button mat-button color="primary" (click)="expItemExpandend = -1">Collapse</button>
+    <button mat-button color="primary" (click)="moveExpToTop(expItem)" [disabled]="expIdx == 0">Move to Top<mat-icon>arrow_upward</mat-icon></button>
+<!--    <button mat-mini-fab class="mat-fab" color="primary" ><mat-icon>arrow_downward</mat-icon></button>-->
+  </mat-action-row>
+</mat-expansion-panel>
+
+
+<div class="fields-row">
+  <button mat-raised-button color="primary" (click)="addNewExperience()" > Add new Work Experience </button>
+</div>

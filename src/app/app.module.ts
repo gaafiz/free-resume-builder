@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
@@ -25,8 +26,8 @@ import { CandidateExperienceComponent } from './resume-page/candidate-experience
 import { CandidateEducationComponent } from './resume-page/candidate-education/candidate-education.component';
 import { ResumeVersionComponent } from './resume-page/resume-version/resume-version.component';
 import { SectionSeparatorComponent } from './section-separator/section-separator.component';
-import { EditExpItemProjectComponent } from './edit-content-tab/edit-exp-item-project/edit-exp-item-project.component';
 import { EditBasicInfoComponent } from './edit-content-tab/edit-basic-info/edit-basic-info.component';
+import { EditExperienceInfoComponent } from './edit-content-tab/edit-experience-info/edit-experience-info.component';
 
 @NgModule({
   declarations: [
@@ -43,8 +44,8 @@ import { EditBasicInfoComponent } from './edit-content-tab/edit-basic-info/edit-
     CandidateEducationComponent,
     ResumeVersionComponent,
     SectionSeparatorComponent,
-    EditExpItemProjectComponent,
-    EditBasicInfoComponent
+    EditBasicInfoComponent,
+    EditExperienceInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +59,8 @@ import { EditBasicInfoComponent } from './edit-content-tab/edit-basic-info/edit-
     FormsModule,
     ReactiveFormsModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
