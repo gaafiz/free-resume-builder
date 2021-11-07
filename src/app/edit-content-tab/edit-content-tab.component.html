@@ -120,14 +120,21 @@
           <mat-icon>delete</mat-icon>
         </button>
       </div>
-      <button
-        class="mat-raised-button"
-        type="button"
-        mat-raised-button
-        color="primary"
-        (click)="addNewAttachment()">
-        Add Attachment
-      </button>
+      <button mat-raised-button color="primary" (click)="addNewAttachment()"> Add Attachment </button>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Save/Load" >
+    <div class="normal-flow">
+      <app-section-separator text="Resume Content"></app-section-separator>
+      <p>
+        By Saving the content in a file, you may load it back whenever you want, and continue from where you left your editing.
+      </p>
+      <input style="display: none" type="file" (change)="onContentFileChanged($event)" #contentFileInput>
+      <div class="fields-row">
+        <button mat-raised-button color="accent" (click)="contentFileInput.click()"> Load From File </button>
+        <button mat-raised-button color="primary" (click)="downloadJsonResumeContent()"> Save in a File </button>
+      </div>
     </div>
   </mat-tab>
 
@@ -135,17 +142,6 @@
 </mat-tab-group>
 
 
-
-
-<!--<div>-->
-<!--  <span><b>Resume Content </b></span>-->
-<!--  <input-->
-<!--    style="display: none"-->
-<!--    type="file" (change)="onContentFileChanged($event)"-->
-<!--    #contentFileInput>-->
-<!--  <button (click)="contentFileInput.click()">Load</button>-->
-<!--  <button (click)="downloadJsonResumeContent()">Save</button>-->
-<!--</div>-->
 
 <!--<div>-->
 <!--  <span><b>Resume Template Configuration </b></span>-->

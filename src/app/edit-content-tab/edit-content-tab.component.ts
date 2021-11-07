@@ -77,7 +77,8 @@ export class EditContentTabComponent implements OnInit {
 
   downloadJsonResumeContent() {
     let resume = this.inputJsonResume;
-    this.downloadObjectAsJson(resume, "jsonResumeContent");
+    let name = _commonJs.camelizeString(this.inputJsonResume.basics.name);
+    this.downloadObjectAsJson(resume, name + "_resumeContent");
   }
 
   downloadTemplateConfig() {
