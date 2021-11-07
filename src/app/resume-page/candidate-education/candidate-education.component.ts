@@ -48,11 +48,26 @@ export class CandidateEducationComponent implements OnInit {
         if (this.nonEmpty(eduItem.url)) {
           institution = institution + ' | ' + eduItem.url;
         }
-        var addressAndPeriod = eduItem.startDate + ' - ' + (eduItem.endDate || 'Present');
-        if (this.nonEmpty(eduItem.address)) {
-          addressAndPeriod = eduItem.address + " | " + addressAndPeriod;
+        var period = "";
+        if (eduItem.startDate && eduItem.startDate != "") {
+          period = eduItem.startDate + ' - ' + (eduItem.endDate || 'Present');
         }
-        let head = institution + ' | ' + addressAndPeriod;
+        var address = "";
+        if (this.nonEmpty(eduItem.address)) {
+          address = eduItem.address;
+        }
+
+        var addressAndPeriod = "";
+        var addressAndPeriodSeparator = "";
+        if (address != "" && period != "") {
+          addressAndPeriodSeparator = " | ";
+        }
+        addressAndPeriod = address + addressAndPeriodSeparator + period
+        let middleSeparator = "";
+        if (institution != "" && addressAndPeriod != "") {
+          middleSeparator = " | "
+        }
+        let head = institution + middleSeparator + addressAndPeriod;
 
         let score = eduItem.score;
         let info = eduItem.info;

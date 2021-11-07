@@ -1,0 +1,71 @@
+<mat-expansion-panel *ngFor="let eduItem of inputJsonResume.education; let eduIdx = index;" [expanded]="itemExpandend === eduIdx" (opened)="itemExpandend = eduIdx">
+  <mat-expansion-panel-header color="primary">
+    <mat-panel-title> Education {{eduIdx+1}} - {{eduItem.studyType}}: {{eduItem.area}} </mat-panel-title>
+    <mat-panel-description> Expand to edit </mat-panel-description>
+  </mat-expansion-panel-header>
+
+
+  <app-section-separator text="Study Info"></app-section-separator>
+  <div class="fields-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Study Type</mat-label>
+      <input matInput [(ngModel)]="eduItem.studyType" name="studyType" required>
+      <mat-hint align="start">I.e. "Master Degree" or "Formative Course"</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Area of Study</mat-label>
+      <input matInput [(ngModel)]="eduItem.area" name="area" required>
+      <mat-hint align="start">I.e. "Computer Science" or "Cooking Fundamentals"</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="fields-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Start Date</mat-label>
+      <input matInput [(ngModel)]="eduItem.startDate" name="startDate" >
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>End Date</mat-label>
+      <input matInput [(ngModel)]="eduItem.endDate" name="endDate" >
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Score</mat-label>
+      <input matInput [(ngModel)]="eduItem.score" name="score" >
+      <mat-hint align="start">GPA or other score, if applicable</mat-hint>
+    </mat-form-field>
+  </div>
+
+
+  <app-section-separator text="Institution Details"></app-section-separator>
+  <div class="fields-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Institution Name</mat-label>
+      <input matInput [(ngModel)]="eduItem.institution" name="institution" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Institution Address</mat-label>
+      <input matInput [(ngModel)]="eduItem.address" name="address">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Institution Website</mat-label>
+      <input matInput [(ngModel)]="eduItem.url" name="url">
+    </mat-form-field>
+  </div>
+
+  <app-section-separator text="Summary or additional info"></app-section-separator>
+  <ckeditor [(ngModel)]="eduItem.info" [config]="commonJs.ckEditorDefaultConfig" [readonly]="false" debounce="500"></ckeditor>
+
+
+  <!-- Actions on Educations: Collapse, delete, move !-->
+  <mat-action-row>
+    <button mat-button color="warn" (click)="commonJs.removeItem(inputJsonResume.education, eduItem)">Remove Education</button>
+    <button mat-button color="primary" (click)="itemExpandend = -1">Collapse</button>
+    <button mat-button color="primary" (click)="moveEduToTop(eduItem)" [disabled]="eduIdx == 0">Move to Top<mat-icon>arrow_upward</mat-icon></button>
+    <!--    <button mat-mini-fab class="mat-fab" color="primary" ><mat-icon>arrow_downward</mat-icon></button>-->
+  </mat-action-row>
+</mat-expansion-panel>
+
+
+<div class="fields-row">
+  <button mat-raised-button color="primary" (click)="addNewEducation()" > Add new Education </button>
+</div>
