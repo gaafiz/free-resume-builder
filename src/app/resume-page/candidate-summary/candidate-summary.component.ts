@@ -9,6 +9,7 @@ import { Input } from '@angular/core';
 export class CandidateSummaryComponent implements OnInit {
   @Input() jsonResume: any;
   @Input() templateConf: any;
+ @Input() side: any;
 
   constructor() { }
 

@@ -4,7 +4,7 @@
     <div *ngFor='let section of leftSections()'>
       <app-candidate-photo *ngIf="section == 'photo'" [jsonResume]=jsonResume></app-candidate-photo>
       <app-candidate-labeling *ngIf="section == 'labeling'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-labeling>
-      <app-candidate-summary *ngIf="section == 'summary'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-summary>
+      <app-candidate-summary *ngIf="section == 'summary'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"left"'></app-candidate-summary>
       <app-candidate-personal-info *ngIf="section == 'personalInfo'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"left"'></app-candidate-personal-info>
       <app-candidate-languages *ngIf="section == 'languages'"  [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-languages>
       <app-candidate-skills *ngIf="section == 'skills'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"left"'></app-candidate-skills>
@@ -20,7 +20,7 @@
     <div *ngFor='let section of rightSections()'>
       <app-candidate-photo *ngIf="section == 'photo'" [jsonResume]=jsonResume></app-candidate-photo>
       <app-candidate-labeling *ngIf="section == 'labeling'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-labeling>
-      <app-candidate-summary *ngIf="section == 'summary'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-summary>
+      <app-candidate-summary *ngIf="section == 'summary'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"right"'></app-candidate-summary>
       <app-candidate-personal-info *ngIf="section == 'personalInfo'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"right"'></app-candidate-personal-info>
       <app-candidate-languages *ngIf="section == 'languages'"  [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-languages>
       <app-candidate-skills *ngIf="section == 'skills'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"right"'></app-candidate-skills>
