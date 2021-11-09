@@ -1,4 +1,4 @@
-export const templateConfigs = {
+export const templateLayoutConfig = {
   "sections": {
     "personalInfo" : {
       "title": "Personal Info"
