@@ -61,3 +61,19 @@
 mat-expansion-panel-header {
   background-color: lightgray;
 }
+
+
+.label-and-field {
+  display: flex;
+  gap: 0 1.5ex;
+  align-items: center;
+    justify-content: center;
+
+  > mat-label {
+//     font-weight: bold;
+  }
+
+  > mat-form-field {
+    flex-grow: 1;
+  }
+}

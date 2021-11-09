@@ -1,5 +1,9 @@
 let _commonJs = {
 
+  toString(obj) {
+    return JSON.stringify(exportObj, null, 2);
+  },
+
   fileToBase64(file) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -61,6 +65,35 @@ let _commonJs = {
       return index === 0 ? word.toLowerCase() : word.toUpperCase();
     }).replace(/\s+/g, '');
   },
+
+  doOnFileChange(event, callback) {
+    const files = event.target.files
+    if (files.length >= 1 ) {
+      const selectedFile = event.target.files[0];
+      const fileReader = new FileReader();
+      fileReader.readAsText(selectedFile, "UTF-8");
+      fileReader.onload = () => {
+        const fileAsText = fileReader.result;
+        callback(fileAsText)
+      }
+      fileReader.onerror = (error) => {
+        console.log(error);
+      }
+
+      event.target.value = '';
+    }
+  },
+
+  downloadObjectAsJson(exportObj, exportName) {
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj, null, 2));
+    var downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href",     dataStr);
+    downloadAnchorNode.setAttribute("download", exportName + ".json");
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  },
+
 
 }
 

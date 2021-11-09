@@ -12,9 +12,7 @@ import 'src/assets/js/common';
 })
 export class EditContentTabComponent implements OnInit {
   @Input() inputJsonResume: any;
-  @Input() inputTemplateConfig: any;
   @Output() public userJsonResumeChanged = new EventEmitter<any>();
-  @Output() public userTemplateConfChanged = new EventEmitter<any>();
   @ViewChild('ckeditor') ckeditor: CKEditorComponent;
   commonJs = _commonJs
 
@@ -27,71 +25,22 @@ export class EditContentTabComponent implements OnInit {
   }
 
   onContentFileChanged(event) {
-    const files = event.target.files
-    if (files.length >= 1 ) {
-      const selectedFile = event.target.files[0];
-      const fileReader = new FileReader();
-      fileReader.readAsText(selectedFile, "UTF-8");
-      fileReader.onload = () => {
-        const fileAsText = fileReader.result as string;
-        this.userJsonResumeChanged.emit(JSON.parse(fileAsText));
-      }
-      fileReader.onerror = (error) => {
-        console.log(error);
-      }
-      event.target.value = '';
-    }
-  }
-
-  onConfFileChanged(event) {
-      const files = event.target.files
-      if (files.length >= 1 ) {
-        const selectedFile = event.target.files[0];
-        const fileReader = new FileReader();
-        fileReader.readAsText(selectedFile, "UTF-8");
-        fileReader.onload = () => {
-          const fileAsText = fileReader.result as string;
-          this.userTemplateConfChanged.emit(JSON.parse(fileAsText));
-        }
-        fileReader.onerror = (error) => {
-          console.log(error);
-        }
-
-        event.target.value = '';
-      }
-    }
-
-
-
-
-
-  downloadObjectAsJson(exportObj, exportName) {
-    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj, null, 2));
-    var downloadAnchorNode = document.createElement('a');
-    downloadAnchorNode.setAttribute("href",     dataStr);
-    downloadAnchorNode.setAttribute("download", exportName + ".json");
-    document.body.appendChild(downloadAnchorNode); // required for firefox
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
+    _commonJs.doOnFileChange(event, (fileAsText) => {
+      this.userJsonResumeChanged.emit(JSON.parse(fileAsText));
+      alert('Content Loaded Successfully');
+    })
   }
 
   downloadJsonResumeContent() {
     let resume = this.inputJsonResume;
     let name = _commonJs.camelizeString(this.inputJsonResume.basics.name);
-    this.downloadObjectAsJson(resume, name + "_resumeContent");
-  }
-
-  downloadTemplateConfig() {
-    let templateConf = this.inputTemplateConfig;
-    this.downloadObjectAsJson(templateConf, "resumeTemplateConfig");
+    _commonJs.downloadObjectAsJson(resume, name + "_resumeContent");
   }
 
   removeProfile(profile) {
-    let idx = this.inputJsonResume.basics.profiles.indexOf(profile)
-    if (idx !== -1) {
-      this.inputJsonResume.basics.profiles.splice(idx, 1);
-    }
+    _commonJs.removeItem(this.inputJsonResume.basics.profiles, profile)
   }
+
   addNewProfile() {
     this.inputJsonResume.basics.profiles.push({
       "network": "network",
@@ -101,10 +50,7 @@ export class EditContentTabComponent implements OnInit {
   }
 
   removeAttachment(attachment) {
-    let idx = this.inputJsonResume.attachments.indexOf(attachment)
-    if (idx !== -1) {
-      this.inputJsonResume.attachments.splice(idx, 1);
-    }
+    _commonJs.removeItem(this.inputJsonResume.attachments, attachment)
   }
 
   addNewAttachment() {
@@ -115,10 +61,7 @@ export class EditContentTabComponent implements OnInit {
   }
 
   removeSkill(skill) {
-    let idx = this.inputJsonResume.skills.indexOf(skill)
-    if (idx !== -1) {
-      this.inputJsonResume.skills.splice(idx, 1);
-    }
+   _commonJs.removeItem(this.inputJsonResume.skills, skill)
   }
 
   addNewSkill() {
@@ -151,50 +94,4 @@ export class EditContentTabComponent implements OnInit {
       "fluency": "Working Proficiency",
     })
   }
-
-  addItem(arr, item) {
-    arr.push(item);
-  }
-
-  arrayChunks(inputArray, perChunk) {
-    if (inputArray == undefined || inputArray.length == 0) {
-      return [];
-    }
-
-    var result = inputArray.reduce((resultArray, item, index) => {
-      const chunkIndex = Math.floor(index/perChunk)
-
-      if(!resultArray[chunkIndex]) {
-        resultArray[chunkIndex] = [] // start a new chunk
-      }
-
-      resultArray[chunkIndex].push(item)
-
-      return resultArray
-    }, [])
-
-    return result;
-  }
-
-  arrayChunksIdxs(inputArray, chunkSize) {
-      if (inputArray?.length == undefined) {
-        return [];
-      }
-
-      let l = inputArray.length;
-      let rg = [...Array(l).keys()];
-      return this.arrayChunks(rg, chunkSize);
-  }
-
-
-
-
-  toString(obj) {
-    return JSON.stringify(obj);
-  }
-
-  toJson(str) {
-    return JSON.parse(str);
-  }
-
 }

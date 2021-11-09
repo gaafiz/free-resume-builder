@@ -29,6 +29,7 @@ import { SectionSeparatorComponent } from './section-separator/section-separator
 import { EditBasicInfoComponent } from './edit-content-tab/edit-basic-info/edit-basic-info.component';
 import { EditExperienceInfoComponent } from './edit-content-tab/edit-experience-info/edit-experience-info.component';
 import { EditEducationInfoComponent } from './edit-content-tab/edit-education-info/edit-education-info.component';
+import { EditLayoutTabComponent } from './edit-layout-tab/edit-layout-tab.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { EditEducationInfoComponent } from './edit-content-tab/edit-education-in
     SectionSeparatorComponent,
     EditBasicInfoComponent,
     EditExperienceInfoComponent,
-    EditEducationInfoComponent
+    EditEducationInfoComponent,
+    EditLayoutTabComponent
   ],
   imports: [
     BrowserModule,

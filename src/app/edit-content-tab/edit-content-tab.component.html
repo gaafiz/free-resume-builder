@@ -70,7 +70,7 @@
         <mat-form-field appearance="fill" class="skill-keyword">
           <mat-label>Keyword</mat-label>
           <input matInput [value]="getSkillKeywords(skill)" (change)="setSkillKeywords(skill, $event.target.value)" name="{{'skillKeywords - ' + i}}">
-          <mat-hint align="start">Enter keywords separated by semicolumn ';'</mat-hint>
+          <mat-hint align="start">Enter keywords separated by semicolon ';'</mat-hint>
         </mat-form-field>
 
         <button mat-mini-fab class="mat-fab" color="warn" (click)="commonJs.removeItem(inputJsonResume.skills, skill)">
@@ -140,19 +140,6 @@
 
 
 </mat-tab-group>
-
-
-
-<!--<div>-->
-<!--  <span><b>Resume Template Configuration </b></span>-->
-<!--  <input-->
-<!--    style="display: none"-->
-<!--    type="file" (change)="onConfFileChanged($event)"-->
-<!--    #confFile>-->
-<!--  <button (click)="confFile.click()">Load</button>-->
-<!--  <button (click)="downloadTemplateConfig()">Save</button>-->
-<!--</div>-->
-<!--<hr>-->
 
 
 

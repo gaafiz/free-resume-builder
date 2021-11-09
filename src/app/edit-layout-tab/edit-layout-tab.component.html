@@ -1,0 +1,82 @@
+<mat-tab-group id="edit-content-tab" mat-align-tabs="center" dynamicHeight="true" class="centerize">
+
+  <mat-tab label="Columns Layout" >
+    <div class="normal-flow">
+      <app-section-separator text="Columns Layout"></app-section-separator>
+      <div>
+        Chose which resume sections will be shown in the left or right columns.
+        Valid Sections are:
+        <ul>
+          <li><b>photo</b> (display picture of the candidate)</li>
+          <li><b>labeling</b> (display name and professional role of the candidate)</li>
+          <li><b>summary</b> (display a brief summary about the candidate)</li>
+          <li><b>personalInfo</b> (display personal info and contacts of the candidate)</li>
+          <li><b>languages</b></li>
+          <li><b>skills</b></li>
+          <li><b>education</b></li>
+          <li><b>experience</b></li>
+
+        </ul>
+      </div>
+
+      <div class="fields-row">
+        <div class="label-and-field">
+          <mat-label>Left Column Sections</mat-label>
+          <mat-form-field appearance="fill">
+            <input matInput [value]="getLeftColumnSections()" (change)="setLeftColumnSections($event.target.value)" name="leftColSections">
+            <mat-hint align="start">Enter sections separated by semicolon ';'</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="fields-row">
+        <div class="label-and-field">
+          <mat-label>Right Column Sections</mat-label>
+          <mat-form-field appearance="fill">
+            <input matInput [value]="getRightColumnSections()" (change)="setRightColumnSections($event.target.value)" name="rightColSections">
+            <mat-hint align="start">Enter sections separated by semicolon ';'</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </div>
+  </mat-tab>
+
+
+  <mat-tab label="Sections Titles" >
+    <div class="normal-flow">
+      <app-section-separator text="Sections Titles"></app-section-separator>
+      <div>Here you can change (or remove) the title for the following sections:</div>
+
+      <div class="grid-2-col">
+        <div *ngFor="let section of inputTemplateLayoutConfig.sections | keyvalue" class="">
+          <div class="label-and-field">
+            <mat-label>"{{section.key}}" section</mat-label>
+            <mat-form-field appearance="fill">
+              <input matInput [(ngModel)]="section.value.title" name="{{section.key}}-title">
+              <mat-hint align="start">Enter blank for no title</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </mat-tab>
+
+
+  <mat-tab label="Save/Load" >
+    <div class="normal-flow">
+      <app-section-separator text="Resume Layout Configurations - Save/Load"></app-section-separator>
+      <p>
+        By Saving the Layout Configuration in a file, you may apply it back any time.
+      </p>
+      <input style="display: none" type="file" (change)="onLayoutConfFileChanged($event)" #layoutConfFile>
+      <div class="fields-row">
+        <button mat-raised-button color="accent" (click)="layoutConfFile.click()"> Load From File </button>
+        <button mat-raised-button color="primary" (click)="downloadTemplateLayoutConfig()"> Save in a File </button>
+      </div>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>

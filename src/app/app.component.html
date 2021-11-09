@@ -2,21 +2,24 @@
 
   <mat-tab label="Preview"><app-resume-page
     [jsonResume]=jsonResume
-    [templateConf]=templateConf
+    [templateConf]=templateLayoutConfig
     [style]='"normal"'
   ></app-resume-page></mat-tab>
 
   <mat-tab label="Preview (Light)"><app-resume-page
     [jsonResume]=jsonResume
-    [templateConf]=templateConf
+    [templateConf]=templateLayoutConfig
     [style]='"light"'
   ></app-resume-page></mat-tab>
 
   <mat-tab label="Edit Content"><app-edit-content-tab
     [inputJsonResume]=jsonResume
-    [inputTemplateConfig]=templateConf
     (userJsonResumeChanged)="updateJsonResume($event)"
-    (userTemplateConfChanged)="updateTemplateConf($event)"
   ></app-edit-content-tab></mat-tab>
+
+  <mat-tab label="Edit Layout"><app-edit-layout-tab
+    [inputTemplateLayoutConfig]=templateLayoutConfig
+    (templateLayoutConfigChanged)="updateTemplateLayoutConfig($event)"
+  ></app-edit-layout-tab></mat-tab>
 
 </mat-tab-group>
