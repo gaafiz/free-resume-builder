@@ -8,14 +8,14 @@
       </div>
 
       <div *ngIf="side == 'right'" class="expItem-quickInfo">
-        {{expItem.company}} {{getWebsite(expItem)}} | {{expItem.address}} | {{expItem.startDate}} - {{expItem.endDate || 'Present'}}
+        {{getExpHeadline(expItem)}}
       </div>
 
       <div *ngIf="side == 'left'" class="expItem-quickInfo">
-        {{expItem.company}} | {{expItem.website}}
+        {{getCompanyNameAndWebsite(expItem)}}
       </div>
       <div *ngIf="side == 'left'" class="expItem-quickInfo">
-        {{expItem.address}} | {{expItem.startDate}} - {{expItem.endDate || 'Present'}}
+        {{getCompanyAddressAndPeriod(expItem)}}
       </div>
 
       <div class="expItem-body">

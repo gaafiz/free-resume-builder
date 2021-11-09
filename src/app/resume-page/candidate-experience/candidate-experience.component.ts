@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
+import 'src/assets/js/common';
 
 @Component({
   selector: 'app-candidate-experience',
@@ -10,6 +11,7 @@ export class CandidateExperienceComponent implements OnInit {
   @Input() jsonResume: any;
   @Input() templateConf: any;
   @Input() side: any;
+  commonJs = _commonJs
 
   constructor() { }
 
@@ -39,13 +41,21 @@ export class CandidateExperienceComponent implements OnInit {
     return projects != undefined && projects.length > 0;
   }
 
-  getWebsite(expItem) {
-    let website = expItem?.website;
-    if (website != undefined && website !== "") {
-      return "| " + website;
-    } else {
-      return "";
-    }
+  getExpHeadline(expItem) {
+    return _commonJs.appendString(
+      this.getCompanyNameAndWebsite(expItem),
+      this.getCompanyAddressAndPeriod(expItem),
+      " | "
+    );
+  }
+
+  getCompanyNameAndWebsite(expItem) {
+    return _commonJs.appendString(expItem.company, expItem.website, " | ");
+  }
+
+  getCompanyAddressAndPeriod(expItem) {
+    let period = expItem.startDate + " - " + (expItem.endDate || 'Present');
+    return _commonJs.appendString(expItem?.address, period, " | ");
   }
 
 }

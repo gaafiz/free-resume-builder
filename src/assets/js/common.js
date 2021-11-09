@@ -95,6 +95,23 @@ let _commonJs = {
   },
 
 
+  appendString(_string, _toAppend, _separator) {
+    var separator = _separator;
+    var string = _string;
+    var toAppend = _toAppend;
+    if (string == undefined) {
+      string = "";
+    }
+    if (toAppend == undefined) {
+      toAppend = "";
+    }
+
+    if (string === "" || toAppend === "") {
+      separator = "";
+    }
+    return string + separator + toAppend;
+  },
+
 }
 
 
