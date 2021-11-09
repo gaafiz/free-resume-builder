@@ -39,6 +39,10 @@ $col-padding-horizontal: 1.6ex;
   }
 }
 
+#resume-page-main-column-wrapper.expand-to-full-page {
+  width: 21cm;
+}
+
 // Links Style
 ::ng-deep a {
   color: inherit;

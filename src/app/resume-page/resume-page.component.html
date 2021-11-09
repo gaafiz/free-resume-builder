@@ -1,5 +1,5 @@
 <div id="resume-page" class="{{style}}">
-  <div id="resume-page-side-column-wrapper">
+  <div *ngIf="showLeftCol()" id="resume-page-side-column-wrapper">
   <div id="resume-page-side-column">
     <div *ngFor='let section of leftSections()'>
       <app-candidate-photo *ngIf="section == 'photo'" [jsonResume]=jsonResume></app-candidate-photo>
@@ -15,7 +15,7 @@
     <app-resume-version [jsonResume]=jsonResume></app-resume-version>
   </div>
 
-  <div id="resume-page-main-column-wrapper">
+  <div id="resume-page-main-column-wrapper" class="{{rightSectionAdditionalClasses()}}">
   <div id="resume-page-main-column">
     <div *ngFor='let section of rightSections()'>
       <app-candidate-photo *ngIf="section == 'photo'" [jsonResume]=jsonResume></app-candidate-photo>

@@ -25,4 +25,17 @@ export class ResumePageComponent implements OnInit {
     return this.templateConf?.rightColSections;
   }
 
+  showLeftCol() {
+    let leftColSections = this.templateConf?.leftColSections;
+    return (leftColSections && leftColSections.length && leftColSections.length > 0);
+  }
+
+  rightSectionAdditionalClasses() {
+    if (this.showLeftCol()) {
+      return "";
+    } else {
+      return "expand-to-full-page";
+    }
+  }
+
 }
