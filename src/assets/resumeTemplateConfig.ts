@@ -20,5 +20,5 @@ export const templateLayoutConfig = {
     }
   },
   "leftColSections" : ["photo", "personalInfo", "languages", "skills", "education"],
-  "rightColSections" : ["labeling", "summary", "experience"]
+  "rightColSections" : ["labeling", "separator", "summary", "experience"]
 }

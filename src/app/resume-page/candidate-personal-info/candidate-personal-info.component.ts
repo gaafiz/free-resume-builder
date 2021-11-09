@@ -16,6 +16,12 @@ export class CandidatePersonalInfoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showTitle() {
+    let title = this.title();
+    return title != undefined && title !== "";
+  }
+
+
   title() {
     return this.templateConf?.sections?.personalInfo?.title
   }

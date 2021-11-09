@@ -44,8 +44,8 @@ $resume-headline-letter-spacing: 3px;
 hr.separator {
   width: 100%;
   border: 0;
-//   height: 2px; background-image: linear-gradient(to right, transparent, #7bafc8, transparent);
-  height: 1px; background-image: linear-gradient(to right, transparent, #003366, transparent);
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, $highlight-bkg-color-neg, transparent);
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -53,6 +53,15 @@ hr.separator {
   background-image: unset;
   background-color: $highlight-bkg-color;
 }
+.light .left .separator {
+  background-image: unset;
+  background-color: $highlight-bkg-color-neg;
+}
+hr.separator.separator-section {
+  margin-top: -0.25em;
+  margin-bottom: 1.2em;
+}
+
 
 .highlight-oval {
 	border-radius: 5px;

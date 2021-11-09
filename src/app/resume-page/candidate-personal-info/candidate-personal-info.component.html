@@ -1,5 +1,5 @@
 <div *ngIf="showSection()" class="content-section personalInfo-section {{side}}">
-  <div class="section-head">
+  <div *ngIf="showTitle()" class="section-head">
     {{title()}}
   </div>
   <div class="section-body">
