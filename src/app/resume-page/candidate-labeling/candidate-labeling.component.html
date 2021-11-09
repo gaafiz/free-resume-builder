@@ -1,4 +1,4 @@
-<div *ngIf="showSection()" class="content-section candidate-labeling">
+<div *ngIf="showSection()" class="content-section candidate-labeling {{side}}">
   <div class="candidate-name">{{candidateName()}}</div>
   <div *ngIf="showCandidateLabel()" class="candidate-label">{{candidateLabel()}}</div>
 

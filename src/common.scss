@@ -49,6 +49,10 @@ hr.separator {
   margin-bottom: 0;
   margin-top: 0;
 }
+.buzzer .left .separator {
+  background-image: unset;
+  background-color: $highlight-bkg-color;
+}
 
 .highlight-oval {
 	border-radius: 5px;

@@ -3,7 +3,7 @@
   <div id="resume-page-side-column">
     <div *ngFor='let section of leftSections()'>
       <app-candidate-photo *ngIf="section == 'photo'" [jsonResume]=jsonResume></app-candidate-photo>
-      <app-candidate-labeling *ngIf="section == 'labeling'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-labeling>
+      <app-candidate-labeling *ngIf="section == 'labeling'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"left"'></app-candidate-labeling>
       <app-candidate-summary *ngIf="section == 'summary'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"left"'></app-candidate-summary>
       <app-candidate-personal-info *ngIf="section == 'personalInfo'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"left"'></app-candidate-personal-info>
       <app-candidate-languages *ngIf="section == 'languages'"  [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-languages>
@@ -19,7 +19,7 @@
   <div id="resume-page-main-column">
     <div *ngFor='let section of rightSections()'>
       <app-candidate-photo *ngIf="section == 'photo'" [jsonResume]=jsonResume></app-candidate-photo>
-      <app-candidate-labeling *ngIf="section == 'labeling'" [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-labeling>
+      <app-candidate-labeling *ngIf="section == 'labeling'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"right"'></app-candidate-labeling>
       <app-candidate-summary *ngIf="section == 'summary'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"right"'></app-candidate-summary>
       <app-candidate-personal-info *ngIf="section == 'personalInfo'" [jsonResume]=jsonResume [templateConf]=templateConf [side]='"right"'></app-candidate-personal-info>
       <app-candidate-languages *ngIf="section == 'languages'"  [jsonResume]=jsonResume [templateConf]=templateConf></app-candidate-languages>
