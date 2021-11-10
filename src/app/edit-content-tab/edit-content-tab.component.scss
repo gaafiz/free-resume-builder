@@ -1,10 +1,10 @@
 :host ::ng-deep mat-tab-body {
   margin-top: 2ex;
-  width: 21cm;
+  max-width: 21cm;
 }
 
 :host ::ng-deep mat-tab-header {
-  width: 21cm;
+  max-width: 21cm;
 }
 
 :host ::ng-deep mat-tab-header .mat-tab-label {
