@@ -3,6 +3,15 @@
   width: 21cm;
 }
 
+:host ::ng-deep mat-tab-header {
+  width: 21cm;
+}
+
+:host ::ng-deep mat-tab-header .mat-tab-label {
+  min-width: 25px !important; // In addition to mat-strech-tabs allowing tabs to fill remaining space in parent container
+  padding: 2.5ex;
+}
+
 ::ng-deep .normal-flow {
   display: flex;
   flex-direction: column;

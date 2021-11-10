@@ -1,7 +1,10 @@
+@import 'src/common.scss';
+
 .section-body {
   line-height: 120%;
 }
 
 .right .section-body {
   text-align: justify;
+  line-height: $resume-line-height-long-text;
 }

@@ -24,7 +24,8 @@ $main-content-width: $a4-width - $side-column-width;
 
 // Text Style
 $resume-text-size: 13px;
-$resume-text-letter-spacing: 0.2px;
+$resume-text-letter-spacing: 0.4px;
+$resume-line-height-long-text: 130%;
 
 $resume-headline-size: 17px;
 $resume-headline-letter-spacing: 3px;
@@ -86,7 +87,7 @@ hr.separator.separator-section {
   padding-left: 1ex;
   border-left: 1px solid;
   border-left-color: $highlight-text-color;
-  line-height: 120%;
+  line-height: $resume-line-height-long-text;
 }
 .right .quoted-body {
   text-align: justify;
