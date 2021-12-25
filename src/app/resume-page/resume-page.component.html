@@ -31,4 +31,33 @@
     </div>
   </div>
   </div>
+
+</div>
+
+<style>
+
+    .float-action-bar-bottom{
+      position:fixed;
+      left:0;
+      bottom: 2em;
+      width: 100%;
+    }
+    .inner-toolbar {
+      margin: auto;
+      width: 21cm;
+    }
+    .print-resume-btn {
+      display: block;
+      margin-left: auto;
+      margin-right: 2em;
+    }
+  </style>
+<div class="float-action-bar-bottom centerize">
+  <div class="inner-toolbar">
+    <button mat-fab class="mat-fab print-resume-btn" color="accent"
+      (click)="commonJs.triggerPrint()">
+      <mat-icon>print</mat-icon>
+    </button>
+  </div>
+
 </div>

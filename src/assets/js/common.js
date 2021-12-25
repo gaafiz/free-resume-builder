@@ -112,6 +112,20 @@ let _commonJs = {
     return string + separator + toAppend;
   },
 
+  triggerPrint() {
+    alert(
+      "For the best printing result:\n"+
+      "1) Use Chrome browser\n" +
+      '2) Tick "Background Graphics"\n' +
+      '3) Set Margin to "Minimum"\n\n' +
+      'To SAVE AS PDF:\n' +
+      '1) Set Destination "Save as PDF\n' +
+      '2) Tick "Background Graphics\n' +
+      '3) Select Margin to "None"\n'
+    )
+    window.print();
+  },
+
 }
 
 
