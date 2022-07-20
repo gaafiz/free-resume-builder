@@ -17,8 +17,9 @@ ul {
 
 
 @media print {
-  #main-tab .mat-tab-header {
-    display: none;
+  #main-tab .mat-tab-header,
+  .float-action-bar-bottom {
+    display: none !important;
   }
   @page {
     size: A4 portrait;

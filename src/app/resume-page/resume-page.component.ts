@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
+import 'src/assets/js/common';
 
 @Component({
   selector: 'app-resume-page',
@@ -11,6 +12,9 @@ export class ResumePageComponent implements OnInit {
   @Input() jsonResume: any;
   @Input() templateConf: any;
   @Input() style: any;
+
+  commonJs = _commonJs
+
 
   constructor() { }
 
